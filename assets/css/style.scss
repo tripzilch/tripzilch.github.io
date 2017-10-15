@@ -4,6 +4,7 @@
 @import "{{ site.theme }}";
 
 body {
+    padding:10px 0;
     font: 14px/1.5 sans-serif;
     color:#000;
     background: #f63;
@@ -11,7 +12,6 @@ body {
 
 .wrapper {
     background: #ffd;
-    border-radius: 8px;
     box-shadow: rgba(0,0,0,0.3) 12px 12px 0px;
 }
 
