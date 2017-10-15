@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body { padding: 10px 0; font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif; color: #000; background: #f63; }
 
 .wrapper { width: 640px; margin: 0 auto; border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.3) 12px 12px 0px; }
@@ -22,8 +23,10 @@ h1 { font-size: 36px; text-align: center; color: #520; }
 
 h2 { font-size: 24px; color: #840; }
 
-blockquote { padding: 8px; margin: 20px; font-size: 1.2em; text-align: right; font-style: italic; font-family: serif; color: #555; text-shadow: rgba(0, 102, 153, 0.5) 4px 4px 3px; }
-blockquote p { margin: 0; }
+blockquote { padding: 8px; margin: 20px; font-size: 1.2em; float: right; display: block; font-style: italic; font-family: Georgia, serif; color: #555; }
+blockquote p { text-shadow: rgba(0, 102, 153, 0.5) 4px 4px 3px; margin: 0; }
+blockquote p:before, blockquote p:after { font-size: 2em; line-height: 0.5em; font-weight: bold; content: "“"; display: inline-block; color: #777; text-shadow: none; padding: 0px 4px; }
+blockquote p:after { content: "”"; }
 
 table { width: 100%; border-collapse: collapse; }
 

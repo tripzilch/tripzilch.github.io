@@ -74,13 +74,28 @@ h2 {
 blockquote {
     padding: 8px; margin: 20px;
     font-size: 1.2em;
-    text-align: right;
+    float: right;
+    display: block;
     font-style:italic;
-    font-family: serif;
+    font-family: Georgia, serif;
     color: #555;
-    text-shadow: rgba(0,102,153,0.5) 4px 4px 3px;
-    p { margin: 0; }
+    p { 
+        text-shadow: rgba(0,102,153,0.5) 4px 4px 3px;
+        margin: 0;
+    }
+    p:before, p:after {
+      font-size: 2em;
+      line-height: 0.5em;
+      font-weight: bold;
+      content: "“";
+      display: inline-block;
+      color: #777;
+      text-shadow: none;
+      padding: 0px 4px;
+    }
+    p:after { content: "”" }
 }
+
 
 table {
   width:100%;
