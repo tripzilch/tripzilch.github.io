@@ -1,6 +1,6 @@
 # DINGEN VOOR GIJS
 
-Deze page bevat **DINGEN VOOR GIJS**
+Deze pagina bevat **DINGEN VOOR GIJS**
 
 Als je GIJS bent, *YOU HAVE COME TO THE RIGHT PLACE!!*
 
