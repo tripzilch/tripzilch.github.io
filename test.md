@@ -2,8 +2,8 @@
 
 Test paeg
 
-| wat wat | dfit dit dit |
-| dat dat | wot wot wot |
-| heu | mja ok |
+wat wat | dfit dit dit
+dat dat | wot wot wot
+heueeee | mja ok
 
 ## ayy
