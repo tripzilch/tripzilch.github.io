@@ -1,6 +1,6 @@
 body { padding: 10px 0; font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif; color: #000; background: #f63; }
 
-.wrapper { width: 640px; margin: 0 auto; background: #ffd; border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.3) 12px 12px 0px; }
+.wrapper { width: 640px; margin: 0 auto; background: #00f; border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.3) 12px 12px 0px; }
 
 header, section, footer { display: block; }
 
