@@ -2,8 +2,8 @@
 
 ## Wikkelontwerp
 
-[wikkel1920.jpg](img/wikkel1920.jpg)  | Wikkelontwerp voor mobiel
-[wikkel-300dpi.png](img/wikkel-300dpi.png) | Wikkelontwerp 300dpi
-[wikkel-600dpi.png](img/wikkel-600dpi.png) | Wikkelontwerp 600dpi
+[wikkel1920.jpg](wikkel1920.jpg)  | Wikkelontwerp voor mobiel
+[wikkel-300dpi.png](wikkel-300dpi.png) | Wikkelontwerp 300dpi
+[wikkel-600dpi.png](wikkel-600dpi.png) | Wikkelontwerp 600dpi
 
-BLarp
+BLirp
