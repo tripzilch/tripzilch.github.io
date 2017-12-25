@@ -4,8 +4,6 @@ Story and design by Solar Flare Fox, based on *Memebombs Volume Aleph* by Profes
 
 ![Aleph One](hysterical-nonsense.jpg)
 
------
-
 ![Aleph Two](now-that-youve-read-this.jpg)
 
 
