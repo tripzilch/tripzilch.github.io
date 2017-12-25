@@ -55,11 +55,10 @@ p {
 
 img {
   display: block;
-  padding: 24px 48px;
   margin: 24px auto;
   max-width: 800px;
   border-radius: 12px;
-  background: #322;  
+  box-shadow: #a88 6px 6px 12px;
 }
 
 h1, h2, h3, h4, h5, h6 {
