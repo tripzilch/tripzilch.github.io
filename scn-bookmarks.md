@@ -11,6 +11,10 @@
 * Scratch
 * [why's poignant gude to Ruby](http://poignant.guide/book/chapter-1.html)
 * Handige + goeie shell scripting tutorial?
+* Codecademy
+* Project Euler
+* Untrusted.js "The adventures of Doctor Eval"
+*  
 
 ## SCN/PCW gerelateerd
 

@@ -1,4 +1,4 @@
-# ANDORK FLIEM
+# My brain on Markdown
 
-Test paeg 999
+**DON'T JUST DEFEND YOUR RIGHT TO BE WRONG — EXERCISE IT** *!!*
 
