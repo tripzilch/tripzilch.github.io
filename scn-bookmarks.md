@@ -23,6 +23,7 @@
 
 ## Referentiemateriaal
 
+* [The Z Shell Manual (zsh)](http://zsh.sourceforge.net/Doc/Release/index.html)
 * devdocs.io
 * procressing reference
 * links naar MDN topics
