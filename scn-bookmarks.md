@@ -1,3 +1,8 @@
+# PCW Image notities
+
+* nieuwste sublime versie
+* subklime packages: SyncedSidebarBg, sdgfs
+
 # SCN/PCW links
 
 ## Games programmeren
