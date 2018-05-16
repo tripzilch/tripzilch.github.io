@@ -37,7 +37,6 @@
 * links naar MDN topics
 * links in python docs
 * etc
-<<<<<<< HEAD
 
 ## Test
 
@@ -53,6 +52,4 @@ feemeoboobao |  baotuvuonee |   keukumukee
   yeolayaoba |   diokemuoko |   dakeyoodai
 naifeoroamia |   kuokuseuku |   reomufodee
 
-Vork aanhangwagen metaal.
-=======
->>>>>>> d91dd0199d6b01026aa1dcb7d66cd68ce18ee3d3
+Vork aanhangwagen metaal. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure *dolor* in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
