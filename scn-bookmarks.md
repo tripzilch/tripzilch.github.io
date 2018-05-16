@@ -14,7 +14,10 @@
 * Codecademy
 * Project Euler
 * Untrusted.js "The adventures of Doctor Eval"
-*  
+
+## Creatief op de computer
+
+* [SuperAnimo FREE Cartoon Maker](http://www.superanimo.com/)
 
 ## SCN/PCW gerelateerd
 
@@ -29,3 +32,19 @@
 * links naar MDN topics
 * links in python docs
 * etc
+
+## Test
+
+Kaas kip berg.
+
+rioboaheuhao | doivailookuo |   yatuotivuo
+-------------|--------------|--------------
+   lusuroyeu |    yafivakaa |  vimoitiowao
+  devadaihee | teekiayaaveu |   nukuweewio
+  nuokuokitu | haabaoreoloi | veudaodeekio
+   sisemileo | fiaviadoinia |   beokuseuka
+feemeoboobao |  baotuvuonee |   keukumukee
+  yeolayaoba |   diokemuoko |   dakeyoodai
+naifeoroamia |   kuokuseuku |   reomufodee
+
+Vork aanhangwagen metaal.
