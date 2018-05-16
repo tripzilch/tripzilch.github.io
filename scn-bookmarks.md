@@ -1,7 +1,7 @@
 # PCW Image notities
 
 * nieuwste sublime versie
-* subklime packages: SyncedSidebarBg, sdgfs
+* subklime packages: SyncedSidebarBg
 
 # SCN/PCW links
 
