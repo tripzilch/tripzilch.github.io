@@ -2,6 +2,7 @@
 
 * nieuwste sublime versie
 * subklime packages: SyncedSidebarBg
+* SCN Bluebird theme
 
 # SCN/PCW links
 
@@ -20,6 +21,10 @@
 * Project Euler
 * Untrusted.js "The adventures of Doctor Eval"
 
+## Computational science
+
+*  [Brilliant](https://brilliant.org/numberphile) — Understand concepts and build your problem solving skills with thousands of free problems and examples in math, science, and engineering.
+
 ## Creatief op de computer
 
 * [SuperAnimo FREE Cartoon Maker](http://www.superanimo.com/)
@@ -36,7 +41,10 @@
 * procressing reference
 * links naar MDN topics
 * links in python docs
-* etc
+
+## Nuttig
+
+* [FIXEDFIXER](javascript:document.querySelectorAll('*').forEach(e=>/fixed|sticky/.test(getComputedStyle(e).position)?e.style.position='static':0)) is een bookmarklet voor in de bookmarks toolbar. Zoekt alle elementen in de page met style `position:fixed` of `position:sticky` en zet ze op `position:static`. Het resultaat is dat headers en logo's die de hele tijd in beeld blijven en mee-scrollen, niet meer de hele tijd in beeld blijven en je meer ruimte hebt op je scherm voor the meat of the page.
 
 ## Test
 
