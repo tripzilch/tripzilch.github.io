@@ -45,9 +45,6 @@
 ## Nuttig
 
 * <a href="javascript:document.querySelectorAll('*').forEach(e=>/fixed|sticky/.test(getComputedStyle(e).position)?e.style.position='static':0))">FIXEDFIXER</a> is een bookmarklet voor in de bookmarks toolbar. Zoekt alle elementen in de page met style `position:fixed` of `position:sticky` en zet ze op `position:static`. Het resultaat is dat headers en logo's die de hele tijd in beeld blijven en mee-scrollen, niet meer de hele tijd in beeld blijven en je meer ruimte hebt op je scherm voor the meat of the page.
-* [FIX2](javascript%3Adocument.querySelectorAll%28%27*%27%29.forEach%28e%3D%3E/fixed%7Csticky/.test%28getComputedStyle%28e%29.position%29%3Fe.style.position%3D%27static%27%3A0%29%29) testing for thing
-* [FIX3](javascript:document.querySelectorAll('*'%29.forEach(e=%3E/fixed%7Csticky/.test(getComputedStyle(e%29.position%29?e.style.position='static':0%29%29) testing for things again
-* [FIX4](javascript:document.querySelectorAll('*'%29.forEach(e=>/fixed%7Csticky/.test(getComputedStyle(e%29.position%29?e.style.position='static':0%29%29) testing for things again 5
 
 ## Test
 
