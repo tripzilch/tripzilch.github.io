@@ -2,9 +2,7 @@
 
 **DON'T JUST DEFEND YOUR RIGHT TO BE WRONG — EXERCISE IT** *!!*
 
-[SCN Bookmarks](scn-bookmarks)
+[Test](test) please ignore.
 
-[Test](test)
-
-[README](README)
+[SCN Bookmarks](scn-bookmarks) please click.
 
