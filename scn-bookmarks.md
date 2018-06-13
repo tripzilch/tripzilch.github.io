@@ -11,6 +11,7 @@
 * [Phaser](https://github.com/photonstorm/phaser) is a fun, free and fast 2D game framework for making HTML5 games for desktop and mobile web browsers, supporting Canvas and WebGL rendering. [HN](https://news.ycombinator.com/item?id=16372375)
 * Scratch
 * *TODO:* Bookmarks en HN threads doorspitten
+* Play [The Incredible Machine](https://news.ycombinator.com/item?id=17271679) online
 
 ## Programmeren algemeen
 
@@ -28,6 +29,7 @@
 ## Creatief op de computer
 
 * [SuperAnimo FREE Cartoon Maker](http://www.superanimo.com/)
+* [Godot Animation Engine](https://godotengine.org/download/linux)
 
 ## SCN/PCW gerelateerd
 
