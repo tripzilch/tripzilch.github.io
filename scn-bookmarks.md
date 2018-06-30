@@ -48,6 +48,10 @@
 
 * <a href="javascript:document.querySelectorAll('*').forEach(e=>/fixed|sticky/.test(getComputedStyle(e).position)?e.style.position='static':0))">FIXEDFIXER</a> is een bookmarklet voor in de bookmarks toolbar. Zoekt alle elementen in de page met style `position:fixed` of `position:sticky` en zet ze op `position:static`. Het resultaat is dat headers en logo's die de hele tijd in beeld blijven en mee-scrollen, niet meer de hele tijd in beeld blijven en je meer ruimte hebt op je scherm voor the meat of the page.
 
+## Unsorted
+
+* [Online Sequencer](https://onlinesequencer.net/782655)
+
 ## Test
 
 Kaas kip berg.

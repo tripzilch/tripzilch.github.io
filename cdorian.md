@@ -20,5 +20,4 @@ VII     | A♯ D  F  | A♯ major
 
 Al deze akkoorden kan je gebruiken behalve **A♯ D F**, dat is een diminished chord. Ik ben werkelijk nog nergens een tutorial of artikel tegengekomen die een diminished chord gebruikt. Je kan het altijd uitproberen natuurlijk :)
 
-De overgang van **v** naar **i** 
-
+De overgang van **v** naar **i** voelt als een "release" (zeggen ze), de 
