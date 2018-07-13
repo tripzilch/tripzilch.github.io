@@ -9,7 +9,8 @@
 ## Games programmeren
 
 * [Phaser](https://github.com/photonstorm/phaser) is a fun, free and fast 2D game framework for making HTML5 games for desktop and mobile web browsers, supporting Canvas and WebGL rendering. [HN](https://news.ycombinator.com/item?id=16372375)
-* Scratch
+* [PuzzleScript](https://www.puzzlescript.net/) – an open-source HTML5 puzzle game engine
+* [Scratch](https://scratch.mit.edu)
 * *TODO:* Bookmarks en HN threads doorspitten
 * Play [The Incredible Machine](https://news.ycombinator.com/item?id=17271679) online
 
@@ -30,6 +31,7 @@
 
 * [SuperAnimo FREE Cartoon Maker](http://www.superanimo.com/)
 * [Godot Animation Engine](https://godotengine.org/download/linux)
+* [Show HN: Dilay – A free 3D sculpting application](https://news.ycombinator.com/item?id=17291269) en [SculptGL](https://stephaneginier.com/sculptgl/)
 
 ## SCN/PCW gerelateerd
 
