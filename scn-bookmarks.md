@@ -23,9 +23,10 @@
 * Project Euler
 * Untrusted.js "The adventures of Doctor Eval"
 
-## Computational science
+## Computerdingen
 
 *  [Brilliant](https://brilliant.org/numberphile) — Understand concepts and build your problem solving skills with thousands of free problems and examples in math, science, and engineering.
+*  [Julia Evans - IP addresses & routing](https://jvns.ca/blog/2018/07/24/ip-addresses-routing/)
 
 ## Creatief op de computer
 
