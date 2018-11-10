@@ -34,7 +34,7 @@ header {
     h1 {
         text-align: center;
         font-size:24px;
-        line-height:36px;
+        line-height:1.5;
         margin: 0; padding: 0;
         a { color: #39C; }
     }
@@ -66,13 +66,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 2em;
     text-align: center;
     color: #520;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 1.5em;
     color: #840;
 }
 
@@ -84,7 +84,7 @@ blockquote {
     font-style:italic;
     font-family: Georgia, serif;
     color: #555;
-    p { 
+    p {
         text-shadow: rgba(0,102,153,0.5) 4px 4px 3px;
         margin: 0;
     }
