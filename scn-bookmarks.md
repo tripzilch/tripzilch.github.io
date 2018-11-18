@@ -13,6 +13,7 @@
 * [Scratch](https://scratch.mit.edu)
 * *TODO:* Bookmarks en HN threads doorspitten
 * Play [The Incredible Machine](https://news.ycombinator.com/item?id=17271679) online
+* [PICO-8](https://www.lexaloffle.com/pico-8.php) is a fantasy console for making, sharing and playing tiny games and other computer programs. When you turn it on, the machine greets you with a shell for typing in Lua commands and provides simple built-in tools for creating your own cartridges. 
 
 ## Programmeren algemeen
 
@@ -34,6 +35,10 @@
 * [Godot Animation Engine](https://godotengine.org/download/linux)
 * [Show HN: Dilay – A free 3D sculpting application](https://news.ycombinator.com/item?id=17291269) en [SculptGL](https://stephaneginier.com/sculptgl/)
 
+## Vermaak
+
+* [GeoGuessr](https://geoguessr.com/) is a great example of how to enjoy Google Maps. You start at some random streetview and try to figure out where in the world you are by walking around (and hoping to see a sign or two)! A lot of times you end up in dirt roads in small countries, and it's really cool to see what it looks like there.
+
 ## SCN/PCW gerelateerd
 
 * [Stichting SCN](http://stichting-scn.nl/)
@@ -49,7 +54,9 @@
 
 ## Nuttig
 
-* <a href="javascript:document.querySelectorAll('*').forEach(e=>/fixed|sticky/.test(getComputedStyle(e).position)?e.style.position='static':0))">FIXEDFIXER</a> is een bookmarklet voor in de bookmarks toolbar. Zoekt alle elementen in de page met style `position:fixed` of `position:sticky` en zet ze op `position:static`. Het resultaat is dat headers en logo's die de hele tijd in beeld blijven en mee-scrollen, niet meer de hele tijd in beeld blijven en je meer ruimte hebt op je scherm voor the meat of the page.
+* FIXEDFIXER: `javascript:document.querySelectorAll('*').forEach(e=>/fixed|sticky/.test(getComputedStyle(e).position)?e.style.position='static':0))`
+
+  is een bookmarklet voor in de bookmarks toolbar. Zoekt alle elementen in de page met style `position:fixed` of `position:sticky` en zet ze op `position:static`. Het resultaat is dat headers en logo's die de hele tijd in beeld blijven en mee-scrollen, niet meer de hele tijd in beeld blijven en je meer ruimte hebt op je scherm voor the meat of the page.
 
 ## Unsorted
 
