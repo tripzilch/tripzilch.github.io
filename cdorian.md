@@ -18,6 +18,6 @@ v       | G  A♯ D  | G minor
 vi°     | A  C  D♯ | A diminished
 VII     | A♯ D  F  | A♯ major
 
-Al deze akkoorden kan je gebruiken behalve **A♯ D F**, dat is een diminished chord. Ik ben werkelijk nog nergens een tutorial of artikel tegengekomen die een diminished chord gebruikt. Je kan het altijd uitproberen natuurlijk :)
+Al deze akkoorden kan je gebruiken behalve **A C D♯**, dat is een diminished chord. Ik ben werkelijk nog nergens een tutorial of artikel tegengekomen die een diminished chord gebruikt. Je kan het altijd uitproberen natuurlijk :)
 
-De overgang van **v** naar **i** voelt als een "release" (zeggen ze), de 
+De overgang van **v** naar **i** voelt als een "release" (zeggen ze), of *resolution*. De overgang van **vi°** naar **i** is ook een resolution, misschien kan je daarvoor het diminished chord gebruiken?
