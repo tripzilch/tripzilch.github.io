@@ -1,17 +1,14 @@
 ---
 ---
 
-/* Mobile breakpoints, use like:
-   @include mobile { .. mobile styles .. } */
-@mixin mobile {
-  @media screen and (max-width: 640px) {
-    @content;
-  }
-}
+@import "reset";
+@import "defs";
 
 body {
     padding:12px 0;
-    font: 18px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
     color:#000;
     background: #f63;
 }

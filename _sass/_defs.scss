@@ -1,0 +1,8 @@
+/* Mobile breakpoints, use like:
+   @include mobile { .. mobile styles .. } */
+
+@mixin mobile {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}

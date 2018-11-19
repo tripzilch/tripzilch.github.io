@@ -1,2 +1,11 @@
 name: Tripzilch Pages
 
+sass:
+  style: :expanded # You might prefer to minify using :compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
