@@ -1,7 +1,7 @@
 name: Tripzilch Pages
 
 sass:
-  style: :expanded # You might prefer to minify using :compressed
+  style: :expanded
 
 exclude:
   - Gemfile
