@@ -53,7 +53,6 @@ section {
 
 p {
   margin: 12px 0;
-  padding: 0;
 }
 
 img {
@@ -68,19 +67,18 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 18px 0 12px 0;
   line-height: 1;
+  font-weight: bold;
+  color: #840;
 }
 
 h1 {
     font-size: 2em;
-    font-weight: bold;
     text-align: center;
     color: #520;
 }
 
 h2 {
     font-size: 1.5em;
-    font-weight: bold;
-    color: #840;
 }
 
 blockquote {
@@ -115,7 +113,7 @@ ul {
 }
 
 table {
-  width: 100%;
+  width: 900px;
   border-collapse: collapse;
   margin: 12px 20px;
 }
@@ -128,3 +126,9 @@ th, td {
   vertical-align: top;
 }
 
+pre {
+    margin: 12px 20px;
+    color: #114;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
