@@ -2,7 +2,7 @@
 
 Er zijn zeven modes, toonladders die elk beginnen op een andere witte noot als root/key. Ze zijn onder andere handig om melodieen met een bepaalde "feel" te krijgen, of om uit te puzzelen wat voor akkoorden erbij passen, of hoe een bestaande bass line uitgebreid kan worden.
 
-Nr      | Mode          | Description
+Number      | Mode          | Description
 ------- | ------------- | ---------------------
 1 / I   | C. Ionian     | Major. Bright happy melodic joyous. B is leading tone.
 2 / II  | D. Dorian     | Minor w/raised 6. Brighter than minor. Mellow smooth cool.
