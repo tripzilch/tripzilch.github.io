@@ -34,7 +34,7 @@ Fortunately, we can take *two* of the above formulas, one with the `x` and `y` s
     w1 = sin(h * y + i * t + j + k * sin(l * x + m * t + n))
     result = w0 + w1
 
-As you can see, the number of parameters is getting kind of ridiculous. This is what stops me from writing a nice generic `Wobbly` class, you'd have to give it so many parameters, you might as well right the formula. So what I usually do is hardcode them in: 
+As you can see, the number of parameters is getting kind of ridiculous. This is what stops me from writing a nice generic `Wobbly` class, you'd have to give it so many parameters, you might as well write the formula. So what I usually do is hardcode them in: 
 
 	float wobbly(float x, float y, float t) {
 		float w0 = sin(0.3 * x + 1.4 * t + 2.0 + 2.5 * sin(0.4 * y + -1.3 * t + 1.0));
