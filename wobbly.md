@@ -1,10 +1,10 @@
-# how to make sinusoid wobbly functions
+# How to make sinusoid wobbly functions
 
 I find that for many uses they're just as good as a (simplex or perlin) noise function, except they are a little bit more controllable, and they have a more organic, swinging, wavy or indeed soothing feel to them. a bit more like "it's doing something" rather than smooth but also completely unpredictable.
 
 What follows are some basic formulas for sinusoid wobblies, and a bunch of tips and rules of thumb on how to tweak them, based on years of experimenting with these things :)
 
-## basic "plasma" modulated sine waves
+## Building the formula
 
 Let's assume our goal is a 2D sinusoid function that evolves over time `t` (usually you'd use a 3D noise function for the time dimension).
 
@@ -44,16 +44,24 @@ As you can see, the number of parameters is getting kind of ridiculous. This is 
 
 Note that the `sin` function outputs between -1 and 1. If you add two of them together, the result is between -2 and 2. Therefore the last line adds the two waves together but also scales the result to a value between 0 and 1.
 
-What values to pick for the parameters? Well it's good to experiment, but here are a few rules of thumb:
+## How to pick the parameter values?
 
-* The ones that you multiply with `x` or `y` (both in the outer and inner `sin` functions) basically depends on the resolution of your coordinates. Remember that a full wave goes from 0 to 2\*PI (6.28), so if your coordinates are between 0 and 1, using a value of 6.0 will give you slightly less than one wave. If you want more you need a higher number. But if you use pixel coordinates, you actually want a much smaller number like 0.073. You can calculate the range, but you can also sort of guesstimate it and try. Try to use somewhat similar values for the corresponding `x` and `y` parameters, so the change along `x` is roughly the same as the change along `y`.
-* The ones that you multiply with `t` depends on what the resolution of your timer variable is (seconds or milliseconds or frames?) and how fast you want the waves to go. One important trick is to also use negative values for some (but not all) of the `t` parameters. That way the waves and modulating waves sort of move "against" eachother, resulting in different patterns. You can get a somewhat stationary morphing effect if you do it right. Another very important trick is that if your `t` value goes between 0 and 2\*PI, and you pick only integer values for the parameters, you will *always* get a perfect loop, which can be nice for animations.
+ Well it's good to experiment, but here are a few rules of thumb:
+
+* The ones that you multiply with `x` or `y` (both in the outer and inner `sin` functions) basically depend on the resolution of your coordinates. Remember that a full wave goes from 0 to 2\*PI (6.28), so if your coordinates are between 0 and 1, using a value of 6.0 will give you slightly less than one wave. If you want more you need a higher number. But if you use pixel coordinates, you actually want a much smaller number like 0.073. You can calculate the range, but you can also sort of guesstimate it and try. Try to use somewhat similar values for the corresponding `x` and `y` parameters, so the change along `x` is roughly the same as the change along `y`.
+* The ones that you multiply with `t` depends on what the resolution of your timer variable is (seconds or milliseconds or frames?) and how fast you want the waves to go. One important trick is to also use negative values for some (but not all) of the `t` parameters, as seen in the code above. That way the waves and modulating waves sort of move "against" eachother, resulting in different patterns. You can get a somewhat stationary morphing effect if you do it right. Another very important trick is that if your `t` value goes between 0 and 2\*PI, and you pick only integer values for the parameters, you will *always* get a perfect loop, which can be nice for animations.
 * For the phases you can pretty much pick any number. Note that waves repeat at 2\*PI, so a phase of 2.3 is exactly equivalent to a phase of 2.3 + 2\*PI. Therefore it makes best sense to pick numbers between 0 and 2PI. Or between -PI and PI (which is the same range, just shifted). The phase parameters are probably the easiest to randomize, without having to worry that the wave gets really wild or ugly. If you have selected a bunch of parameters that creates a pleasing pattern/motion, and you just want a "different but similar" one, shake up the phase parameters and there you go.
 
-Where to go from here? Well you can combine sine waves in all sorts of manners, this is just a particular form that I've found is useful as a good starting point.
+## Where to go from here? 
+
+Well you can combine sine waves in all sorts of manners, this is just a particular form that I've found is useful as a good starting point.
 
 You could modulate the inner `sin` function with a third sine wave. I usually don't do this because it makes the formula very long. Also the wobbling thing may wobble between periods of slow and very fast wobbling. Which may or may not be what you want.
 
 Instead of adding two, you could add three (or four!) modulated sine waves together. This is a great idea if the wobbly function still seems somewhat too "regular" or predictable. The easiest way is to use similar but slightly tweaked parameters. But maybe it's a cool idea to add waves of different scale/frequency together, I haven't really tried that.
 
-I'll stop here because I feel like talking about the golden ratio now, which is a great ratio to use between frequencies that need to be similar but not too similar, so they interfere most irrationally. The golden ratio is `phi` = 1.618 = 0.5 + 0.5 * sqrt(5). Because it's an irrational number two waves with frequency ratio `phi` will go out of phase and never exactly line up again. And because of `phi`'s particular mathematical properties, it is called "the most irrational number", and therefore does this in the best way :)
+Cosine waves are just sine waves shifted in phase by PI/4, so it doesn't help using the `cos` function, as you are already tweaking the phase parameters.
+
+You can also not modulate the sine wave, but instead just add together a whole bunch of simple sine waves (the first formula) with slightly different frequency, speed and phase. I think you'd need at least five or so before it stops looking too regular. It's very important to randomize the phases properly so they don't all start at 0. Disclaimer: I haven't really experimented with this variation a lot.
+
+You can also modulate the sine wave with an actual perlin or simplex noise function! That way you might (again, not tested) get something in between the organic feel of a wobbly motion and the unpredictability of noise. Or maybe the other way around ...
