@@ -28,7 +28,7 @@ Next, we modulate this sine wave with another sine wave, over `y`. We take the f
 
 However, this is not yet enough! I should probably include an image or GIF here to show what it looks like so far. If you were to plot this 2D function as a grey scale map, it looks like a rather plain wavey thing that is just scrolling in some direction.
 
-Fortunately, we can just take *two* of the above formulas, one with the `x` and `y` swapped, and completely different parameters of course:
+Fortunately, we can take *two* of the above formulas, one with the `x` and `y` swapped, and completely different parameters of course. Then we just add them together:
 
     w0 = sin(a * x + b * t + c + d * sin(e * y + f * t + g))
     w1 = sin(h * y + i * t + j + k * sin(l * x + m * t + n))

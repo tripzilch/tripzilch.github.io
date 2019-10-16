@@ -27,7 +27,7 @@ header, section, footer {
 
 strong { color: #402; font-weight: bold; }
 em { color: #402; font-style: italic; }
-code { color: #114; font-family: monospace; }
+code { color: #116; font-family: monospace; background: #def; }
 
 a {
   color:#069;
@@ -129,3 +129,4 @@ pre {
     font-family: monospace;
     white-space: pre-wrap;
 }
+pre code { background: transparent; }
