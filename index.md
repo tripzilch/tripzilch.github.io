@@ -7,3 +7,5 @@
 [SCN Bookmarks](scn-bookmarks) please click.
 
 [Pompoensoep recept](pompoensoep) please eat!
+
+[How to make sinusoid wobbly functions][wobbly]
