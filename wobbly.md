@@ -12,6 +12,51 @@ We start with a simple 1D sine wave over `x`, that moves with time:
 
 	sin(a * x + b * t + c)
 
+<canvas id="sin1d"></canvas>
+<script>
+    class Graph1Dt {
+        constructor(canvas, f) {
+            this.W = canvas.width = 600;
+            this.H = canvas.height = 300;
+            this.ctx = canvas.getContext("2d");
+            this.f = f;
+            // graphing variables
+            this.minx = -5;
+            this.maxx = 5;
+            this.miny = -1.5;
+            this.maxy = 1.5;
+            this.bgcol = "#000";
+            this.fgcol = "#fff";
+        }
+        draw() {
+            const t = Date.now() / 1000;
+            const xs = (this.maxx - this.minx) / this.W, x0 = this.minx;
+            const ys1 = this.H / (this.maxy - this.miny), y0 = this.miny;
+            const ctx = this.ctx;
+            ctx.fillStyle = this.bgcol;
+            ctx.strokeStyle = this.fgcol;
+            ctx.lineWidth = 3.0;
+            ctx.fillRect(0, 0, this.W, this.H);
+            ctx.beginPath();
+            for (let x = 0; x < this.W; x++) {
+                const fx = x * xs + x0;
+                const fy = this.f(fx, t);
+                const y = (fy - y0) * ys1;
+                if (x == 0) { 
+                    ctx.moveTo(x, y); 
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }            
+            ctx.stroke();
+            requestAnimationFrame(this.draw.bind(this));
+        }
+    }
+    const sin = Math.sin;
+    let graph = new Graph1Dt(sin1d, (x, t) => sin(2 * x + 3 * t + 5));
+    graph.draw();
+</script>
+
 * `a` is the scale of the wave over x, smaller numbers make longer waves.
 * `b` is the scale of movement over time, bigger numbers move faster.
 * `c` is the phase of the wave, at which point it starts (this becomes more important once you start combining waves).
