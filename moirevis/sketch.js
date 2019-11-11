@@ -10,7 +10,7 @@ function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   ctx = canvas.elt.getContext("2d");
   calc_canvas_size();
-  frameRate(30); // maybe not?
+  // frameRate(30); // maybe not?
   strokeCap(ROUND);
   strokeJoin(ROUND);
   window.addEventListener("keydown", ev => { keys[ev.code] = true; });
@@ -24,7 +24,7 @@ class LineMesh {
     this.lineWidth = 2.0;
     this.angle = angle;
     this.amp = amp;
-    this.t_step = 3.0;
+    this.t_step = 15.0;
     this.s_step = 20.0;
   }
 
@@ -112,7 +112,7 @@ function draw() {
   if (keys.ArrowRight) mesh.angle += amount;
 }
 
-let stopped = false;
+let stopped = false, show_info = false;
 function keyPressed() {
   if (key == 's') {
     stopped = !stopped;
@@ -121,6 +121,10 @@ function keyPressed() {
   if (key == 'f') {
     let fs = fullscreen();
     fullscreen(!fs);
+  }
+  if (key == 'h') {
+    show_info = !show_info;
+    info.style.display = show_info ? "block" : "none";
   }
 }
 
