@@ -14,7 +14,13 @@ canvas {
 	border: 1px solid #609;
 	background: #6098;
 	color: #fc0;
-	font: bold 16px/24px sans-serif;
+	text-shadow: 2px 2px 0px #000, 4px 4px 0px #000;
+	font: bold 20px/30px sans-serif;
 	padding: 16px;
 	width: 384px;
+}
+
+#help b {
+	color: #f80;
+	padding-right: 24px;
 }

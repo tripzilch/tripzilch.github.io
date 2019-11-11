@@ -26,6 +26,7 @@ class LineMesh {
     this.amp = amp;
     this.t_step = 15.0;
     this.s_step = 20.0;
+    this.scale = 0.004;
   }
 
   get angle() { return this.angle_; }
@@ -34,7 +35,7 @@ class LineMesh {
     // trickery to shift angle by a tiny amount if sin or cos would be close to 0
     val = wrap(val, TAU);
     if ((val + eps) % HALF_PI < 2 * eps) val += 2 * eps;
-    val %= PI;
+    val %= TAU;
     this.angle_ = val;
     this.sin = sin(val);
     this.cos = cos(val);
@@ -45,9 +46,11 @@ class LineMesh {
   draw(time) {
     const x_min = -W2 - 2 * this.amp, x_max = -x_min;
     const y_min = -H2 - 2 * this.amp, y_max = -y_min;
-    const scale = 0.004;
+    const scale = this.scale;
     ctx.beginPath();
-    for (let s = -diag; s < diag; s += this.s_step) { // todo: make sure s hits 0 (centered)
+    const sN = floor(diag / this.s_step) + 1;
+    for (let si = -sN; si < sN; si++) {
+      const s = si * this.s_step;
       // origin of line
       const x0 = this.sin * s;
       const y0 = -this.cos * s;
@@ -60,7 +63,7 @@ class LineMesh {
       if (t0y > t1y) { [t0y, t1y] = [t1y, t0y]; }
       if (t1x >= t0y && t1y >= t0x) {
         // yes intersect
-        const t0 = max(t0x, t0y), t1 = min(t1x, t1y);
+        const t0 = max(t0x, t0y), t1 = min(t1x, t1y) + this.t_step;
         // draw line
         let first = true;
         for (let t = t0; t < t1; t += this.t_step) {
@@ -104,17 +107,25 @@ function draw() {
   background(bgcol);
   mesh.draw(now * 0.25);
 
-  if ((frameCount & 31) == 0) {
-    info.innerHTML = `${frameRate().toFixed(1)} fps`;
+  if ((frameCount & 7) == 0) {
+    stats.innerHTML = `${frameRate().toFixed(1)} fps`;
   }
   let amount = dt;
   if (keys.ArrowLeft) mesh.angle -= amount;
   if (keys.ArrowRight) mesh.angle += amount;
+  if (keys.ArrowDown) mesh.s_step = clamp(mesh.s_step - 5 * amount, 1, 80);
+  if (keys.ArrowUp) mesh.s_step = clamp(mesh.s_step + 5 * amount, 1, 80);
+  if (keys.KeyZ) mesh.lineWidth = clamp(mesh.lineWidth - 0.5 * amount, 0.25, 12);
+  if (keys.KeyX) mesh.lineWidth = clamp(mesh.lineWidth + 0.5 * amount, 0.25, 12);
+  if (keys.KeyA) mesh.amp = clamp(mesh.amp - 3.0 * amount, 0.0, 80);
+  if (keys.KeyS) mesh.amp = clamp(mesh.amp + 3.0 * amount, 0.0, 80);
+  if (keys.KeyQ) mesh.scale = clamp(mesh.scale - 0.0005 * amount, 0.0005, 0.032);
+  if (keys.KeyW) mesh.scale = clamp(mesh.scale + 0.0005 * amount, 0.0005, 0.032);
 }
 
 let stopped = false, show_info = false;
 function keyPressed() {
-  if (key == 's') {
+  if (key == ' ') {
     stopped = !stopped;
     if (stopped) { noLoop(); } else { loop(); }
   }
