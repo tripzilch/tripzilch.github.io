@@ -1,0 +1,19 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #333;
+}
+canvas {
+  display: block;
+}
+#info {
+	position: absolute;
+	top: 16px;
+	left: 16px;
+	border: 1px solid #609;
+	background: #6098;
+	color: #fc0;
+	font: bold 16px/24px sans-serif;
+	padding: 16px;
+	width: 384px;
+}

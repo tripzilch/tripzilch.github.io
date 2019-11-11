@@ -12,48 +12,11 @@ We start with a simple 1D sine wave over `x`, that moves with time:
 
 	sin(a * x + b * t + c)
 
-<canvas id="sin1d"></canvas>
+<script src="graph.js"></script>
+
+<div id="sin1d" class="live"> <canvas></canvas> <input type="text" /> </div>
 <script>
-    class Graph1Dt {
-        constructor(canvas, f) {
-            this.W = canvas.width = 600;
-            this.H = canvas.height = 300;
-            this.ctx = canvas.getContext("2d");
-            this.f = f;
-            // graphing variables
-            this.minx = -5;
-            this.maxx = 5;
-            this.miny = -1.5;
-            this.maxy = 1.5;
-            this.bgcol = "#000";
-            this.fgcol = "#fff";
-        }
-        draw() {
-            const t = Date.now() / 1000;
-            const xs = (this.maxx - this.minx) / this.W, x0 = this.minx;
-            const ys1 = this.H / (this.maxy - this.miny), y0 = this.miny;
-            const ctx = this.ctx;
-            ctx.fillStyle = this.bgcol;
-            ctx.strokeStyle = this.fgcol;
-            ctx.lineWidth = 3.0;
-            ctx.fillRect(0, 0, this.W, this.H);
-            ctx.beginPath();
-            for (let x = 0; x < this.W; x++) {
-                const fx = x * xs + x0;
-                const fy = this.f(fx, t);
-                const y = (fy - y0) * ys1;
-                if (x == 0) { 
-                    ctx.moveTo(x, y); 
-                } else {
-                    ctx.lineTo(x, y);
-                }
-            }            
-            ctx.stroke();
-            requestAnimationFrame(this.draw.bind(this));
-        }
-    }
-    const sin = Math.sin;
-    let graph = new Graph1Dt(sin1d, (x, t) => sin(2 * x + 3 * t + 5));
+    let graph = new Graph1Dt(sin1d, "sin(2 * x + 3 * t + 5)");
     graph.draw();
 </script>
 
@@ -64,6 +27,15 @@ We start with a simple 1D sine wave over `x`, that moves with time:
 Next, we modulate this sine wave with another sine wave, over `y`. We take the formula above, and add inside the `sin` function another wave just like the formula above, except with `y` instead of `x`. Note that this formula is now a 2D function over time, since it uses both `x` and `y`:
 
 	sin(a * x + b * t + c + d * sin(e * y + f * t + g))
+
+
+<!-- <canvas id="wob1d"></canvas>
+<input type="text" id="wob1dt" class="">
+<script>
+
+    let graph2 = new Graph1Dt(wob1d, (x, t) => sin(2 * x + 2 * t + 5 + 2 * sin(1.5 * x + -0.5 * t + 3)));
+    graph2.draw();
+</script> -->
 
 * `a`, `b` and `c` are just like above.
 * `d` is the magnitude of the modulation. Set it to zero for no modulation, and it becomes just like the formula above. Higher values make the resulting wave increasingly erratic.
