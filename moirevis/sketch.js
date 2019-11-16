@@ -5,7 +5,7 @@ let keys = {};
 let bgcol = "#000";
 let fgcol = "#fff";
 
-let mesh;
+let cur_mesh, meshA, meshB, meshA_on = true, meshB_on = false;
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   ctx = canvas.elt.getContext("2d");
@@ -15,87 +15,9 @@ function setup() {
   strokeJoin(ROUND);
   window.addEventListener("keydown", ev => { keys[ev.code] = true; });
   window.addEventListener("keyup", ev => { keys[ev.code] = false; });
-  mesh = new LineMesh();
-}
-
-class LineMesh {
-  constructor(col="#fff", angle=radians(45), amp=10) {
-    this.col = col;
-    this.lineWidth = 2.0;
-    this.angle = angle;
-    this.amp = amp;
-    this.t_step = 15.0;
-    this.s_step = 20.0;
-    this.scale = 0.004;
-  }
-
-  get angle() { return this.angle_; }
-  set angle(val) {
-    const eps = 0.0001;
-    // trickery to shift angle by a tiny amount if sin or cos would be close to 0
-    val = wrap(val, TAU);
-    if ((val + eps) % HALF_PI < 2 * eps) val += 2 * eps;
-    val %= TAU;
-    this.angle_ = val;
-    this.sin = sin(val);
-    this.cos = cos(val);
-    this.isin = 1 / this.sin;
-    this.icos = 1 / this.cos;
-  }
-  
-  draw(time) {
-    const x_min = -W2 - 2 * this.amp, x_max = -x_min;
-    const y_min = -H2 - 2 * this.amp, y_max = -y_min;
-    const scale = this.scale;
-    ctx.beginPath();
-    const sN = floor(diag / this.s_step) + 1;
-    for (let si = -sN; si < sN; si++) {
-      const s = si * this.s_step;
-      // origin of line
-      const x0 = this.sin * s;
-      const y0 = -this.cos * s;
-      // intersect line w bounding box (todo: exploit x_min/max symmetry)
-      let t0x = (x_min - x0) * this.icos;
-      let t1x = (x_max - x0) * this.icos;
-      let t0y = (y_min - y0) * this.isin;
-      let t1y = (y_max - y0) * this.isin;
-      if (t0x > t1x) { [t0x, t1x] = [t1x, t0x]; }
-      if (t0y > t1y) { [t0y, t1y] = [t1y, t0y]; }
-      if (t1x >= t0y && t1y >= t0x) {
-        // yes intersect
-        const t0 = max(t0x, t0y), t1 = min(t1x, t1y) + this.t_step;
-        // draw line
-        let first = true;
-        for (let t = t0; t < t1; t += this.t_step) {
-          // line
-          let x = x0 + this.cos * t;
-          let y = y0 + this.sin * t;
-          // perturb
-          const p0 = 2.0 + scale * (3.6 * s + -1.1 * t) + -1.3 * time;
-          const p1 = 1.4 + scale * (2.3 * s +  0.8 * t) +  1.0 * time;
-          const q0 = 3.2 + scale * (3.8 * s + -1.2 * t) +  1.7 * time;
-          const q1 = 1.1 + scale * (1.9 * s +  0.6 * t) + -1.0 * time;
-          const d = this.amp * sin(p0 + 1.3 * sin(p1)) + this.amp * sin(q0 + 1.4 * sin(q1));
-          x += this.sin * d;
-          y -= this.cos * d;
-          // add point to path
-          if (first) {
-            ctx.moveTo(x + W2, y + H2);
-            first = false;
-          } else {
-            ctx.lineTo(x + W2, y + H2);
-          }
-        }
-      } else {
-        // no intersect
-        // no line
-      }
-    }
-    ctx.strokeStyle = this.col;
-    ctx.lineWidth = this.lineWidth;
-    ctx.stroke();
-  }
-
+  meshA = new LineMesh();
+  meshB = new LineMesh();
+  cur_mesh = meshA;
 }
 
 let last_now = Date.now() * 0.001;
@@ -105,18 +27,20 @@ function draw() {
   last_now = now;
 
   background(bgcol);
-  mesh.draw(now * 0.25);
+  if (meshA_on) meshA.draw(dt);
+  if (meshB_on) meshB.draw(dt);
 
   if ((frameCount & 7) == 0) {
     stats.innerHTML = `${frameRate().toFixed(1)} fps`;
   }
   let amount = dt;
-  if (keys.ArrowLeft) mesh.angle -= amount;
-  if (keys.ArrowRight) mesh.angle += amount;
+  let mesh = cur_mesh;
+  if (keys.ArrowLeft) mesh.angle -= 0.5 * amount;
+  if (keys.ArrowRight) mesh.angle += 0.5 * amount;
   if (keys.ArrowDown) mesh.s_step = clamp(mesh.s_step - 5 * amount, 1, 80);
   if (keys.ArrowUp) mesh.s_step = clamp(mesh.s_step + 5 * amount, 1, 80);
-  if (keys.KeyZ) mesh.lineWidth = clamp(mesh.lineWidth - 0.5 * amount, 0.25, 12);
-  if (keys.KeyX) mesh.lineWidth = clamp(mesh.lineWidth + 0.5 * amount, 0.25, 12);
+  if (keys.KeyZ) mesh.lineWidth = clamp(mesh.lineWidth - 1.5 * amount, 0.25, 12);
+  if (keys.KeyX) mesh.lineWidth = clamp(mesh.lineWidth + 1.5 * amount, 0.25, 12);
   if (keys.KeyA) mesh.amp = clamp(mesh.amp - 3.0 * amount, 0.0, 80);
   if (keys.KeyS) mesh.amp = clamp(mesh.amp + 3.0 * amount, 0.0, 80);
   if (keys.KeyQ) mesh.scale = clamp(mesh.scale - 0.0005 * amount, 0.0005, 0.032);
@@ -127,7 +51,10 @@ let stopped = false, show_info = false;
 function keyPressed() {
   if (key == ' ') {
     stopped = !stopped;
-    if (stopped) { noLoop(); } else { loop(); }
+    if (stopped) { noLoop(); } else { 
+      last_now = Date.now() * 0.001;
+      loop(); 
+    }
   }
   if (key == 'f') {
     let fs = fullscreen();
@@ -137,6 +64,11 @@ function keyPressed() {
     show_info = !show_info;
     info.style.display = show_info ? "block" : "none";
   }
+  if (key == 'i') {
+    [fgcol, bgcol] = [bgcol, fgcol];
+  }
+  if (key == '1') { meshA_on = (cur_mesh !== meshA); cur_mesh = meshA_on ? meshA : meshB; }
+  if (key == '2') { meshB_on = (cur_mesh !== meshB); cur_mesh = meshB_on ? meshB : meshA; }
 }
 
 function windowResized() {
