@@ -1,0 +1,26 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #333;
+}
+canvas {
+  display: block;
+}
+#info {
+	display: none;
+	position: absolute;
+	top: 16px;
+	left: 16px;
+	border: 1px solid #609;
+	background: #6098;
+	color: #fc0;
+	text-shadow: 2px 2px 0px #000, 4px 4px 0px #000;
+	font: bold 20px/30px sans-serif;
+	padding: 16px;
+	width: 384px;
+}
+
+#help b {
+	color: #f80;
+	padding-right: 24px;
+}
