@@ -16,22 +16,24 @@
 		}
 		li img { 
 			display: block;
-			width: 90%;
+			width: 100%;
+			max-width: 1080px;
+		}
+		li div {
+			width: 90vw;
 			max-width: 1080px;
 			margin: 48px auto 128px auto;
+			box-shadow: 16px 16px 32px #0006;
 		}
 		li p {
 			font: 32px/32px 'Cinzel', serif;
 			color: #778;
-			width: 90%;
+			width: 90vw;
 			max-width: 1080px;
 			margin: 48px auto 0px auto;
 			text-align: right;
 		}
 		li p b { font-weight: normal; color: #000; }
-		li img {
-			box-shadow: 16px 16px 32px #0006;
-		}
 		img.rot0 { transform: rotate(0deg); }
 		img.rot1 { transform: rotate(90deg); }
 		img.rot2 { transform: rotate(180deg); }
@@ -41,15 +43,15 @@
 </head>
 <body>
 	<ul id="container">
-		<li><p>Nr. <b>0</b></p>  <img src="0-s.jpg"  class="rot0" /></li>
-		<li><p>Nr. <b>1</b></p>  <img src="1-s.jpg"  class="rot0" /></li>
-		<li><p>Nr. <b>2r</b></p> <img src="2r-s.jpg" class="rot0" /></li>
-		<li><p>Nr. <b>3</b></p>  <img src="3-s.jpg"  class="rot0" /></li>
-		<li><p>Nr. <b>4L</b></p> <img src="4L-s.jpg" class="rot0" /></li>
-		<li><p>Nr. <b>5</b></p>  <img src="5-s.jpg"  class="rot0" /></li>
-		<li><p>Nr. <b>6R</b></p> <img src="6R-s.jpg" class="rot0" /></li>
-		<li><p>Nr. <b>7</b></p>  <img src="7-s.jpg"  class="rot0" /></li>
-		<li><p>Nr. <b>8</b></p>  <img src="8-s.jpg"  class="rot0" /></li>
+		<li><p>Nr. <b>0</b></p>  <div><img src="0-s.jpg"  class="rot0" /></div></li>
+		<li><p>Nr. <b>1</b></p>  <div><img src="1-s.jpg"  class="rot0" /></div></li>
+		<li><p>Nr. <b>2r</b></p> <div><img src="2r-s.jpg" class="rot0" /></div></li>
+		<li><p>Nr. <b>3</b></p>  <div><img src="3-s.jpg"  class="rot0" /></div></li>
+		<li><p>Nr. <b>4L</b></p> <div><img src="4L-s.jpg" class="rot0" /></div></li>
+		<li><p>Nr. <b>5</b></p>  <div><img src="5-s.jpg"  class="rot0" /></div></li>
+		<li><p>Nr. <b>6R</b></p> <div><img src="6R-s.jpg" class="rot0" /></div></li>
+		<li><p>Nr. <b>7</b></p>  <div><img src="7-s.jpg"  class="rot0" /></div></li>
+		<li><p>Nr. <b>8</b></p>  <div><img src="8-s.jpg"  class="rot0" /></div></li>
 	</div>
 	<script>
 		// document.querySelectorAll("#gallery img").forEach(im => {
