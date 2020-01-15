@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="utf-8"> 
+	<title>SCRIBBLES-RECTSUB #F</title> 
+  <link href="https://fonts.googleapis.com/css?family=Cinzel:700&display=swap" rel="stylesheet"> 	
+	<style>
+		* { margin: 0; padding: 0; }
+		body {
+			background: #ccd;
+		}
+		li {
+			list-style: none;
+			border-bottom: 8px dotted #889;
+			padding: 32px;
+		}
+		li img { 
+			display: block;
+			width: 90%;
+			max-width: 1080px;
+			margin: 48px auto 128px auto;
+		}
+		li p {
+			font: 32px/32px 'Cinzel', serif;
+			color: #778;
+			width: 90%;
+			max-width: 1080px;
+			margin: 48px auto 0px auto;
+			text-align: right;
+		}
+		li p b { font-weight: normal; color: #000; }
+		li img {
+			box-shadow: 16px 16px 32px #0006;
+		}
+		.rot0 { rotate: 0deg; }
+		.rot1 { rotate: 90deg; }
+		.rot2 { rotate: 180deg; }
+		.rot3 { rotate: 270deg; }
+
+	</style>
+</head>
+<body>
+	<ul id="container">
+		<li><p>Nr. <b>0</b></p>  <img src="0-s.jpg"  class="rot0" /></li>
+		<li><p>Nr. <b>1</b></p>  <img src="1-s.jpg"  class="rot0" /></li>
+		<li><p>Nr. <b>2r</b></p> <img src="2r-s.jpg" class="rot0" /></li>
+		<li><p>Nr. <b>3</b></p>  <img src="3-s.jpg"  class="rot0" /></li>
+		<li><p>Nr. <b>4L</b></p> <img src="4L-s.jpg" class="rot0" /></li>
+		<li><p>Nr. <b>5</b></p>  <img src="5-s.jpg"  class="rot0" /></li>
+		<li><p>Nr. <b>6R</b></p> <img src="6R-s.jpg" class="rot0" /></li>
+		<li><p>Nr. <b>7</b></p>  <img src="7-s.jpg"  class="rot0" /></li>
+		<li><p>Nr. <b>8</b></p>  <img src="8-s.jpg"  class="rot0" /></li>
+	</div>
+	<script>
+		// document.querySelectorAll("#gallery img").forEach(im => {
+		// 	im.addEventListener("mouseover", ev => {
+		// 		view.src = ev.target.src;
+		// 		cmd.value = ev.target.getAttribute('src');
+		// 	});
+		// })
+		// window.addEventListener("keydown", ev => {
+		// 	if (ev.key == 'f') container.className = (container.className == 'full') ? '' : 'full';
+		// });
+		document.querySelectorAll("#container li img").forEach(im => {
+			im.addEventListener('click', ev => {
+				let im = ev.target;
+				let c = im.className;
+				if (c == "rot0") im.className = "rot1";
+				if (c == "rot1") im.className = "rot2";
+				if (c == "rot2") im.className = "rot3";
+				if (c == "rot3") im.className = "rot0";
+			});
+		});
+	</script>  
+</body>
+</html>
