@@ -63,6 +63,7 @@
 		// });
 		document.querySelectorAll("#container li img").forEach(im => {
 			im.addEventListener('click', ev => {
+				alert("click!");
 				let im = ev.target;
 				let c = im.className;
 				if (c == "rot0") im.className = "rot1";
