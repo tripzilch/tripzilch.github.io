@@ -1,6 +1,6 @@
+* { margin: 0; padding: 0; }
+
 html, body {
-  margin: 0;
-  padding: 0;
   background: #333;
 }
 canvas {
@@ -15,12 +15,26 @@ canvas {
 	background: #6098;
 	color: #fc0;
 	text-shadow: 2px 2px 0px #000, 4px 4px 0px #000;
-	font: bold 20px/30px sans-serif;
+	font: bold 16px/28px sans-serif;
 	padding: 16px;
-	width: 384px;
+	width: 440px;
+}
+
+#help {
+}
+
+#help p {
 }
 
 #help b {
 	color: #f80;
 	padding-right: 24px;
+}
+
+#stats {
+  margin: 16px 0 0 0;
+  padding: 8px;
+  background: #0008;
+  font: 16px/28px monospace;
+  color: #906;
 }

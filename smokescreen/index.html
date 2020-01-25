@@ -1,15 +1,14 @@
 <!DOCTYPE html><html><head>
     <meta charset="utf-8">
-    <title>just a circle</title>
-    <script src="p5.js"></script>
-    <script src="p5.dom.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css?v2">
-
+    <title>just a circle</title>
+    <script src="./lib/p5.js"></script>
+    <script src="./lib/p5.dom.min.js"></script>
+    <script src="./lib/util.js"></script>
+    <script src="./lib/vec2.js"></script>
+    <script src="tunnel.js"></script>
   </head>
   <body>
-    <script src="util.js"></script>
-    <script src="vec2.js"></script>
-    <script src="tunnel.js"></script>
     <script src="sketch.js"></script>
     <div id="info">
         <div id="help">
@@ -18,9 +17,10 @@
             <p><b>Z / X</b> adjust hue</p>
             <p><b>A / S</b> adjust saturation</p>
             <p><b>Q / W</b> adjust lightness</p>
-            <p><b>C / V</b> adjust hue amplitude</p>
-            <p><b>B / N</b> adjust hue frequency</p>
-            <p><b>M / ,</b> adjust hue speed</p>
+            <p><b>CTRL + ?</b> adjust wobble amplitude</p>
+            <p><b>SHIFT + ?</b> adjust wobble phase</p>
+            <p><b>CTRL+SHIFT + ?</b> adjust wobble phase speed</p>
+            <p><b>ALT + ?</b> adjust wobble frequency</p>
             <p><b>1 / 2</b> toggle tunnels 1 & 2</p>
             <p><b>F</b> toggle fullscreen</p>
             <p><b>SPACE</b> start / stop</p>

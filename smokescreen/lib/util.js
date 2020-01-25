@@ -1,3 +1,5 @@
+'use strict';
+
 const PI = Math.PI, TAU = PI * 2, phi = .5 + .5 * 5 ** .5;
 const mix = (a, b, p) => a * (1 - p) + b * p;
 const clamp = (x, lo, hi) => Math.min(Math.max(x, lo), hi);
@@ -8,7 +10,7 @@ const smoothstep = (x, e0, e1) => {
 const hsl = (hue, sat, lit) => `hsl(${hue%360}, ${sat}%, ${lit}%)`;
 const hsla = (hue, sat, lit, a) => `hsla(${hue}, ${sat}%, ${lit}%, ${a})`;
 const rgb = (r, g, b) => `rgb(${r|0}, ${g|0}, ${b|0})`;
-const rgba = (r, g, b, a) => `rgb(${r|0}, ${g|0}, ${b|0}, ${a})`;
+const rgba = (r, g, b, a) => `rgba(${r|0}, ${g|0}, ${b|0}, ${a})`;
 const rcos = (x) => 0.5 - 0.5 * Math.cos(Math.min(Math.max(x, 0), 1) * TAU);
 const rcos1 = (x) => 0.5 - 0.5 * Math.cos(Math.min(Math.max(x, 0), 1) * PI);
 
@@ -35,7 +37,18 @@ const shuffle = (a) => {
     return a;
 }
 
+const Ease = { // TODO: map clamp
+  linear: t => t,
+  out: t => t * t,
+  out_fast: t => t * t * t,
+  in_overshoot: t => 2 * t * t * (1 - 0.04 * (9 * t - 5) ** 2),
+  mid_slow: (t, a=0.5) => mix(t, t + sin(t * TAU) / TAU, a),
+  in: t => 1 - (1 - t) ** 2,
+  in_fast: t => 1 - (1 - t) ** 3,
+}
+
 /* The state array must be initialized to not be all zero */
+// TODO: test against ALEA generator
 const xs_state = Uint32Array.of(0xC9A5, 0x5996, 0x5696, 0x9A33);
 function xorshift128() {
   /* Algorithm "xor128" from p. 5 of Marsaglia, "Xorshift RNGs" */

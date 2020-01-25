@@ -25,6 +25,7 @@ class Vec2 {
     [this.x, this.y] = [ca * this.x - sa * this.y, sa * this.x + ca * this.y];
     return this; 
   }  
+  // test if (x**2 + y**2)**-2 is faster
   normalize_safe() { let m = 1 / (Math.hypot(this.x, this.y) || 1); this.x *= m; this.y *= m; return this; }
   normalize() { let m = 1 / Math.hypot(this.x, this.y); this.x *= m; this.y *= m; return this; }
   op1(f) { this.x = f(this.x); this.y = f(this.y); return this; }
@@ -34,6 +35,8 @@ class Vec2 {
   // scalar methods
   dist(v) { return Math.hypot(this.x - v.x, this.y - v.y); }
   hypot() { return Math.hypot(this.x, this.y); }
+  dot(v) { return this.x * v.x + this.y * v.y; }
+  dot2(x, y) { return this.x * x + this.y * y; }
 
   // swizzling
   get xy() { return new Vec2(this.x, this.y); } // Vec2.xy is also copy constructor
@@ -61,27 +64,55 @@ class Vec2 {
     yield this.x;
     yield this.y;
   }
-
+  // toString with nice unicode math brackets
+  toString() {
+    return `⟨${this.x}, ${this.y}⟩`;
+  }
+  
   // static initializers
-  static random(a=1) {
+  static urandom(a=1) {
     return new Vec2(a * RNG(), a * RNG());
+  }
+  static irandom(a=1) {
+    return new Vec2(a * (2 * RNG() - 1), a * (2 * RNG() - 1));
   }
   static fromAngle(phi, r) {
     return new Vec2(r * Math.cos(phi), r * Math.sin(phi));
   }
-  
-  // toString (pretty unicode math brackets!)
-  toString() {
-    return `⟨${this.x}, ${this.y}⟩`;
-  }
 }
 const vec2 = (x, y) => new Vec2(x, y);
 Vec2.ZERO = vec2(0, 0);
+Vec2.ONE = vec2(1, 1);
 
 function draw_shape(pp, o=Vec2.ZERO) {
   beginShape(); 
   for (let p of pp) { vertex(p.x + o.x, p.y + o.y); }
   endShape();
+}
+
+function fill_shape(ctx, col, path, o=Vec2.ZERO) {
+  const x = o.x, y = o.y;
+  ctx.beginPath();
+  ctx.moveTo(path[0].x + x, path[0].y + y);
+  for (let i = 0; i < path.length; i++) {
+    ctx.lineTo(path[i].x + x, path[i].y + y);
+  }
+  ctx.closePath();
+  ctx.fillStyle = col;
+  ctx.fill();
+}
+
+function stroke_shape(ctx, col, lw, path, closed=false, o=Vec2.ZERO) {
+  const x = o.x, y = o.y;
+  ctx.beginPath();
+  ctx.moveTo(path[0].x + x, path[0].y + y);
+  for (let i = 0; i < path.length; i++) {
+    ctx.lineTo(path[i].x + x, path[i].y + y);
+  }
+  if (closed) ctx.closePath();
+  ctx.strokeStyle = col;
+  ctx.lineWidth = lw;
+  ctx.stroke();
 }
 
 function thick_brush(pp, ww) {
@@ -103,9 +134,9 @@ function thick_brush(pp, ww) {
 }
 
 function smooth_closed_path(pp) {
-  let sp = [pp[0].xy.mix(pp[pp.length - 1], 0.5)];
+  let sp = [pp[0].xy.mix(pp[pp.length - 1], .5)];
   for (let i = 1; i < pp.length; i++) {
-    sp.push(pp[i].xy.mix(pp[i - 1], 0.5));
+    sp.push(pp[i].xy.mix(pp[i - 1], .5));
   }
   return sp;
 }
