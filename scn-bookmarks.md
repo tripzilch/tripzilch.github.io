@@ -32,6 +32,8 @@
 ## Vermaak
 
 * [GeoGuessr](https://geoguessr.com/) is a great example of how to enjoy Google Maps. You start at some random streetview and try to figure out where in the world you are by walking around (and hoping to see a sign or two)! A lot of times you end up in dirt roads in small countries, and it's really cool to see what it looks like there.
+* [Keybr.com](https://www.keybr.com/), a web application that will help you teach touch typing.
+* [ZType](https://zty.pe/), Typing Game, Type to Shoot 
 
 ## SCN/PCW gerelateerd
 
