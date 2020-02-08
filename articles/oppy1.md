@@ -14,9 +14,9 @@ One thing I like about Rust so far is that, once I had converted all the code (w
 
 So imagine a large, semi-translucent paper towel. Crumple it up, and take a picture cropped in such a way that you see only paper towel. That's kind of what we're looking at here. Also, the paper towel is infinitely stretchy.
 
-So the picture is a square, let's call an arbitrary point on this plane (x, y). Now the paper towel is also a square and we can call an arbitrary point on the towel (u, v). When the paper towel is unfolded and you take a picture of exactly the entire towel, then the (x, y) coordinates exactly match up with the (u, v) coordinates. But when we crumple it and then take the picture, this changes.
+So the picture is a square, let's call an arbitrary point on this plane `(x, y)`. Now the paper towel is also a square and we can call an arbitrary point on the towel `(u, v)`. When the paper towel is unfolded and you take a picture of exactly the entire towel, then the `(x, y)` coordinates exactly match up with the `(u, v)` coordinates. But when we crumple it and then take the picture, this changes.
 
-We can define how the towel is crumpled up by defining a function that takes as parameter a (u, v) coordinate, and returns the (x, y) coordinate of that piece of towel in the final picture. Let's call this a *mapping* from (u, v) to (x, y).
+We can define how the towel is crumpled up by defining a function that takes as parameter a `(u, v)` coordinate, and returns the `(x, y)` coordinate of that piece of towel in the final picture. Let's call this a *mapping* from `(u, v)` to `(x, y)`.
 
 ## The wobbly function
 
@@ -75,7 +75,7 @@ When a gazillion samples have been accumulated, this buffer is converted to RGBA
 
 If we use this technique to draw black points on a white background, you get something that kinda looks like this:
 
-![Black and white](img/oppy1-step1.jpg)
+![Black and white](oppy1-step1.jpg)
 
 ## How to do what I did
 
@@ -85,13 +85,13 @@ First, the black lines.
 
 After we pick a random `(u, v)` coordinate, but before we warp it, we're going to do something to it. First split it into its integer and fractional parts, respectively `(ui, vi) = (u.floor(), v.floor()` and `(uf, vf) = (u, v) - (ui, vi)`. The fractional parts are between 0 and 1 and if you raise this to, say, the 3rd power, it *still* ranges between 0 and 1. Except that now there are a lot more numbers close to 0 and less of them close to 1. So the distribution changes. This is what we do to either `uf` or `vf` (50% chance of picking one or the other). Then we add the integer part back, so now we got a random coordinate over the same range, but every fractional part is skewed towards its lower end. This divides your worbly surface into blocks, and plots more points at the "left" and "top" edges of the block, making it darker. We also want the other two edges darker, so we add a 50% chance of flipping the fractional parts, that is the fractional part becomes `(1 - uf, 1 - vf)`. Do that and you got this nice shaded grid texture:
 
-![Shaded grid](img/oppy1-step2.jpg)
+![Shaded grid](oppy1-step2.jpg)
 
 Comes the last part, colour! It's pretty easy, I take the integer coordinates `(ui, vi)` and I hash them together to form a single number, modulo 8 (`& 7`) to index a palette of RGBA triplets (I don't use the A — yet — and set it to 255 at conversion). The hashing is done in two lines with prime multiplications and a xorshift, experimenting until I got something simple that looks shuffled enough. Then for each sample I give it an 80% chance to get coloured unchanged like this, or 20% chance to become a black pixel according to the grid-algorithm above.
 
 So what that looks like, you can see in the first image of this article :) But I'll include another one here. You'll notice it looks different because I probably messed with the parameters:
 
-![Shaded grid](img/oppy1-step3.jpg)
+![Shaded grid](oppy1-step3.jpg)
 
 Also it's rendered at slightly lower quality. And there's one other important thing that's actually different, if you can spot it. But that's a secret trick for another time :)
 
