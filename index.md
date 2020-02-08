@@ -8,4 +8,6 @@
 
 [Pompoensoep recept](pompoensoep) please eat!
 
-[How to make sinusoid wobbly functions](wobbly)
+[How to make sinusoid wobbly functions](articles/wobbly)
+
+[How did I do make the thing?](articles/oppy1)
