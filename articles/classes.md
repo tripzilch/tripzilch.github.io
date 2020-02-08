@@ -1,3 +1,9 @@
+# Processing?
+
+Processing is built on Java. The code you write in Processing is actually Java code. When you run it, what Processing basically does is paste a bunch of Java code before your code, and after it, to make it a working Processing sketch. Then it runs it like a regular Java program.
+
+This article is about classes, and those are a feature of Java. But because Processing is Java, classes work just the same (almost).
+
 # Java classes, mostly
 
 So if you have a line of code that looks like this:
@@ -10,7 +16,7 @@ Conceptually, a *class* is pretty much the same as a *type*. You can make variab
 
     String b = "fnord";
 
-Yep, `String` is the name of a class. You can tell because it starts with an uppercase character. That's the rule in Java, and you're going to follow it. If you don't, your code will compile fine but everybody reading your code will be very sad.
+So, `String` is the name of a class. You can tell because it starts with an uppercase character. That's the rule in Java, and you're going to follow it. If you don't, your code will compile fine but everybody reading your code will be very sad.
 
 So you have a `String` *object*, also called an *instance* of the class `String`. You can also do things to an object:
 
@@ -33,4 +39,7 @@ Imagine your code could look like this:
     void setup() {
       size(400,400);
       colorMode(RGB, 1.0);
+      // clever OOP usage goes here
     }
+
+Lalala to be contoinued
