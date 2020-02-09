@@ -4,11 +4,13 @@
 
 ## Why don't you just share us the code?
 
-Well honestly, the code that I write has a very singular purpose: to render one of my artworks. And it does this at arbitrarily high resolution. And with endless variation. And I just don't feel quite comfortable giving that away in a ready-to-use package. But it's *not* about hiding my method or keeping secrets. Because that's what this article is going to be about.
+Well honestly, the code that I write has a very singular purpose: to render one of my artworks. And it does this at arbitrarily high resolution. And with endless variation. And I just don't feel quite comfortable giving that away in a ready-to-use package. But it's *not* about hiding my method or keeping secrets. Because that's what this article is going to be about! :-)
 
-The original prototype of this project was written in Javascript, using (small parts of) the P5js library. Very promising images, but took over half an hour to render at medium resolution. A friend had been poking me to try out Rust for a while, and I figured this might be a good motivation. That's one reason you might not even *want* my code, because I've only been writing rust for a week now, and it's probably not very idiomatic. I've also been told that some of the cleverer bits might *panic* in debug mode, which I'm going to fix eventually, but seriously in debug mode it runs slow as molasses, you didn't want to do that any way.
+## Javascript to Rust
 
-One thing I like about Rust so far is that, once I had converted all the code (which was tedious because I had to refactor) and I had no more errors or warnings, the code was pretty much correct. It produced an image that was only slightly wrong because I had made a typo in the formula. Also that it is indeed, *fast*. As well as much less unpredictable to optimize than Javascript.
+The original prototype of this project was written in Javascript, using (small parts of) the P5js library. Very promising images, but took over half an hour to render at medium resolution. A friend had been poking me to try out Rust for a while, and I figured this might be a good motivation. That's one reason you might not even *want* my code, because I've only been writing Rust for a week now, and it's probably not very idiomatic. I've also been told that some of the cleverer bits might *panic* in debug mode, which I'm going to fix eventually, but seriously in debug mode it runs slow as molasses, you didn't want to do that any way.
+
+One thing I like about Rust so far is that, once I had converted all the code (which was tedious because I had to refactor) and I compiled with no more errors or warnings, the code was pretty much correct. It produced an image that was only slightly wrong because I had made a typo in the formula. Also that it is indeed, *fast*. As well as much less unpredictable to optimize than Javascript.
 
 ## What the thing is roughly
 
