@@ -1,5 +1,7 @@
 # How to make sinusoid wobbly functions
 
+*Warning: this article is unfinished (but it's gonna be really cool) and halfway turns into a rambling braindump.*
+
 I find that for many uses they're just as good as a (simplex or perlin) noise function, except they are a little bit more controllable, and they have a more organic, swinging, wavy or indeed soothing feel to them. a bit more like "it's doing something" rather than smooth but also completely unpredictable.
 
 What follows are some basic formulas for sinusoid wobblies, and a bunch of tips and rules of thumb on how to tweak them, based on years of experimenting with these things :)
