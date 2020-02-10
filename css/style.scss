@@ -65,6 +65,16 @@ img {
   box-shadow: #a88 0.25em 0.25em 0.5em;
 }
 
+img + em {
+  display: block;
+  font-size: 0.75em;  
+  text-align: center;
+  margin: 0 auto;
+  max-width: 90%;
+  font-style: normal;
+  color: #000;
+}
+
 .live {
   canvas, input {
     display: block;
