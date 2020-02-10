@@ -25,6 +25,7 @@ We can define how the towel is crumpled up by defining a function that takes as 
 This is a subset of (a growing number of) various techniques I use in many of my artworks. I call them "wobbly functions", for lack of a better name. The noise function in Processing, which you may have used, is a kind of wobbly function. It's a little too rough for my purposes and it doesn't quite "swing". That's why I usually use various combinations of sine waves (often added or fed back into each other, but not more than once). The results are functions that change value smoothly, flow, and can have harmonious features (either by accident or by restricting the frequencies to a small number of ratios).
 
 ![Wobbly function](oppy1-wobbly.png)
+*A graph of the function `sin(t+p0 + sin(t*0.7+p1)) + 0.5 * sin(t*2+p2 + sin(t*2*0.7+p3))`, with p0..3 being random numbers in the range 0..TAU*
 
 In this case however, I had used a few too many sine waves. After the speed-up from using Rust, this turned out to be the biggest factor in rendering time. So we have to do something cleverer (props to Stevan for setting me up on the idea).
 
