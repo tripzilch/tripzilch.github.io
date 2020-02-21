@@ -1,4 +1,5 @@
 # How to split polygons unevenly
+*by Piter Pasma, February 2020*
 
 Several people wanted to know how this works. And it's not even that complicated!
 
@@ -23,7 +24,7 @@ And this is uneven subdivision. As you can see it creates holes!
 
 Really this isn't that important. But there are some details, which are like smaller aspects of the larger picture. That is why we call them details. Please do read on if you haven't had enough.
 
-You can easily calculate "largest" polygon by its circumference.
+You can easily pick the "largest" polygon by its circumference. No need to calculate area or anything more complex.
 
 You can also map the circumference of the polygon so that you can index it with a number between 0 and 1. You start at 0 at an arbitrary vertex and you go around the polygon, until you end at 1 at the same vertex.
 

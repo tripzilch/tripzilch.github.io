@@ -1,6 +1,8 @@
 # How did I do make the thing?
+*by Piter Pasma, January 2020*
 
 ![This thing](oppy1-tompa-s.jpg)
+*This thing.*
 
 ## Why don't you just share us the code?
 
