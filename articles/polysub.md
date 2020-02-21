@@ -10,12 +10,12 @@ First, a quick summary: Start with a big square, slice it roughly in half along 
 
 That's it! Think about it, slicing polygons unevenly just makes holes. You could even do this with pen and paper and a *lot* of patience.
 
-The following is an example of even subdivision, where the polygons are sliced roughly in half. 
+The following is an example of even subdivision, where the polygons are sliced roughly in half: 
 
 ![Even subdivision](polysub-2.jpg)
 *Garden-variety polygon subdivison.*
 
-The image below shows uneven subdivision. As you can see it creates holes!
+And the image below shows uneven subdivision. As you can see it creates holes!
 
 ![Uneven subdivision](polysub-3.jpg)
 *Uneven polygon subdivision.*
