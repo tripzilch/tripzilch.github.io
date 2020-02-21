@@ -20,7 +20,7 @@ And the image below shows uneven subdivision. As you can see it creates holes!
 ![Uneven subdivision](polysub-3.jpg)
 *Uneven polygon subdivision.*
 
-## Sample Heading 2
+## Placeholder text
 
 Really this isn't that important. But there are some details, which are like smaller aspects of the larger picture. That is why we call them details. Please do read on if you haven't had enough.
 
@@ -44,3 +44,5 @@ One important trick is to always divide the polygons (roughly) evenly for the fi
 * You can vary the parameter in various exiciting ways.
 * You can start out with various exciting shapes or poly meshes.
 
+![Variation](polysub-4.jpg)
+*This is what happens if you shrink and rotate the polygons every time they are split.*
