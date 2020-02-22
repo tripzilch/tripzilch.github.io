@@ -8,6 +8,8 @@ Several people wanted to know how this works. And it's not even that complicated
 
 First, a quick summary: Start with a big square, slice it roughly in half along a straight line. Then you find the largest polygon (or one of the largest), split it, and repeat. You can slice a polygon either evenly (roughly in half), or unevenly. If you do it evenly, it looks like your usual garden-variety polygon subdivison. But if you do it unevenly, what happens is that you slice off a smaller bit of the polygon. The larger bit will be a bit rounder than before, but not much smaller. This is what causes the "holes". I vary the parameter of how even the polygon is sliced, over the image. More even at the bottom, less even at the top.
 
+Another thing to consider, is that it is preferable to slice polygons in a way such that if you have a long polygon, you don't slice it all the way along its length. Because then you'd get an even thinner polygon. In other words, try to keep your cut short, rather than long.
+
 That's it! Think about it, slicing polygons unevenly just makes holes. You could even do this with pen and paper and a *lot* of patience.
 
 The following is an example of even subdivision, where the polygons are sliced roughly in half: 
@@ -31,6 +33,8 @@ You can also map the circumference of the polygon so that you can index it with 
 Then to slice it, pick two numbers between 0 and 1, corresponding to points r0 and r1 on the polygon circumference. If the numbers are (about) 0.5 apart (modulo 1), they divide it roughly in half. If they are less than 0.5 apart, they divide it unevenly. They can't be more than 0.5 apart since you're calculating modulo 1. Just like you can't cut a polygon into more than half, without also cutting it into less than half!
 
 So you decide on a distance (this is the parameter you can vary). Then pick r0 randomly between 0 and 1. Then r1 is just the distance added to r0, modulo 1.
+
+Remember how we didn't want to make thin polygons? We do this by considering the (Euclidian) distance between r0 and r1. Pick the random numbers (say) a 100 times, and keep the pair with the smallest distance.
 
 Now you have all the vertices you need and can easily slice the polygon.
 
