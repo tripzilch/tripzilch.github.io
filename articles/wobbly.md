@@ -2,7 +2,7 @@
 
 *Warning: this article is unfinished (but it's gonna be really cool) and halfway turns into a rambling braindump.*
 
-I find that for many uses they're just as good as a (simplex or perlin) noise function, except they are a little bit more controllable, and they have a more organic, swinging, wavy or indeed soothing feel to them. a bit more like "it's doing something" rather than smooth but also completely unpredictable.
+I find that for many uses they're just as good as a (simplex or perlin) noise function, except they are a little bit more controllable, and they have a more organic, swinging, wavy or indeed soothing feel to them. A bit more like "it's doing something" rather than just being smooth and unpredictable.
 
 What follows are some basic formulas for sinusoid wobblies, and a bunch of tips and rules of thumb on how to tweak them, based on years of experimenting with these things :)
 
@@ -12,8 +12,6 @@ Let's assume our goal is a 2D sinusoid function that evolves over time `t` (usua
 
 We start with a simple 1D sine wave over `x`, that moves with time:
 
-	sin(a * x + b * t + c)
-
 <script src="graph.js"></script>
 
 <div id="sin1d" class="live"> <canvas></canvas> <input type="text" /> </div>
@@ -22,6 +20,8 @@ We start with a simple 1D sine wave over `x`, that moves with time:
     graph.draw();
 </script>
 
+	sin(a * x + b * t + c)
+    
 * `a` is the scale of the wave over x, smaller numbers make longer waves.
 * `b` is the scale of movement over time, bigger numbers move faster.
 * `c` is the phase of the wave, at which point it starts (this becomes more important once you start combining waves).
@@ -84,3 +84,15 @@ Cosine waves are just sine waves shifted in phase by PI/4, so it doesn't help us
 You can also not modulate the sine wave, but instead just add together a whole bunch of simple sine waves (the first formula) with slightly different frequency, speed and phase. I think you'd need at least five or so before it stops looking too regular. It's very important to randomize the phases properly so they don't all start at 0. Disclaimer: I haven't really experimented with this variation a lot.
 
 You can also modulate the sine wave with an actual perlin or simplex noise function! That way you might (again, not tested) get something in between the organic feel of a wobbly motion and the unpredictability of noise. Or maybe the other way around ...
+
+## 2D wobbly
+
+A good formula to start with is modulating a sine over `x` with a sine over `y`: `sin(px + fx * x + a * sin(py + fy * y))`.
+Here `fx` and `fy` are the frequencies, if coordinates range between -1 and 1, then 2.3 and 3.2 are good values for a smooth plasma. But you can experiment with any value you like. It usually looks best if their ratio is less than twice apart.
+`px` and `py` are the phases, choose these between -PI and +PI (or between 0 and TAU). Choosing outside this range just repeats and is no use.
+`a` is the modulation amplitude. This is how extreme the modulation is. Because it's fed into a `sin` function, I usually choose between -PI and +PI, but you can go outside this range.
+
+Now you may find that this looks fairly boring, and this is because you need to copy this formula, add it to itself, except with the `x` and `y` swapped (and all different numbers of course).
+Because the result is the sum of two sine waves, it ranges between -2 and 2. Therefore you do `0.5 + 0.25 * (the entire thing)` to scale it to 0 and 1.
+
+Try it with greyscale first. It's incredibly hard to see what happens when you change the parameters between 3 colour channels at once. Besides, doing that blindly will result in nothing but rainbow puke. If you want nice colours try slight incremental phase offsets between R, G and B. Leave the frequencies the same. After you tried that, realise that this is also about the extent of what you can usefully do with colour in the RGB colour space without using a palette (prove me wrong, though :) ).
