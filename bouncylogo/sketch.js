@@ -10,7 +10,7 @@ let canvas, ctx;
 let view_mode = 0;
 
 function setup() {
-  canvas = createCanvas(windowWidth * displayDensity(), windowHeight * displayDensity());
+  canvas = createCanvas(windowWidth, windowHeight);
   ctx = canvas.elt.getContext("2d");
   canvas_init();
   frameRate(30);
@@ -75,7 +75,7 @@ function keyPressed() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth * displayDensity(), windowHeight * displayDensity());
+  resizeCanvas(windowWidth, windowHeight);
   canvas_init();
 }
 
