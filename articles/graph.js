@@ -67,7 +67,7 @@
             this.f = new Function('s', 't', 'return ' + fn_str);
         }
         draw() {
-            const t = Date.now() / 1000;
+            const t = Date.now() / 5000;
             const WH2 = vec2(this.W / 2, this.H / 2);
             const scale = this.H / this.y_ext;
             const N1 = 1 / this.N;
