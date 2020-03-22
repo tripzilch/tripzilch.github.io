@@ -49,7 +49,7 @@ We can notice a few interesting things:
 
 We arbitrarily decide that we're not interested in things that rotate more often than 6 times. So we want two frequencies from {1, 2, 3, 4, 5, 6}, they can't be the same and the order doesn't matter. Since it also doesn't matter which frequency is negative, we'll decide it'll always be the second one. This gives us 15 combinations. 
 
-You can cycle between these 15 combinations in the following figure:
+You can try out all of these 15 combinations using the buttons below the following figure:
 
 <div id="ex2" class="live"> <canvas></canvas> <input type="text" /> 
 <b class="selected">1:2</b> <b>1:3</b> <b>1:4</b> <b>1:5</b> <b>1:6</b> <b>2:3</b> <b>2:4</b> <b>2:5</b> <b>2:6</b> <b>3:4</b> <b>3:5</b> <b>3:6</b> <b>4:5</b> <b>4:6</b> <b>5:6</b> 
@@ -122,8 +122,12 @@ A few things that I find:
 * It's not a good idea to modulate the frequency of a rotating function with an oscillator. At least, I can't get it to look right. This is okay, because modulating the phase is kind of like modulating the frequency.
 * You can modulate the *phase* and the *amplitude* of both rotating functions to your heart's content. All the numbers and possibilities give great-looking shapes.
 
-## Wow! Can you use this method to generate an infinitude of cool shapes?
+## Wow! Can you use this method to randomly generate an infinitude of cool looking shapes?
 
 You can see the results in my Instagram posts [harmonic chains 1](https://www.instagram.com/p/B3SJjjvIDHs/) and [harmonic chains 2](https://www.instagram.com/p/B3aaiErJ41k/). Without selection, you're also going to get a whole load of swastikas!
 
 I have also used these techniques to build the shapes for [Procedural scribbles on sinusoids part I](https://www.instagram.com/p/B2kASTroQxU/) and [part II](https://www.instagram.com/p/B3ADG-FIsyv/), [Squid Yoga](https://www.instagram.com/p/B14gJRTIw6-/) and [Curly 9000](https://www.instagram.com/p/B2ByL8koZi1/).
+
+## If you have read this far
+
+You might find it interesting that in my interactive examples, besides the variable `s`, which traces around the figure, there is also another variable called `t` which counts the time in seconds. You could use this in, say, oscillator functions and get moving shapes. Just saying you might want to go back and check that out ...
