@@ -16,8 +16,9 @@ We start with a simple 1D sine wave over `x`, that moves with time:
 
 <div id="sin1d" class="live"> <canvas></canvas> <input type="text" /> </div>
 <script>
-    let graph = new Graph1Dt(sin1d, "sin(2 * x + 3 * t + 5)");
+    let graph = new Graph1Dxt("sin1d", "sin(2 * x + 3 * t + 5)");
     graph.draw();
+    // Graph1D
 </script>
 
 	sin(a * x + b * t + c)

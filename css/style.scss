@@ -86,19 +86,30 @@ h1 + p em {
 }
 
 .live {
-  canvas, input {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+
+  canvas, input[type=text] {
     display: block;
-    margin: 1em auto;
+    width: 100%;
+    margin: 1em 0;
     border-radius: 0.5em;
     box-shadow: #a88 0.25em 0.25em 0.5em;
-    width: 90%;
   }
-  input {
-    box-sizing: border-box;
+  input[type=text] {
     color: #fff;
     background: #000;
     font: 18px/36px monospace;
+    box-sizing: border-box;
     padding: 0em 1em;
+  }
+  input[type=radio] {
+    display: block;
+    width: 1.0em;
+    height: 1.0em;
+    margin: 0.5em;
   }
 }
 
