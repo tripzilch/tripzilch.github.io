@@ -110,7 +110,7 @@ The fun thing is, as long as you use integer frequencies, this function exactly 
 <div id="ex3" class="live"> <canvas></canvas> <input type="text" /> </div>
 <script>
     const O = (f, p, v, d, s) => v + d * sin((s * f + p) * TAU);
-    let g3 = new Graph2Dst("ex3", "vec_add(R(2, 0, O(5, 0, 1, 0.5, s), s), R(-3, 0, 1, s))");
+    let g3 = new Graph2Dst("ex3", "vec_add(R(3, 0, 1, s), R(-2, O(5, 0, 0.3, 0.15, s), 1, s))");
     g3.draw();
 </script>
 
