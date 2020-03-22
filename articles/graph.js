@@ -86,6 +86,7 @@
                     ctx.lineTo(p.x, p.y);
                 }
             }
+            ctx.closePath();
             ctx.stroke();
             requestAnimationFrame(() => this.draw());
         }
