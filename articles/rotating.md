@@ -1,7 +1,7 @@
 # How to make interesting rotating things
 *by Piter Pasma, March 2020*
 
-In this article, I will discuss my findings about rotating things. I think they are sometimes also called *harmonographs*, but that is a very general class.
+This article is about the basics of constructing cool loopy functions, sometimes also called *harmonographs* (but that's a very broad term), and shows step by step how I build and investigate some possible formulas for them.
 
 There are various curious combinatorial things going on, and things related to ratios. I wonder if there is some field of math that deals with these things.
 
