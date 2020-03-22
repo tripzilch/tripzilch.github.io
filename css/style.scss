@@ -30,8 +30,11 @@ em { color: #402; font-style: italic; }
 code { color: #116; font-family: monospace; background: #def; }
 
 a {
-  color:#069;
+  color: #069;
   text-decoration:none;
+}
+a:hover {
+  color: #09C;
 }
 
 header {
@@ -88,28 +91,36 @@ h1 + p em {
 .live {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   width: 90%;
   margin: 0 auto;
 
-  canvas, input[type=text] {
+  canvas, input[type=text], b {
     display: block;
     width: 100%;
-    margin: 1em 0;
+    margin: 0.5em 0;
     border-radius: 0.5em;
     box-shadow: #a88 0.25em 0.25em 0.5em;
   }
-  input[type=text] {
+  input[type=text], b {
     color: #fff;
     background: #000;
     font: 18px/36px monospace;
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
     padding: 0em 1em;
   }
-  input[type=radio] {
+  b {
     display: block;
-    width: 1.0em;
-    height: 1.0em;
-    margin: 0.5em;
+    color: #bbb;
+    width: auto;
+    margin: 1em 0.5em 1em 0;
+    cursor: default;
+    padding: 0em 0.5em;
+    /*flex-grow: 1;*/
+  }
+  b.selected {
+    color: #fff;
   }
 }
 
