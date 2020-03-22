@@ -101,9 +101,9 @@ It appears that the symmetry of the figure is equal to *the sum of the _simplifi
 
 Yes we can! We can start by defining a very simple oscillator (oscillating thing?) that wobbles around a certain value, deviating by a scaled sine wave:
 
-    const O = (f, p, v, d) => s => v + d * sin((s * f + p) * TAU)
+    const O = (f, p, v, d, s) => v + d * sin((s * f + p) * TAU)
 
-Wow, did I say simple? This one takes four parameters, *frequency*, *phase*, *value* and *deviation*.
+Wow, did I say simple? This one takes five parameters, *frequency*, *phase*, *value*, *deviation* and the final parameter `s`.
 
 The fun thing is, as long as you use integer frequencies, this function exactly loops back on itself. That means you can replace any value in our previous formula with an oscillator, and it will still be a smooth loop.
 
