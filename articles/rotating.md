@@ -1,9 +1,19 @@
 # How to make interesting rotating things
 *by Piter Pasma, March 2020*
 
+<script src="util.js"></script>
+<script src="vec2.js"></script>
+<script src="graph.js"></script>
+
+<div id="ex0" class="live"> <canvas></canvas> <input type="text" /> </div>
+<script>
+    let g0 = new Graph2Dst("ex0", "vec_add(R(1, 0, 1, s), R(-2, 0, 1, s))");
+    g0.draw();
+</script>
+
 This article is about the basics of constructing cool loopy functions, sometimes also called *harmonographs* (but that's a very broad term), and shows step by step how I build and investigate some possible formulas for them.
 
-There are various curious combinatorial things going on, and things related to ratios. I wonder if there is some field of math that deals with these things.
+There are various curious things to do with combinatorics going on, and things related to ratios. I wonder if there is some field of math that deals with these things.
 
 ## One rotating thing
 
@@ -15,13 +25,12 @@ We can turn this into a rotating function that takes a *frequency*, *phase* and 
 
     const R = (f, p, a, s) => circle((s * f + p) * TAU, a);
 
+![A circle](rotating-circle.png)
+*If you draw this function, it looks like this.*
+
 ## Two rotating things
 
-Now what happens if you add two rotating functions together? Let's try it out over here:
-
-<script src="util.js"></script>
-<script src="vec2.js"></script>
-<script src="graph.js"></script>
+Now, what happens if you add two rotating functions together? Let's try it out over here:
 
 <div id="ex1" class="live"> <canvas></canvas> <input type="text" /> </div>
 <script>
@@ -121,6 +130,7 @@ A few things that I find:
 * It's a good idea to have the *frequency* of the oscillator be a multiple of the *symmetry* of the rotating setup (that you can look up in the table, or by eye). This way the figure retains its symmetry, otherwise it'll be lopsided and weird.
 * It's not a good idea to modulate the frequency of a rotating function with an oscillator. At least, I can't get it to look right. This is okay, because modulating the phase is kind of like modulating the frequency.
 * You can modulate the *phase* and the *amplitude* of both rotating functions to your heart's content. All the numbers and possibilities give great-looking shapes.
+* Some weird stuff is going on still and I think my theory isn't entirely correct. For instance, the `2:6` figure has a symmetry of 4, but if you modulate it with an oscillator of frequency 4, it'll turn into a figure with symmetry 2! This makes sense if you think about it, because it traces the fourfold shape twice. But then there is the `3:6` figure, which has a symmetry of 3, but loses this symmetry as soon as you modulate it with a frequency 3 oscillator. My theory is partially bogus under modulation. Why doesn't anything out of the ordinary happen to the `2:4` figure?
 
 ## Wow! Can you use this method to randomly generate an infinitude of cool looking shapes?
 
