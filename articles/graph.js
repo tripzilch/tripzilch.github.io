@@ -67,6 +67,9 @@
             this.f = new Function('s', 't', 'return ' + fn_str);
         }
         draw() {
+            requestAnimationFrame(() => this._draw());
+        }
+        _draw() {
             const t = Date.now() / 5000;
             const WH2 = vec2(this.W / 2, this.H / 2);
             const scale = this.H / this.y_ext;
@@ -88,6 +91,6 @@
             }
             ctx.closePath();
             ctx.stroke();
-            requestAnimationFrame(() => this.draw());
+            requestAnimationFrame(() => this._draw());
         }
     }

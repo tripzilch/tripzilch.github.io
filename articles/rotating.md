@@ -7,7 +7,7 @@
 
 <div id="ex0" class="live"> <canvas></canvas> <input type="text" /> </div>
 <script>
-    let g0 = new Graph2Dst("ex0", "vec_add(R(1, 0, 1, s), R(-2, 0, 1, s))");
+    let g0 = new Graph2Dst("ex0", "vec_add(R(5, O(7, 0.6, 0.0, 0.2, s), 0.7, s), R(-2, 0, O(7, 0.9, 1.0, 0.5, s), s))");
     g0.draw();
 </script>
 
