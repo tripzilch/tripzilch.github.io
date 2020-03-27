@@ -18,7 +18,7 @@
 
 This article is about the basics of constructing cool loopy functions, sometimes also called *harmonographs* (but that's a very broad term), and shows step by step how I build and investigate some possible formulas for them.
 
-There are various curious things to do with combinatorics going on, and things related to ratios. I wonder if there is some field of math that deals with these things.
+There are various curious things to do with combinatorics going on, and things related to ratios. If you have a better idea than me about the math involved in these kinds of things, please let me know!
 
 ## One rotating thing
 
@@ -142,3 +142,7 @@ I have also used these techniques to build the shapes for [Procedural scribbles 
 ## If you have read this far
 
 You might find it interesting that in my interactive examples, besides the variable `s`, which traces around the figure, there is also another variable called `t` which counts up with time. You could use this in, say, oscillator functions and get moving shapes. Just saying you might want to go back and check that out ...
+
+If you're not entirely sure how to implement the math discussed in this article, check out this [very simply P5js sketch](https://editor.p5js.org/triplezero/sketches/76PtMW82V).
+
+If you make anything cool using this technique, or you have questions, or corrections, or a brilliant idea, please don't hesitate to send me a message! 
