@@ -143,6 +143,6 @@ I have also used these techniques to build the shapes for [Procedural scribbles 
 
 You might find it interesting that in my interactive examples, besides the variable `s`, which traces around the figure, there is also another variable called `t` which counts up with time. You could use this in, say, oscillator functions and get moving shapes. Just saying you might want to go back and check that out ...
 
-If you're not entirely sure how to implement the math discussed in this article, check out this [very simply P5js sketch](https://editor.p5js.org/triplezero/sketches/76PtMW82V).
+If you're not entirely sure how to implement the math discussed in this article, check out this [very simple P5js sketch](https://editor.p5js.org/triplezero/sketches/76PtMW82V).
 
 If you make anything cool using this technique, or you have questions, or corrections, or a brilliant idea, please don't hesitate to send me a message! 
