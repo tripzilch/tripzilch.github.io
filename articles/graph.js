@@ -67,7 +67,7 @@
             this.f = new Function('s', 't', 'return ' + fn_str);
         }
         draw() {
-            document.addEventListener('load', () => this._draw());
+            requestAnimationFrame(() => this._draw());
         }
         _draw() {
             const t = Date.now() / 5000;
