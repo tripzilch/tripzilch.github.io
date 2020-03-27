@@ -7,6 +7,11 @@
 
 <div id="ex0" class="live"> <canvas></canvas> <input type="text" /> </div>
 <script>
+    const circle = (phi, r) => vec2(r * cos(phi), r * sin(phi));
+    const R = (f, p, a, s) => circle((s * f + p) * TAU, a);
+    const O = (f, p, v, d, s) => v + d * sin((s * f + p) * TAU);
+    const vec_add = (a, b) => a.xy.add(b);
+
     let g0 = new Graph2Dst("ex0", "vec_add(R(5, O(7, .5, 0, .2, s), .7, s), R(-2, 0, O(7, .9, 1, .5, s), s))");
     g0.draw();
 </script>
@@ -34,9 +39,6 @@ Now, what happens if you add two rotating functions together? Let's try it out o
 
 <div id="ex1" class="live"> <canvas></canvas> <input type="text" /> </div>
 <script>
-    const circle = (phi, r) => vec2(r * cos(phi), r * sin(phi));
-    const R = (f, p, a, s) => circle((s * f + p) * TAU, a);
-    const vec_add = (a, b) => a.xy.add(b);
     let g1 = new Graph2Dst("ex1", "vec_add(R(1, 0, 1, s), R(-2, 0, 1, s))");
     g1.draw();
 </script>
@@ -118,7 +120,6 @@ The fun thing is, as long as you use integer frequencies, this function exactly 
 
 <div id="ex3" class="live"> <canvas></canvas> <input type="text" /> </div>
 <script>
-    const O = (f, p, v, d, s) => v + d * sin((s * f + p) * TAU);
     let g3 = new Graph2Dst("ex3", "vec_add(R(3, 0, 1, s), R(-2, O(5, 0, 0.3, 0.15, s), 1, s))");
     g3.draw();
 </script>
