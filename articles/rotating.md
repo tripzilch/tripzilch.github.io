@@ -131,7 +131,10 @@ A few things that I find:
 * It's a good idea to have the *frequency* of the oscillator be a multiple of the *symmetry* of the rotating setup (that you can look up in the table, or by eye). This way the figure retains its symmetry, otherwise it'll be lopsided and weird.
 * It's not a good idea to modulate the frequency of a rotating function with an oscillator. At least, I can't get it to look right. This is okay, because modulating the phase is kind of like modulating the frequency.
 * You can modulate the *phase* and the *amplitude* of both rotating functions to your heart's content. All the numbers and possibilities give great-looking shapes.
-* Some weird stuff is going on still and I think my theory isn't entirely correct. For instance, the `2:6` figure has a symmetry of 4, but if you modulate it with an oscillator of frequency 4, it'll turn into a figure with symmetry 2! This makes sense if you think about it, because it traces the fourfold shape twice. But then there is the `3:6` figure, which has a symmetry of 3, but loses this symmetry as soon as you modulate it with a frequency 3 oscillator. My theory is partially bogus under modulation. Why doesn't anything out of the ordinary happen to the `2:4` figure?
+
+Some weird stuff is going on still and I think my theory isn't entirely correct. I feel like I'm 90% there but also missing some big fundamental math idea. For instance, the `2:6` figure has a symmetry of 4, but if you modulate it with an oscillator of frequency 4, it'll turn into a figure with symmetry 2! This makes sense if you think about it, because it traces the fourfold shape twice. But then there is the `3:6` figure, which has a symmetry of 3, but loses this symmetry as soon as you modulate it with a frequency 3 oscillator. My theory is partially bogus under modulation. Why doesn't anything out of the ordinary happen to the `2:4` figure?
+
+Another question is what happens when you add three rotating functions, and when that displays symmetry. I've only tried a few combinations of these, without too much success so far.
 
 ## Wow! Can you use this method to randomly generate an infinitude of cool looking shapes?
 
