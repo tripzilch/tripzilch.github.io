@@ -10,6 +10,10 @@
 
 [How to split polygons unevenly](articles/polysub)
 
+[How to make interesting rotating things](articles/rotating)
+
+
+
 ## stuff
 
 [Test](test) please ignore.
