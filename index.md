@@ -3,14 +3,13 @@
 
 ## articles
 
-[How to make sinusoid wobbly functions](articles/wobbly)
-
 [How did I do make the thing?](articles/oppy1)
 
 [How to split polygons unevenly](articles/polysub)
 
 [How to make interesting rotating things](articles/rotating)
 
+(unfinished) [How to make sinusoid wobbly functions](articles/wobbly)
 
 
 ## stuff
