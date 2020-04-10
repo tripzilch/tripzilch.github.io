@@ -1,6 +1,5 @@
 # My brain on Markdown
-
-**DON'T JUST DEFEND YOUR RIGHT TO BE WRONG — _EXERCISE IT!!_**
+*A CONCLUSION IS JUST WHERE YOU STOPPED THINKING*
 
 ## articles
 
