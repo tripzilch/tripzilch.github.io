@@ -1,4 +1,4 @@
-# 3 hyperpretzels
+# Three hyperpretzels
 
 ## Version A
 
