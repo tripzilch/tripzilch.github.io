@@ -4,6 +4,7 @@
 This article lists the various visual depth cues that I could find. If you're making almost any kind of visual art, I believe you'll benefit from knowing these cues, being able to recognize and practice to use them in various contexts.
 
 ![Hyperburger, extra cheese (2020). Notice the mist effect and the perception of depth it provides.](depth-cues1.jpg)
+*Hyperburger, extra cheese (2020). Notice the mist effect and the perception of depth it provides.*
 
 In a recent discussion the subject of "atmospheric perspective" came up. After trying out various rendering techniques, I was surprised with the effectiveness of this depth cue.
 
