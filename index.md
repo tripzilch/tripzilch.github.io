@@ -19,7 +19,7 @@ Starting as a demoscener in 1998, he wrote four prize-winning 4 kilobyte demos (
 
 ## art
 
-For now, the best place to see my art is to check out [my Instagram Profile](). Sending me a message on Instagram or Twitter is currently probably also the best way to contact me, for questions about sales or collaboration.
+For now, the best place to see my art is to check out [my Instagram Profile](https://www.instagram.com/piterpasma/). Sending me a message on Instagram or Twitter is currently probably also the best way to contact me, for questions about sales or collaboration.
 
 In the future there will be a gallery page and other cool stuff on this very website. Because Instagram is not supposed to the canonical place to find my art.
 
