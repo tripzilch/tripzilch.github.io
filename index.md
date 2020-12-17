@@ -28,9 +28,9 @@ In the future there will be a gallery page and other cool stuff on this very web
 
 ## 4 kilobyte demos
 
-[Meuk](http://www.pouet.net/prod.php?which=343). Mekka & Symposium 2000, second place. [Video capture](https://vimeo.com/207039658). Just wanted to mention, I also built the music/audio synthesis routines from scratch, a soft synth in about 1100 bytes :D
+[Meuk](http://www.pouet.net/prod.php?which=343) ([video capture](https://vimeo.com/207039658)). Mekka & Symposium 2000, second place. Just wanted to mention, I also built the music/audio synthesis routines from scratch, a soft synth in about 1100 bytes :D
 
-[Never Bored](http://www.pouet.net/prod.php?which=291). Takeover 1999, second place. [Video capture](https://www.youtube.com/watch?v=gv-gHBz4hgw)
+[Never Bored](http://www.pouet.net/prod.php?which=291) ([video capture](https://www.youtube.com/watch?v=gv-gHBz4hgw)). Takeover 1999, second place.
 
 [Organic](http://www.pouet.net/prod.php?which=332). Ambience 1999, first place.
 
