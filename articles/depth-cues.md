@@ -63,3 +63,7 @@ The monocular cues could be further divided into static and moving/dynamic cues,
 ## Triocular
 
 **Trepanation**. The pineal gland is sometimes said to be the "third eye" as it is sensitive to light or something. People who drill a hole in their head in order to expose this third eye, are also more likely to bump into walls, suggesting a decrease in depth perception. Other theories suggest that these cases are not so much lacking in depth perception, but clarity of thought and basic common sense. People with a hole in their head did not respond to requests for comment.
+
+## References
+
+I started with searching for [visual depth cues](https://www.google.com/search?hl=en&q=visual%20depth%20cues) and ended up getting most of the examples from the Wikipedia page on [depth percetion](https://en.wikipedia.org/wiki/Depth_perception). I know these aren't proper references but it's intended as a quick list of notes for myself and perhaps other visual artists. Not a textbook :)
