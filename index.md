@@ -1,6 +1,9 @@
 # You are here
 *A CONCLUSION IS JUST WHERE YOU STOPPED THINKING*
 
+![Hagelslag Age Cave Painting (November 2020)](dingo1-2020-11-17-12-36-54-s.jpg)
+*Hagelslag Age Cave Painting (November 2020)*
+
 Piter Pasma is a generative artist, expressing himself through experiments with code, complexity and a touch of chaos. Among the space of algorithms are buried gems in carefully tuned black boxes, concrete trap doors leading to unexpected dungeon forests, only seen when you open them a thousand times, sideways. 
 
 Starting as a demoscener in 1998, he wrote four prize-winning 4 kilobyte demos (non-interactive real-time size-constrained audio-visuals). Since then he has been honing his creative coding skills, and recently has been exploring the challenges of realising his works physically by means of a robot plotter.
