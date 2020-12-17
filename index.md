@@ -3,6 +3,8 @@
 
 ## articles
 
+[Visual depth cues](articles/depth-cues)
+
 [How did I do make the thing?](articles/oppy1)
 
 [How to split polygons unevenly](articles/polysub)
