@@ -66,4 +66,4 @@ The monocular cues could be further divided into static and moving/dynamic cues,
 
 ## References
 
-I started with searching for [visual depth cues](https://www.google.com/search?hl=en&q=visual%20depth%20cues) and ended up getting most of the examples from the Wikipedia page on [depth percetion](https://en.wikipedia.org/wiki/Depth_perception). I know these aren't proper references but it's intended as a quick list of notes for myself and perhaps other visual artists. Not a textbook :)
+I started with searching for [visual depth cues](https://www.google.com/search?hl=en&q=visual%20depth%20cues) and ended up getting most of the examples from the Wikipedia page on [depth perception](https://en.wikipedia.org/wiki/Depth_perception). I know these aren't proper references but it's intended as a quick list of notes for myself and perhaps other visual artists. Not a textbook :)
