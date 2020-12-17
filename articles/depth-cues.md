@@ -6,7 +6,7 @@ This article lists the various visual depth cues that I could find. If you're ma
 ![Hyperburger, extra cheese (2020). Notice the mist effect and the perception of depth it provides.](depth-cues1.jpg)
 *Hyperburger, extra cheese (2020). Notice the mist effect and the perception of depth it provides.*
 
-In a recent discussion the subject of "atmospheric perspective" came up. After trying out various rendering techniques, I was surprised with the effectiveness of this depth cue.
+In a recent discussion with [Louis-André Labadie](https://www.instagram.com/lalabadie/) the subject of "atmospheric perspective" came up. After trying out various rendering techniques, I was surprised with the effectiveness of this depth cue.
 
 I knew of a couple of other depth cues (the most obvious ones being perspective and shading), but I wondered if I knew all of them, and whether there would be any surprising ones, or ones that I might have been neglecting in my art. So I did a little research.
 
