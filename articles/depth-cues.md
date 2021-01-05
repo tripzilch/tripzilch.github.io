@@ -47,7 +47,7 @@ The monocular cues could be further divided into static and moving/dynamic cues,
 **Shading and shadows**. Actually several depth cues:
   - when we know the location of a light source and see objects casting shadows on other objects, we learn that the object shadowing the other is closer to the light source
   - as most illumination comes downward we tend to resolve ambiguities using this information (there's probably some shaded 3D-looking GUI elements you can see right now that use this)
-  - bright objects seem to be closer to the observer than dark ones
+  - (uncertain if true) bright objects seem to be closer to the observer than dark ones
   - ambient occlusion is very important in determining the shape of things (need a bit more on this).
 
 **Focus blur**. The depth of focus of the human eye is limited and this can act as a monocular cue even when all other cues are removed.

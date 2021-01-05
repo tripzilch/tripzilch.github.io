@@ -1,0 +1,14 @@
+<body bgcolor=#feb><script>({sin:s,cos:c,random:G,PI:T}=Math);T*=2;L=(f,N=23)=>[...Array(N)].map((_,i)=>f(i/N));R=(f,p,a,t)=>(t=f*t*T+p*T,[a*s(t),a*c(t)]);O=(f,p,v,d,t)=>v+d*s(t*f*T+p*T);A=([a,b],[c,d])=>[a+c,b+d];for(j=12;j--;){f=1+4*G()|0;g=g=f+1+G()*(5-f)|0;h=f+g;y=h%3?(h&1?h:2):3;[B,C,D,E,F,H,I,J,K,M,P,a]=L(G);[Q,S,U,W]=L(_=>G()<.6?G()*1.6/(y+2):0);[V,X,Y,Z]=L(_=>y*(1+G()*(3-(y/3|0))|0));document.write(`<img src="data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 4 4"><path d="M ${L(t=>A(A(R(f,O(V,B,C,Q,t),O(y,D,1-a*.4,S,t),t),R(-g,O(X,E,F,U,t),O(y,H,.3+a*.4,W,t),t)),R(h*73,0,(.3+M)*.1*O(Y,O(Z,I,J,K,t),.5,.5,t)**(2+4*P),t)),1e4).join(' ')} Z" fill="none" stroke="#004" stroke-width=".013"/></svg>`)}"style="display:inline-block;width:24%">`);}</script>
+
+<!--
+
+  GENUARY 2021 Day 5: Code size optimisation
+
+  809 characters.
+
+  Code is copyright by Piter Pasma, 2021/01/05
+
+  The output of this program is free to use for non-profit purposes (for your plotters, laser engravers etc).
+  Contact me if you need a different license.
+
+-->
