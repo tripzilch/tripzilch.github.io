@@ -130,7 +130,7 @@ function draw(now) {
   for (let {par, f, d, p, is_kick} of ks) {
     const last = is_kick ? last_kick : last_snare;
     const t = clamp((now - last) / t8, 0, 1);
-    epi[par] = p + d * .3 * ((1 - t) ** 3) + frac(now * f * 0.4); 
+    epi[par] = p + d * .3 * ((1 - t) ** 3) + frac(now * f * 1.0); 
     // console.log(par, f, p);
   }
   for (let i = 0; i < N; i++) {
@@ -240,6 +240,9 @@ function run() {
     if ((bars & 3) === 3) {
       breakz.hit(when + 2 * 8 * t8);
       sample(amen, when + 3 * 8 * t8, breakz.preamp, .5 * BPM / 136.79, 8 * t8);
+      QQ.append({n: 0, when: when + 3 * 8 * t8});
+      QQ.append({n: 1, when: when + 3 * 8 * t8 + t4});
+      QQ.append({n: 2, when: when + 3 * 8 * t8 + 2 * t4});
     } else {
       breakz.hit(when + 2 * 8 * t8);
       breakz.hit(when + 3 * 8 * t8);
