@@ -1,0 +1,22 @@
+* { margin: 0; padding: 0; }
+
+body { background: #023; } 
+
+#view {
+  display: block;
+  max-width: 100vh;
+  max-height: 100vh;
+  margin: 0 auto;
+}
+
+#info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: absolute; top: 0; left: 0;
+  width: 100vw;
+  font: bold 24px/25vh sans;
+  color: #fff;
+  background: #0009;
+}
