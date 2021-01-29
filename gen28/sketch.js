@@ -1,10 +1,12 @@
 const view = document.getElementById('view');
+const splash = document.getElementById('splash');
+const credits = document.getElementById('credits');
 const info = document.getElementById('info');
 const PROJ_NAME = /([^\/]+)\/$/.exec(location.pathname)[1];
 document.title = PROJ_NAME;
 
 function log(s) {
-  info.innerHTML += s + '\n';
+  splash.innerHTML += s + '\n';
   console.log(s);
 }
 
@@ -46,7 +48,7 @@ class Epi5x {
     // M=Math;T=2*M.PI;s=M.sin;c=M.cos;G=M.random;
     this.f = 1 + 4 * RNG()|0;
     this.g = this.f + 1 + RNG() * (5 - this.f)|0;
-    const h = this.f + this.g;
+    const h = this.f + this.g; this.h = h;
     this.y = h % 3 ? (h & 1 ? h : 2) : 3;
     const rsym = ()=>this.y*(1+RNG()*(3-(this.y/3|0))|0);
     this.h0 = rsym(); this.h1 = rsym(); this.h2 = rsym();
@@ -60,7 +62,7 @@ class Epi5x {
   }
   wob(t) {
     const w = (.3 + 1. * this.ws) * .1 * cLUT.O(this.h2, cLUT.O(this.h3, this.wr6, this.wr7, this.wr8, t), .5, .5, t) ** (2 + 4 * this.wp);
-    return cLUT.R((this.y) * 80, 0, w, t);
+    return cLUT.R((this.y) * 30 * this.h, 0, w, t);
   }
   fn(t){
     const rA = cLUT.R(this.f, cLUT.O(this.h0, this.p0, this.p1, this.k0, t), cLUT.O(this.y, this.p2, 1 - this.a * .4, this.k1, t), t);
@@ -149,7 +151,7 @@ function draw(now) {
 
 function run() {
   // hide tap to start message
-  info.style.display = 'none';
+  splash.style.display = 'none';
 
   // get and start audio context
   const audio = new (window.AudioContext || window.webkitAudioContext)();
@@ -294,10 +296,10 @@ function run() {
       window.requestAnimationFrame(go);
     }
     go();
-    view.addEventListener('click', () => {
-      playing = !playing;
-      if (playing) play_pos = audio.currentTime + t16;
-    })
+    // view.addEventListener('click', () => {
+    //   playing = !playing;
+    //   if (playing) play_pos = audio.currentTime + t16;
+    // })
     // setInterval(() => {
     //   const now = audio.currentTime
     // }, 500);
@@ -307,8 +309,13 @@ function run() {
   });
 } // run
 
-info.addEventListener('click', run);
-// info.click();
-
+splash.addEventListener('click', run);
+// splash.click();
+view.addEventListener('click', () => {
+  info.style.display = 'block';
+})
+info.addEventListener('click', () => {
+  info.style.display = 'none';
+})
 
 
