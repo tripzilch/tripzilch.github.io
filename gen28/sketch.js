@@ -94,14 +94,14 @@ init();
 const N = 7999, N1 = 1 / N;
 const [dax, day, daz] = qphi(3);
 const start_time = Date.now();
-let cur_hit = null, next_hit = null;
+let cur_hit = {when: 0, n: 0}, next_hit = {when: 0, n: 0};
 let last_kick = 0, last_snare = 0;
 let framecount = 0;
 let next_init = Infinity;
 // KKSrrKSr
 function draw(now) {
-  if (cur_hit === null) cur_hit = QQ.popleft();
-  if (next_hit === null) next_hit = QQ.popleft();
+  // if (cur_hit === null) cur_hit = QQ.popleft();
+  // if (next_hit === null) next_hit = QQ.popleft();
   let ii = 0;
   while (next_hit.when <= now + t16 * .25 && QQ.length > 0) {
     cur_hit = next_hit;
@@ -233,24 +233,29 @@ function run() {
   
   const breakz = new Breakz(audio.destination);
 
-  // generation
-  let bars = 0;
-  function generate(when) {
-    breakz.hit_cymbal(when + 0 * 2 * t4);
-    breakz.hit(when + 0 * 8 * t8);
-    breakz.hit(when + 1 * 8 * t8);
-    if ((bars & 3) === 3) {
-      breakz.hit(when + 2 * 8 * t8);
-      sample(amen, when + 3 * 8 * t8, breakz.preamp, .5 * BPM / 136.79, 8 * t8);
-      QQ.append({n: 0, when: when + 3 * 8 * t8});
-      QQ.append({n: 1, when: when + 3 * 8 * t8 + t4});
-      QQ.append({n: 2, when: when + 3 * 8 * t8 + 2 * t4});
-    } else {
-      breakz.hit(when + 2 * 8 * t8);
-      breakz.hit(when + 3 * 8 * t8);
+  // music generation generator function
+  function* generate(when) {
+    for (let bars = 0; ; bars++) {
+      breakz.hit_cymbal(when);
+      breakz.hit(when);
+      when += 8 * t8; yield when;
+      breakz.hit(when);
+      when += 8 * t8; yield when;
+      if ((bars & 3) === 3) {
+        breakz.hit(when);
+        when += 8 * t8; yield when;
+        sample(amen, when, breakz.preamp, .5 * BPM / 136.79, 8 * t8);
+        QQ.append({n: 0, when: when});
+        QQ.append({n: 1, when: when + t4});
+        QQ.append({n: 2, when: when + 2 * t4});
+        when += 8 * t8; yield when;
+      } else {
+        breakz.hit(when);
+        when += 8 * t8; yield when;
+        breakz.hit(when);
+        when += 8 * t8; yield when;
+      }
     }
-    bars++;
-    return when + 4 * 8 * t8;
   }
 
   // graphics
@@ -285,17 +290,22 @@ function run() {
     ]
   ).then(() => {
     // go!
-    let playing = true;
-    let play_pos = audio.currentTime + t16;
-    function go() {
+    // let playing = true;
+    const player = generate(audio.currentTime + t16);
+    let player_time = player.next().value;
+    setInterval(() => {
       const now = audio.currentTime;
-      if (play_pos - now < t4 && playing) {
-        play_pos = generate(play_pos)
-      } 
+      while (player_time - now < 16 * t8) {
+        player_time = player.next().value;
+      }        
+    }, t8);
+    
+    function draw_loop() {
+      const now = audio.currentTime;
       draw(now);
-      window.requestAnimationFrame(go);
+      window.requestAnimationFrame(draw_loop);
     }
-    go();
+    draw_loop();
     // view.addEventListener('click', () => {
     //   playing = !playing;
     //   if (playing) play_pos = audio.currentTime + t16;
