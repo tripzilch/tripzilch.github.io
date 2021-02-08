@@ -18,7 +18,8 @@ const ctx = view.getContext('2d');
 xorshift128_seed(Date.now() + '');
 const _burn = [...$G.loop(235, i => RNG())];
 
-  const BPM = 168, EPS = 1E-6;
+  const BPM = 168;//136.79;
+  const EPS = 1E-6;
   const t4 = 60 / BPM, t8 = t4 / 2, t16 = t4 / 4;
 
 class Queue {
@@ -180,6 +181,7 @@ function run() {
       src.connect(where);
     }
     src.start(when);
+    if (len) src.stop(when + len - EPS);
   }
   // define instruments
   class Breakz {
@@ -226,7 +228,7 @@ function run() {
       }
     }
     hit_cymbal(when) {
-      sample(crash, when, this.cym_amp);
+      sample(crash, when, this.cym_amp, 1, 2 * t4, dB(0));
       QQ.append({n: 9, when});
     }
   }
@@ -264,7 +266,8 @@ function run() {
   // load samples and begin
   const fetch_sample = fn => fetch(fn).then(response => response.arrayBuffer())
       .then(data => audio.decodeAudioData(data));
-  const amen_slice_off = [0, 9608, 19433, 29584, 39139, 48176, 57655, 67796, 77143];
+  const amen_slice_off = [0, 9608, 19433, 29584, 39139, 48176, 57655, 67796, 
+    77143].map(t => Math.round(t * audio.sampleRate / 44100));
   const amen_slices = [];
   let amen, crash;
   Promise.all(
@@ -276,7 +279,7 @@ function run() {
         for (let i = 1; i < amen_slice_off.length; i++) {
           const start = amen_slice_off[i - 1];
           const end = amen_slice_off[i];
-          const slice_array = amen_array.subarray(start, end);
+          const slice_array = amen_array.slice(start, end);
           const slice = audio.createBuffer(1, end - start, audio.sampleRate);
           slice.copyToChannel(slice_array, 0);
           // slice.slice_number = i - 1;
@@ -295,17 +298,19 @@ function run() {
     let player_time = player.next().value;
     setInterval(() => {
       const now = audio.currentTime;
-      while (player_time - now < 16 * t8) {
+      while (player_time - now < 64 * t8) {
         player_time = player.next().value;
       }        
-    }, t8);
-    
+    }, t8 * 1000);
+
     function draw_loop() {
       const now = audio.currentTime;
       draw(now);
       window.requestAnimationFrame(draw_loop);
     }
     draw_loop();
+    console.log('ok1', audio.sampleRate);
+
     // view.addEventListener('click', () => {
     //   playing = !playing;
     //   if (playing) play_pos = audio.currentTime + t16;
