@@ -1,8 +1,9 @@
 <!DOCTYPE html><html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
     <title>thingmaker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css?v3">
     <script src="util.js"></script>
     <script src="generator.js"></script>
     <script src="vec2.js"></script>
@@ -11,9 +12,11 @@
     <script src="epi.js"></script>
   </head>
   <body>
-    <canvas id="view"></canvas>
-    <div id="help">Twist, turn & tap.</div>
-    <div id="info"></div>
-    <script src="sketch.js"></script> 
+    <div id="container">
+      <canvas id="view"></canvas>
+      <div id="help">Twist, turn & tap.</div>
+      <div id="info"></div>
+      <script src="sketch.js"></script> 
+    </div>
   </body>
 </html>

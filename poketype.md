@@ -54,7 +54,7 @@ Ivysaur (grass/poison)
 toxicroak (fighting/poison)
 - vuln: flying ground psychic
 - resist: bug dark fight grass poison rock
-- fight (counter): +dark +ice +normal +rock +steel -bug -fairy -flying -poison -psychic 
+- fight (counter): -GHOST +dark +ice +normal +rock +steel -bug -fairy -flying -poison -psychic 
 - ground (mud): +electric +fire +poison +rock +steel -FLYING -grass -bug
 - poison (sludge): +grass +fairy -STEEL -ghost -ground -poison -rock
 
@@ -74,17 +74,24 @@ haunter (ghost/poison)
 - resist: POISON BUG NORMAL fairy *FIGHT* grass
 - ghost (claw, punch, ball): +psychic +ghost -dark -NORMAL
 
+shiftry (grass/dark)
+- vuln: BUG fairy ice fight fire poison flying
+- resist: PSYCHIC ground ghost water grass electric dark
+- Grass: +ground +rock +water -bug -dragon -fire -fly -grass -poison -steel
+- Dark (foul): +ghost +psychic -dark -fight -fairy
+
 alolan raichu (electr/psychic)
 - vuln: bug dark ghost ground
 - resist: electr fight fly psychic steel
 - electr (volt, punch): -GROUND +water +fly -grass -electr -dragon
 - grass (knot): +ground +rock +water -fire -grass -poison -bug -dragon -steel -fly
 
-shiftry (grass/dark)
-- vuln: BUG fairy ice fight fire poison flying
-- resist: PSYCHIC ground ghost water grass electric dark
-- Grass: +ground +rock +water -bug -dragon -fire -fly -grass -poison -steel
-- Dark (foul): +ghost +psychic -dark -fight -fairy
+azumarill (fairy/water)
+- vuln: electr grass poison
+- resist: bug dark dragon fight fire ice water
+- water (bubble): +fire +ground +rock -water -grass -dragon 
+- fairy (play rough): +fight +dragon +dark -fire -poison -steel
+- ice (beam): +dragon +fly +grass +ground -fire -ice -steel -water
 
 altaria
 - vuln: ICE dragon fairy rock
@@ -107,13 +114,6 @@ sableye (dark/ghost)
 - resist: fight normal poison psychic
 - ghost (shadow claw): -NORMAL +psychic -dark +ghost
 - dark (foul play): +ghost +psychic -dark -fighting -fairy
-
-azumarill (fairy/water)
-- vuln: electr grass poison
-- resist: bug dark dragon fight fire ice water
-- water (bubble): +fire +ground +rock -water -grass -dragon 
-- fairy (play rough): +fight +dragon +dark -fire -poison -steel
-- ice (beam): +dragon +fly +grass +ground -fire -ice -steel -water
 
 clefable (fairy)
 - vuln: poison steel
@@ -146,7 +146,6 @@ gal stunfisk (ground/steel)
 - Ground (Mud): -FLYING -grass -bug +electric +fire +poison +rock +steel
 - Rock (slide): +bug +fire +ice +flying -fighting -ground -steel
 
-
 medichamp
 - vuln: flying ghost fairy
 - resist: fighting rock
@@ -165,17 +164,36 @@ dragonite
 - resist: bug fight fire grass ground water
 - dragon (breath/outrage): +dragon -steel -FAIRY 
 
+shiftry (grass/dark)
+- vuln: BUG fairy ice fight fire poison flying
+- resist: PSYCHIC ground ghost water grass electric dark
+- Dark (snarl, foul): +ghost +psychic -dark -fight -fairy
+- Grass: +ground +rock +water -bug -dragon -fire -fly -grass -poison -steel
+
+Sirfetch'd
+- vuln: fairy flying psychic
+- resist: bug dark rock
+- fight: +dark +ice +normal +rock +steel -bug -fairy -flying -poison -psychic 
+- grass: +ground +rock +water -bug -dragon -fire -fly -grass -poison -steel
+
+escavalier (bug/steel)
+- vuln: fire
+- resist: GRASS POISON bug dragon fairy ice normal psychic steel
+- fight (counter): -GHOST +dark +ice +normal +rock +steel -bug -fairy -flying -poison -psychic 
+- drill (ground): -FLYING -grass -bug +fire +electr +poison +rock +steel
+- megahorn (bug): +grass +psychic +dark -fight -flying -poison -ghost -steel -fire -fairy
+
+gengar (ghost/poison)
+- vuln: dark ghost ground psychic
+- resist: *FIGHT* NORMAL POISON BUG fairy grass
+- ghost (claw, punch, ball): +psychic +ghost -dark -NORMAL
+
 clefable
 - vuln: poison steel
 - resist: bug dark DRAGON fight
 - fairy (charm): +fight +dragon +dark -fire -poison -steel
 - steel (meteor): +ice +rock +fairy -fire -water -electr -steel
 - psychic: +fight +poison -psychic -steel -DARK
-
-gengar (ghost/poison)
-- vuln: dark ghost ground psychic
-- resist: *FIGHT* NORMAL POISON BUG fairy grass
-- ghost (claw, punch, ball): +psychic +ghost -dark -NORMAL
 
 gyarados
 - vuln: ELECTRIC rock

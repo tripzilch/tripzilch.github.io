@@ -1,5 +1,6 @@
+const container = document.getElementById('container');
 const view = document.getElementById('view');
-const info = document.getElementById('info'); info.hidden = false;
+const info = document.getElementById('info');
 const PROJ_NAME = /([^\/]+)\/$/.exec(location.pathname)[1];
 document.title = PROJ_NAME;
 
@@ -32,15 +33,23 @@ class Epi5x {
     for (let rvar of 'p0,p1,p2,p3,p4,p5,wr6,wr7,wr8,ws,wp,a'.split(',')) {
       this[rvar] = RNG();
     }
+    let vmax = 0;
+    const N = 1999, N1 = 1 / N;
+    for (let i = 0; i < 1999; i++) {
+      vmax = max(vmax, this.ff(i * N1 + N1).sub(this.ff(i * N1)).hypot());
+    }
+    vmax *= N;
+    this.wf = floor(10 * vmax);    
+    console.log(vmax, this.wf);
   }
-  wob(t) {
-    const w = (.3 + 1. * this.ws) * .1 * cLUT.O(this.h2, cLUT.O(this.h3, this.wr6, this.wr7, this.wr8, t), .5, .5, t) ** (2 + 4 * this.wp);
-    return cLUT.R((this.f + this.g) * 144, 0, w, t);
-  }
-  fn(t){
+  ff(t){
     const rA = cLUT.R(this.f, cLUT.O(this.h0, this.p0, this.p1, this.k0, t), cLUT.O(this.y, this.p2, 1 - this.a * .4, this.k1, t), t);
     const rB = cLUT.R(-this.g, cLUT.O(this.h1, this.p3, this.p4, this.k2, t), cLUT.O(this.y, this.p5, .3 + this.a * .4, this.k3, t), t);
-    return rA.add(rB).add(this.wob(t));
+    return rA.add(rB);
+  }
+  fn(t){
+    const w = (.3 + .7 * this.ws) * .15 * cLUT.O(this.h2, cLUT.O(this.h3, this.wr6, this.wr7, this.wr8, t), .5, .5, t) ** (2 + 4 * this.wp);
+    return this.ff(t).add(cLUT.R(this.wf, 0, w, t));
   }
 }
 
@@ -57,37 +66,83 @@ function init() {
   ru = [...$G.loop(rp.length, () => Vec3.unit_rand())];
 }
 init();
-document.addEventListener('click', init); 
 
-const N = 14999, N1 = 1 / N;
+view.addEventListener('click', e => {
+  e.stopPropagation();
+  init();
+});
+document.addEventListener('click', () => {
+  // full screen
+  const e = container;
+  if (e.requestFullscreen) {
+    e.requestFullscreen();
+  } else if (e.webkitRequestFullscreen) {
+    e.webkitRequestFullscreen();
+  }
+}); 
+
+document.body.addEventListener('keyup', ev => {
+  if (ev.code === 'Escape') {
+    running = false;
+    console.log('STOPPED');
+  }
+});
+
+let draw_count;
+function draw_path(ctx, path, closed=false) {
+  draw_count = 0;
+  ctx.beginPath();
+  const {value: p0, done} = path.next();
+  if (done) return;
+  draw_count++;
+  ctx.moveTo(p0.x, p0.y);
+  for (let p of path) {
+    draw_count++;
+    ctx.lineTo(p.x, p.y);
+  }
+  if (closed) ctx.closePath();
+}
+
+const N = 7999, N1 = 1 / N;
+let framecount = 0;
+const start_time = Date.now();
+let running = true;
 function draw() {
-  ctx.fillStyle = getComputedStyle(document.body).backgroundColor;
-  ctx.fillRect(0, 0, W, H);
-  ctx.strokeStyle = '#ffc';
+  if (!running) return;
+  if ((framecount & 63) === 0) {
+    const elapsed = Date.now() - start_time;
+    info.innerHTML = `${(1000 * framecount / elapsed).toFixed(1)}fps | pts = ${draw_count} / ${N}`;
+  }
+  // ctx.fillStyle = '#fc0';//getComputedStyle(document.body).backgroundColor;
+  ctx.clearRect(0, 0, W, H);
+  ctx.strokeStyle = '#fc0';
   ctx.lineJoin = 'bevel';
-  ctx.lineCap = 'round';
-  ctx.lineWidth = 1.7;
+  ctx.lineWidth = 6;
   ctx.beginPath();
   const q = sensor?.quaternion;
   if (q) {
     let mat = q2mat(q);
     for (let k = 0; k < rp.length; k++) {
-      epi[rp[k]] = mat.rmul(ru[k]).x;
+      const v = smoothstep(.5 + .5 * mat.rmul(ru[k]).x, 0, 1);
+      epi[rp[k]] = mix(epi[rp[k]], v, .5);
       // ctx.strokeRect(540, 20 * k, 540 * q[k], 5);
     }
   }
-  for (let i = 0; i < N; i++) {
-    const t = i * N1;
-    const p = epi.fn(t);
-    p.scale_trans(scale * 0.6, centre);
-    if (i === 0) {
-      ctx.moveTo(p.x, p.y);
-    } else {
-      ctx.lineTo(p.x, p.y);
-    }
-  }
-  ctx.closePath();
+  let path = $G.loop1(N, t => epi.fn(t).scale_trans(scale * .6, centre));
+  path = simplify_RW(path, 1.);
+  draw_path(ctx, path, true);
+  // for (let i = 0; i < N; i++) {
+  //   const t = i * N1;
+  //   const p = epi.fn(t);
+  //   p.scale_trans(scale * 0.6, centre);
+  //   if (i === 0) {
+  //     ctx.moveTo(p.x, p.y);
+  //   } else {
+  //     ctx.lineTo(p.x, p.y);
+  //   }
+  // }
   ctx.stroke();
+  framecount++;
   window.requestAnimationFrame(draw);
 }
 
