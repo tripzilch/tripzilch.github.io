@@ -2,6 +2,8 @@ const container = document.getElementById('container');
 const view = document.getElementById('view');
 const info = document.getElementById('info');
 const PROJ_NAME = /([^\/]+)\/$/.exec(location.pathname)[1];
+const debug = location.hash === '#debug';
+info.hidden = !debug;
 document.title = PROJ_NAME;
 
 function log(s) {
@@ -27,7 +29,7 @@ class Epi5x {
     const rsym = ()=>this.y*(1+RNG()*(3-(this.y/3|0))|0);
     this.h0 = rsym(); this.h1 = rsym(); this.h2 = rsym();
     this.h3 = rsym(); this.h4 = rsym();
-    const rapok = ()=>RNG()<.6?RNG()*1.6/(this.y+2):0;
+    const rapok = ()=> RNG() < .6 ? RNG() * 2.0 / (this.y + 3) : 0;
     this.k0 = rapok(); this.k1 = rapok();
     this.k2 = rapok(); this.k3 = rapok();
     for (let rvar of 'p0,p1,p2,p3,p4,p5,wr6,wr7,wr8,ws,wp,a'.split(',')) {
@@ -42,28 +44,54 @@ class Epi5x {
     this.wf = floor(10 * vmax);    
     console.log(vmax, this.wf);
   }
-  ff(t){
+  ff(t) {
     const rA = cLUT.R(this.f, cLUT.O(this.h0, this.p0, this.p1, this.k0, t), cLUT.O(this.y, this.p2, 1 - this.a * .4, this.k1, t), t);
     const rB = cLUT.R(-this.g, cLUT.O(this.h1, this.p3, this.p4, this.k2, t), cLUT.O(this.y, this.p5, .3 + this.a * .4, this.k3, t), t);
     return rA.add(rB);
   }
-  fn(t){
-    const w = (.3 + .7 * this.ws) * .15 * cLUT.O(this.h2, cLUT.O(this.h3, this.wr6, this.wr7, this.wr8, t), .5, .5, t) ** (2 + 4 * this.wp);
+  fn(t) {
+    const w = (.4 + .6 * this.ws) * .1 * cLUT.O(this.h2, cLUT.O(this.h3, this.wr6, this.wr7, this.wr8, t), .5, .5, t) ** (2 + 4 * this.wp);
     return this.ff(t).add(cLUT.R(this.wf, 0, w, t));
   }
 }
 
+const len2 = (x, y) => (x * x + y * y) ** 0.5;
 function q2mat([X,Y,Z,W]) {
   return new Mat3(1-2*Y*Y-2*Z*Z, 2*X*Y-2*Z*W, 2*X*Z+2*W*Y, 
                   2*X*Y+2*W*Z, 1-2*X*X-2*Z*Z, 2*Y*Z-2*W*X,
                   2*X*Z-2*W*Y, 2*Y*Z+2*W*X, 1-2*X*X-2*Y*Y);
 }
+function ortho_score(vv) {
+  const N = vv.length;
+  let sum = 0;
+  for (let i = 0; i < N - 1; i++) {
+    for (let j = i + 1; j < N; j++) {
+      sum += vv[i].dot(vv[j]) ** 2;
+    }
+  }
+  return sum;
+}
+function good_unitv(N, tries=25) {
+  let best = Infinity, res;
+  for (let i = 0; i < tries; i++) {
+    const test = [...$G.loop(rp.length, () => Vec3.unit_rand())];
+    const score = ortho_score(test);
+    if (score < best) {
+      res = test;
+      best = score;
+    }
+  }
+  return res;
+}
 
 const rp = 'p0,p1,p2,p3,p4,p5,wr6,wr7,wr8'.split(',');
-let epi, ru;
+let epi, ru, rv;
 function init() {
-  epi = new Epi5x(); 
-  ru = [...$G.loop(rp.length, () => Vec3.unit_rand())];
+  epi = new Epi5x();
+  // ru = [...$G.loop(rp.length, () => Vec3.unit_rand())];
+  // rv = [...$G.loop(rp.length, () => Vec3.unit_rand())];
+  ru = good_unitv(rp.length);
+  rv = good_unitv(rp.length);
 }
 init();
 
@@ -115,7 +143,7 @@ function draw() {
   }
   // ctx.fillStyle = '#fc0';//getComputedStyle(document.body).backgroundColor;
   ctx.clearRect(0, 0, W, H);
-  ctx.strokeStyle = '#fc0';
+  ctx.strokeStyle = '#f90';
   ctx.lineJoin = 'bevel';
   ctx.lineWidth = 6;
   ctx.beginPath();
@@ -123,9 +151,14 @@ function draw() {
   if (q) {
     let mat = q2mat(q);
     for (let k = 0; k < rp.length; k++) {
-      const v = smoothstep(.5 + .5 * mat.rmul(ru[k]).x, 0, 1);
-      epi[rp[k]] = mix(epi[rp[k]], v, .5);
-      // ctx.strokeRect(540, 20 * k, 540 * q[k], 5);
+      // const tv = mat.rmul(vec3(0,0,-1))
+      const v = mat.rmul(rv[k]);
+      const val = .5 + .5 * ru[k].dot(v);
+      epi[rp[k]] = mix(epi[rp[k]], val, .5);
+      // epi[rp[k]] = mix(epi[rp[k]], smoothstep(val, 0, 1), .5);
+      if (debug) {
+        ctx.strokeRect(540, 20 * k, 540 * epi[rp[k]], 5);
+      }
     }
   }
   let path = $G.loop1(N, t => epi.fn(t).scale_trans(scale * .6, centre));
