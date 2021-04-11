@@ -17,6 +17,8 @@ h1 {
   text-align: center;
 }
 
+h1 span { background: #000; padding: 4px 8px;}
+
 #words {
   display: block;
   color: #000;
@@ -24,5 +26,6 @@ h1 {
   padding: 18px;
   margin: 36px auto;
   font: bold 18px/36px sans-serif;
+  border: 2px solid black;
 }
 
