@@ -1,0 +1,28 @@
+* { margin: 0; padding: 0; }
+
+body { 
+  background: #222;
+  color: #000; 
+} 
+
+#container {
+  width: 100%;
+}
+
+h1 {
+  display: block;
+  font: bold 24px/48px sans-serif;
+  color: #ddd;   
+  margin: 36px auto;
+  text-align: center;
+}
+
+#words {
+  display: block;
+  color: #000;
+  background: #ddd;
+  padding: 18px;
+  margin: 36px auto;
+  font: bold 18px/36px sans-serif;
+}
+
