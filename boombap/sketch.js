@@ -325,7 +325,7 @@ function draw(now) {
     hhpat4.flat().forEach((v, i) => {
       if (v !== 0) hits.push({
         which: 'chh',
-        offset: groove(i),
+        offset: groove(i) + 0.1 * t16,
         rate: 1, vol: .7
       });
     });
