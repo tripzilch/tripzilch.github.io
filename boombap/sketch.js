@@ -344,8 +344,8 @@ function draw(now) {
 
   // music generation generator function
   function* generate(when, instr) {
-    const swing_mask = RNG() < .2 ? 2 : 1; // 2 = oizo mode
-    const swing = .333 * RNG() / swing_mask;
+    const swing_mask = RNG() < .15 ? 2 : 1; // 2 = oizo mode
+    const swing = RNG() * (swing_mask == 1 ? .333 : .100);
     const groove = i => (i + (i & swing_mask) * swing) * t16;
     const pat2hit = pat => {
 
@@ -378,7 +378,7 @@ function draw(now) {
       });
     });
 
-    for (let bars = 0; ; bars++) {
+    for (let bars = 0; bars < 32; bars++) {
       const start = (bars % 4) * 16 * t16;
       for (let {which, offset, rate, vol} of hits) {
         const o = offset - start;
@@ -387,6 +387,16 @@ function draw(now) {
         }
       }
       when += 16 * t16; yield when;
+    }
+  }
+
+  function* generate_continuously(when, instr) {
+    while (true) {
+      const gvar = generate(when, instr);
+      for (let w of gvar) {
+        when = w;
+        yield w;
+      }
     }
   }
 
@@ -438,7 +448,7 @@ function run() {
       smp_out: mix.input('smp', dB(0))
     }
 
-    const player = generate(audio.currentTime + t16, instr);
+    const player = generate_continuously(audio.currentTime + t16, instr);
     let player_time = player.next().value;
     setInterval(() => {
       const now = audio.currentTime;
