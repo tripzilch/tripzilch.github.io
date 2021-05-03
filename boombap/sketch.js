@@ -1,3 +1,23 @@
+const default_opts = {
+  seed: false,
+  BPM: 89
+};
+
+function hash_opts(defaults={}) {
+  const ifnum = s => { const x = Number(s); return isNaN(x) ? s : x; }
+  const h = decodeURIComponent(location.hash.substring(1));
+  const res = Object.assign({}, defaults);
+  for (const key_value of h.split('&')) {
+    let [k, v] = key_value.split('=');
+    if (v === undefined) { v = true; } 
+    else if (v.includes(',')) { v = v.split(',').map(ifnum); } 
+    else { v = ifnum(v); }
+    res[k] = v;
+  }
+  return res;
+}
+const opts = hash_opts(default_opts);
+
 const view = document.getElementById('view');
 const splash = document.getElementById('splash');
 const credits = document.getElementById('credits');
@@ -142,7 +162,7 @@ function draw(now) {
 
 // ======================================== AUDIO ===================== -
 
-  const BPM = 91; //136.79;
+  const BPM = opts.BPM; //136.79;
   const EPS = 1E-10;
   const t4 = 60 / BPM, t8 = t4 / 2, t16 = t4 / 4;
 
@@ -182,7 +202,11 @@ function draw(now) {
     constructor(dest) {
       this.context = dest.context;
       this.ch = [];
-      this.out = this.master = new GainNode(this.context, {gain: dB(0.0)});
+      this.master = new GainNode(this.context, {gain: dB(0.0)});
+      this.comp = new DynamicsCompressorNode(this.context, {
+        attack: .070, knee: 12, ratio: 4, release: .050, threshold: -12});
+      this.master.connect(this.comp);
+      this.out = this.comp;
       this.out.connect(dest);
     }
     input(name, level=1.0) {
@@ -296,33 +320,57 @@ function draw(now) {
   }
   
   const boombap = (mask = 0) => () => {
-    const k0 = (mask & 1) !== 0 || RNG() < .5;
-    const k1 = (mask & 2) !== 0 || RNG() < .5;
-    return [k0?1:0, 0, k1?1:0, 0, 2, 0, 0, 0];
+    const res = [{}, {}, {}, {},  {}, {}, {}, {}];
+    // basic structure
+    if ((mask & 1) !== 0 || RNG() < .5) res[0].which = 'kick';
+    if ((mask & 2) !== 0 || RNG() < .5) res[2].which = 'kick';
+    res[4].which = 'snare1';
+    if (RNG() < .25) {
+      if (RNG() < .5) {
+        res[6].which = 'kick';
+      } else {
+        res[6].which = 'snare1';
+        if (RNG() < .5) res[4].which = false;
+      }
+    }
+    // add ghost hits
+    for (let r of res) r.ghost = (r.which && RNG() < .5);
+    return res;
   };
   const hats = () => [...$G.loop(4, i => RNG() < .4 + .3 * (i & 1) ? 0 : 1)];
+  const percs = () => [...$G.loop(4, i => RNG() < .35 + .3 * (i & 1) 
+    ? {which: sample(['snap']), vol: .25 + .25 * RNG()} 
+    : {})];
 
   // music generation generator function
   function* generate(when, instr) {
-    const swing = .33, swing_mask = 1;
+    const swing_mask = RNG() < .2 ? 2 : 1; // 2 = oizo mode
+    const swing = .333 * RNG() / swing_mask;
     const groove = i => (i + (i & swing_mask) * swing) * t16;
     const pat2hit = pat => {
 
     }
     const bbpat = gen_8_pattern(boombap(1), boombap(0));
-    console.log(bbpat, t16);
+    // console.log(bbpat, t16);
     const hits = [];
     bbpat.flat().forEach((v, i) => {
-      if (v !== 0) hits.push({
-        which: ['kick', 'snare1'][v - 1],
+      if (v.which) hits.push({
+        which: v.which,
         offset: groove(i),
-        rate: 1, vol: 1
+        rate: v.rate || 1, 
+        vol: v.vol || 1
+      });
+      if (v.ghost) hits.push({
+        which: v.which === 'kick' ? 'kick' : 'snare2',
+        offset: groove(i - 1),
+        rate: (v.rate || 1), 
+        vol: (v.vol || 1) * .25
       });
     });
-    const hhpat = gen_4_pattern(hats);
-    const hhpat4 = [...hhpat, ...hhpat, ...hhpat, ...hhpat];
-    console.log(hhpat);
-    hhpat4.flat().forEach((v, i) => {
+    const hhpat = gen_4_pattern(() => gen_4_pattern(hats).flat());
+    // const hhpat4 = [...hhpat, ...hhpat, ...hhpat, ...hhpat];
+    // console.log(hhpat);
+    hhpat.flat().forEach((v, i) => {
       if (v !== 0) hits.push({
         which: 'chh',
         offset: groove(i) + 0.1 * t16,
@@ -330,24 +378,14 @@ function draw(now) {
       });
     });
 
-    // const pclaps = Env.pattern([0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0], [instr.clap.env(.5), instr.clap.env(.25)], t16, swing);
-    // const pbass = Env.pattern([0,0,1,0, 0,0,2,3, 0,0,1,0, 0,0,0,2], [instr.bass.env(23),instr.bass.env(24),instr.bass.env(25)], t16, swing);
-    // const phats = Env.pattern([2,0,1,0, 2,0,1,2, 2,0,1,0, 2,2,1,2], [instr.hihat.env(),instr.hihat.env(.5)], t16, swing);
     for (let bars = 0; ; bars++) {
       const start = (bars % 4) * 16 * t16;
       for (let {which, offset, rate, vol} of hits) {
         const o = offset - start;
-        // console.log('play', which, o, start, offset);
         if (o >= 0 && o < 16 * t16) {
           play_sample(instr.kit[which], when + o, instr.smp_out, rate, false, vol);
         }
       }
-      // // phats.hit(when + .125 * t16);
-      // play_sample(instr.kit.kick, when +  0 * t16, instr.smp_out);
-      // play_sample(instr.kit.snare1, when +  4 * t16, instr.smp_out);
-      // play_sample(instr.kit.kick, when +  8 * t16, instr.smp_out);
-      // play_sample(instr.kit.snare1, when +  12 * t16, instr.smp_out);
-      // play_sample(instr.kick_smp, when + 15 * t16, instr.smp_out, .7, false, .5);
       when += 16 * t16; yield when;
     }
   }
@@ -431,7 +469,7 @@ function run() {
 } // run
 
 splash.addEventListener('click', run);
-// splash.click();
+splash.click();
 view.addEventListener('click', () => {
   info.style.display = 'block';
 })
