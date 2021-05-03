@@ -469,7 +469,7 @@ function run() {
 } // run
 
 splash.addEventListener('click', run);
-splash.click();
+if (opts.autoclick) splash.click();
 view.addEventListener('click', () => {
   info.style.display = 'block';
 })
