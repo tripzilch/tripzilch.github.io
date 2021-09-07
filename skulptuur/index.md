@@ -16,7 +16,9 @@ First, two different grid sizes are selected. Each grid gets an assigned shape. 
 
 These two grids are then intersected (step 3), meaning only space that is common to both shape grids, remains.
 
-Finally the resulting shape is assigned colour and material, which is uniquely linked to its shape.
+There are 76 032 unique combinations, and thus forms.
+
+Finally the resulting shape is assigned colour and material, which is uniquely linked to its form.
 
 ## Rendering speed
 
