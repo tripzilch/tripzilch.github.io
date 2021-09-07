@@ -91,6 +91,12 @@ drapion (poison/dark)
 - water (tail): +fire +ground +rock -water -grass -dragon 
 - dark (crunch): +ghost +psychic -dark -fight -fairy
 
+whiscash (water/ground)
+- vuln: *GRASS*
+- resist: fire electric poison rock steel
+- Ground (Mud): +electric +fire +poison +rock +steel -FLYING -grass -bug
+- Ice (Blizzard): +dragon +flying +grass +ground -fire -ice -steel -water 
+
 haunter (ghost/poison)
 - vuln: dark ghost ground psychic
 - resist: POISON BUG NORMAL fairy *FIGHT* grass
@@ -122,7 +128,6 @@ medichamp (fight/psych)
 - ice (punch): +dragon +fly +grass +ground -fire -ice -steel -water
 - psychic: +fight +poison -psychic -steel -DARK
 
-
 alolan raichu (electr/psychic)
 - vuln: bug dark ghost ground
 - resist: electr fight fly psychic steel
@@ -148,7 +153,6 @@ azumarill (fairy/water)
 - fairy (play rough): +fight +dragon +dark -fire -poison -steel
 - ice (beam): +dragon +fly +grass +ground -fire -ice -steel -water
 
-
 skarmory
 - vuln: fire electric
 - resist: BUG GRASS POISON dragon fairy flying ground normal psychic steel
@@ -170,12 +174,6 @@ umbreon (dark)
 - vuln: fighting bug fairy
 - resist: psychic ghost dark
 - dark: (foul play): +ghost +psychic -dark -fighting -fairy
-
-whiscash (water/ground)
-- vuln: *GRASS*
-- resist: fire electric poison rock steel
-- Ground (Mud): +electric +fire +poison +rock +steel -FLYING -grass -bug
-- Ice (Blizzard): +dragon +flying +grass +ground -fire -ice -steel -water 
 
 obstagoon (dark/normal)
 - vuln: bug fairy fight
@@ -210,11 +208,29 @@ cloyster
 - resist: ICE water
 - ice: +dragon +flying +grass +ground -fire -ice -steel -water
 
+typhlosion (fire)
+- vuln: ground rock water
+- resist: bug fairy fire grass ice steel
+- ghost (claw): +psychic +ghost -dark -NORMAL
+- fire (blast): +grass +ice +bug +steel -fire -water -rock -dragon
+- grass (beam): +ground +rock +water -bug -dragon -fire -fly -grass -poison -steel
+
 Sirfetch'd
 - vuln: fairy flying psychic
 - resist: bug dark rock
 - fight: +dark +ice +normal +rock +steel -bug -fairy -flying -poison -psychic 
 - grass: +ground +rock +water -bug -dragon -fire -fly -grass -poison -steel
+
+gengar (ghost/poison)
+- vuln: dark ghost ground psychic
+- resist: *FIGHT* NORMAL POISON BUG fairy grass
+- ghost (claw, punch, ball): +psychic +ghost -dark -NORMAL
+
+snorlax
+- vuln: fighting
+- resist: ghost
+- ghost (lick): -NORMAL +psychic -dark +ghost
+- normal (body slam): -rock -steel -GHOST
 
 escavalier (bug/steel)
 - vuln: fire
@@ -236,22 +252,12 @@ clefable
 - steel (meteor): +ice +rock +fairy -fire -water -electr -steel
 - psychic: +fight +poison -psychic -steel -DARK
 
-gengar (ghost/poison)
-- vuln: dark ghost ground psychic
-- resist: *FIGHT* NORMAL POISON BUG fairy grass
-- ghost (claw, punch, ball): +psychic +ghost -dark -NORMAL
-
 gyarados
 - vuln: ELECTRIC rock
 - resist: fire water fighting GROUND bug steel
 - Dragon (D.Breath, Outrage): +dragon -steel -FAIRY
 - Dark (Crunch): +ghost +psychic -dark -fighting -fairy
 
-snorlax
-- vuln: fighting
-- resist: ghost
-- ghost (lick): -NORMAL +psychic -dark +ghost
-- normal (body slam): -rock -steel -GHOST
 
 hariyama
 - vuln: fairy flying psychic
