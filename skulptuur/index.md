@@ -1,6 +1,6 @@
 # Skulptuur
 
-An exploration in generating forms in 3-dimensional space. This exclusive set of sculptures has been carved from a sea of infinite possibilities, much like a sculptor creates a singular reality from the potential in a block of stone. The shapes are illuminated by a variety of complex virtual lighting environments and yet the piece retains algorithmic minimalism with the code reduced to its pure essence -- **seven thousand bytes**.
+An exploration in generating forms in 3-dimensional space. This exclusive set of sculptures has been carved from a sea of infinite possibilities, much like a sculptor creates a singular reality from the potential in a block of stone. The shapes are illuminated by a variety of complex virtual lighting environments and yet the piece retains algorithmic minimalism with the code reduced to its pure essence -- **6370 bytes**.
 
 ![Skulptuur code](code-wrong.png)
 *The entirety of Skulptuur's code*
@@ -16,7 +16,7 @@ First, two different grid sizes are selected. Each grid gets an assigned shape. 
 
 These two grids are then intersected (step 3), meaning only space that is common to both shape grids, remains.
 
-There are 76 032 unique combinations, and thus forms.
+There are many unique combinations, and thus forms.
 
 Finally the resulting shape is assigned colour and material, which is uniquely linked to its form.
 
@@ -36,6 +36,10 @@ In the current version of Safari, it is possible to enable WebGL2 by first enabl
 
 ## Tiled rendering
 
-(to be implemented)
+I have a feature in my AB script that I call "tiled rendering". It allows you to render the image at high resolution without overloading the GPU. You specify it by appending #M;N to the script URL, where M is the number of tiles (an MxM grid), and N is the resolution multiplication factor.
+
+For instance, if you'd append #3;4 to the URL, you'll get a 3x3 grid of tiles (which will render in sequence, one per frame to limit the GPU load) but at 4x the resolution.
+
+## X
 
 Splinters of wood from the shipyard were collected downstream to make boats that are not boats. A fleeting war. Only common ground remained, unrecognizable, and majestic.
