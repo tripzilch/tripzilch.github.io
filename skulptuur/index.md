@@ -2,7 +2,7 @@
 
 An exploration in generating forms in 3-dimensional space. This exclusive set of sculptures has been carved from a sea of infinite possibilities, much like a sculptor creates a singular reality from the potential in a block of stone. The shapes are illuminated by a variety of complex virtual lighting environments and yet the piece retains algorithmic minimalism with the code reduced to its pure essence -- **6370 bytes**.
 
-![Skulptuur code](code-wrong.png)
+![Skulptuur code](code-final.png)
 *The entirety of Skulptuur's code*
 
 Let that sink in for a while. You don't need to understand the code, but this -- less than half a page of symbols -- can produce this incredible variety of unique and beautiful highly photo realistic images.
