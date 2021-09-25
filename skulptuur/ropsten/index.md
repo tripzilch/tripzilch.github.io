@@ -1,3 +1,5 @@
+<style>* { background: #000; } </style>
+
 # Skulptuur — Ropsten test mints
 
 [Skulptuur main page](/skulptuur)
