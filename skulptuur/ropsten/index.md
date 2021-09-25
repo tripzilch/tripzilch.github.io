@@ -1,4 +1,4 @@
-<style>body { background: #000; } </style>
+<style>body { background: #000; } section { background: #444; } img { box-shadow: none; } </style>
 
 # Skulptuur — Ropsten test mints
 
