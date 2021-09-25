@@ -1,5 +1,11 @@
 # Skulptuur — Ropsten test mints
 
+[Skulptuur main page](/skulptuur)
+
+These are the (public) Ropsten test mints for Skulptuur. I have released them in order starting from 0, in order to demonstrate no cherry picking.
+
+These images are intended as preview only for the upcoming Art Blocks release. None of these are real. Any resemblance to existing sculptures, real or fictional, is purely coincidental. May contain traces of shell characters.
+
 ## Ropsten 0
 
 ![Ropsten 0](ropsten-0.jpg)
