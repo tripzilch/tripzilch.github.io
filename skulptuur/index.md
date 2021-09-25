@@ -7,7 +7,11 @@ An exploration in generating forms in 3-dimensional space. This exclusive set of
 
 Let that sink in for a while. You don't need to understand the code, but this -- less than half a page of symbols -- can produce this incredible variety of unique and beautiful highly photo realistic images.
 
+[check out the Ropsten test mints](ropsten)
+
 ## Q & A
+
+In this article I talk about my background, inspiration for this project, the demoscene, and other stuff:
 
 [In Conversation with Piter Pasma](https://beta.cent.co/artblocks/+13ycwt)
 
