@@ -18,6 +18,8 @@ On 27th September 2021 he released [Skulptuur](skulptuur), a generative art proj
 
 In November 2021 he published [Dot Produkt](https://www.fxhash.xyz/generative/549) and [Hypergiraffe](https://www.fxhash.xyz/generative/1291) on the FX(hash) platform.
 
+Februari 2022: [Some of Piter Pasma's pieces on Versum](https://versum.xyz/user/tz1Kw8cEFuNLj21e5b42NBn1ANW7hupmbDbo), including a generative poetry piece named [I AM YOU](https://versum.xyz/token/versum/11489).
+
 ## articles
 
 [Visual depth cues](articles/depth-cues)
@@ -29,16 +31,4 @@ In November 2021 he published [Dot Produkt](https://www.fxhash.xyz/generative/54
 [How to make interesting rotating things](articles/rotating)
 
 (unfinished) [How to make sinusoid wobbly functions](articles/wobbly)
-
-## 4 kilobyte demos
-
-[Meuk](http://www.pouet.net/prod.php?which=343) ([video capture](https://vimeo.com/207039658)). Mekka & Symposium 2000, second place. Just wanted to mention, I also built the music/audio synthesis routines from scratch, a soft synth in about 1100 bytes :D
-
-[Never Bored](http://www.pouet.net/prod.php?which=291) ([video capture](https://www.youtube.com/watch?v=gv-gHBz4hgw)). Takeover 1999, second place.
-
-[Organic](http://www.pouet.net/prod.php?which=332). Ambience 1999, first place.
-
-[Design?!](http://www.pouet.net/prod.php?which=333). Bizarre 1998, second place.
-
-Dutch tech web magazine Tweakers also wrote a cool article about the demoscene, also featuring me: [Duitsland erkent demoscene als cultureel erfgoed waaronder kunst van Nederlander](https://tweakers.net/geek/179762/duitsland-erkent-demoscene-als-cultureel-erfgoed-waaronder-kunst-van-nederlander.html).
 

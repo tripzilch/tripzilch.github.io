@@ -44,7 +44,7 @@ Second place in the Takeover 1999 4KB competition. [Watch on YouTube](https://ww
 
 ### Meuk
 
-Second place in the Mekka & Symposium 2000 4KB competition. [Watch on YouTube](https://www.youtube.com/watch?v=DYopuMRVN6Q).
+Second place in the Mekka & Symposium 2000 4KB competition. [Watch on YouTube](https://www.youtube.com/watch?v=DYopuMRVN6Q). [Watch on Vimeo (HQ)](https://vimeo.com/207039658).
 
 This is my most complex 4KB demo yet, featuring a hand written software synthesizer in about 1100 bytes, as opposed to using the AdLib chip as in my previous demos.
 
