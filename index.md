@@ -6,9 +6,13 @@
 
 Piter Pasma is a generative artist, expressing himself through experiments with code and complexity. Inspired by randomness as an inspirational and creative force. Among the space of algorithms are buried gems in carefully tuned black boxes, concrete trap doors leading to unexpected dungeon forests, only seen when you open them a thousand times, sideways. 
 
-He was lead organizer of [Genuary 2021](https://genuary2021.github.io/), generative art month, during which artists create daily pieces according to 31 carefully selected prompts.
+Starting as a demoscener in 1998, he wrote four prize-winning 4 kilobyte demos (non-interactive real-time size-constrained audio-visuals). [Read more about my demoscene productions](demoscene)
 
-Starting as a [demoscener](https://demozoo.org/sceners/17360/) in 1998, he wrote four prize-winning 4 kilobyte demos (non-interactive real-time size-constrained audio-visuals). Since then he has been honing his creative coding skills, and recently has been exploring the challenges of realising his works physically by means of a robot plotter.
+
+Since then he has been honing his creative coding skills. 
+
+He was lead organizer of [Genuary 2021](https://genuary2021.github.io/) and [Genuary 2022](https://genuary.art), generative art month, during which artists create daily pieces according to 31 carefully selected prompts. You can find many of these pieces by searching for #genuary/#genuary2021/#genuary2022 on social media (Twitter, Instagram). An open gallery of artist-submitted pieces from 2021 can be viewed at [symbiocene.gallery/genuary2021](https://www.symbiocene.gallery/genuary2021).
+
 
 ## articles
 
