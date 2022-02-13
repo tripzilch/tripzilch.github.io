@@ -2,6 +2,8 @@
 
 Here's a very complete list of all my productions: [Ritz on Demozoo.org](https://demozoo.org/sceners/17360/). Also has links for download in case you want to try and run the demos yourself. You probably want to use the [DOSBox emulator](https://www.dosbox.com/).
 
+Dutch tech web magazine *Tweakers* wrote a cool article about the demoscene, also featuring me: [Duitsland erkent demoscene als cultureel erfgoed waaronder kunst van Nederlander](https://tweakers.net/geek/179762/duitsland-erkent-demoscene-als-cultureel-erfgoed-waaronder-kunst-van-nederlander.html).
+
 ## 4KB demos
 
 A 4KB demo is a computer program whose executable is no larger than 4096 bytes. I wrote all my 4KB demos in 80x86 assembly.
@@ -67,14 +69,13 @@ A BBS is something of pre-internet days, similar to a webserver, except you lite
 *New Line BBS, BBStro, 1998*
 
 ![bodycount-1](img/demoscene/bodycount-1.png)
-![bodycount-2](img/demoscene/bodycount-2.png)
 *Body Count BBS, BBStro, 1998*
 
 ![legalized](img/demoscene/legalized.png)
 *Legalized BBS, BBStro, 1998*
 
 ![first-degree](img/demoscene/first-degree.png)
-*The First Degree BBS, BBStro, Dec 1998*
+*The First Degree BBS (code), BBStro, Dec 1998*
 
 ![faith2k-1](img/demoscene/faith2k-1.png)
 ![faith2k-2](img/demoscene/faith2k-2.gif)
