@@ -68,6 +68,10 @@ img {
   box-shadow: #a88 0.25em 0.25em 0.5em;
 }
 
+p.inline img {
+  display: inline;
+}
+
 img + em {
   display: block;
   font-size: 0.75em;  

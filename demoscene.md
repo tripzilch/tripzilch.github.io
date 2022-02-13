@@ -16,6 +16,7 @@ A 4KB demo is a computer program whose executable is no larger than 4096 bytes. 
 ![design-4](img/demoscene/design-4.png)
 ![design-5](img/demoscene/design-5.png)
 ![design-6](img/demoscene/design-6.png)
+{:.inline}
 
 Second place in the Bizarre 1998 4KB competition.
 
@@ -28,6 +29,7 @@ First place in the Ambience 1999 4KB competition.
 ![organic-1](img/demoscene/organic-1.png)
 ![organic-2](img/demoscene/organic-2.png)
 ![organic-2](img/demoscene/ikamb99.jpg)
+{:.inline}
 
 ### Never Bored
 
@@ -38,6 +40,7 @@ Second place in the Takeover 1999 4KB competition. [Watch on YouTube](https://ww
 ![neverbored-3](img/demoscene/neverbored-3.png)
 ![neverbored-4](img/demoscene/neverbored-4.png)
 ![neverbored-5](img/demoscene/neverbored-5.png)
+{:.inline}
 
 ### Meuk
 
@@ -49,6 +52,7 @@ This is my most complex 4KB demo yet, featuring a hand written software synthesi
 ![meuk-2](img/demoscene/meuk-2.png)
 ![meuk-3](img/demoscene/meuk-3.png)
 ![meuk-4](img/demoscene/meuk-4.png)
+{:.inline}
 
 ### Other productions
 
@@ -63,10 +67,12 @@ A BBS is something of pre-internet days, similar to a webserver, except you lite
 ![dark-illusion-2-1](img/demoscene/dark-illusion-2-1.png)
 ![dark-illusion-2-2](img/demoscene/dark-illusion-2-2.png)
 *Dark Illusion BBS, BBStro, 1998*
+{:.inline}
 
 ![newline-1](img/demoscene/newline-1.png)
 ![newline-2](img/demoscene/newline-2.png)
 *New Line BBS, BBStro, 1998*
+{:.inline}
 
 ![bodycount-1](img/demoscene/bodycount-1.png)
 *Body Count BBS, BBStro, 1998*
@@ -80,6 +86,7 @@ A BBS is something of pre-internet days, similar to a webserver, except you lite
 ![faith2k-1](img/demoscene/faith2k-1.png)
 ![faith2k-2](img/demoscene/faith2k-2.gif)
 *Faith2000 Cracktro, Cracktro, 1999*
+{:.inline}
 
 ![monkey-bar](img/demoscene/monkey-bar.png)
 *The Monkey Bar BBS, BBStro, Dec 1999*
@@ -88,11 +95,13 @@ A BBS is something of pre-internet days, similar to a webserver, except you lite
 ![wilby4-2](img/demoscene/wilby4-2.png)
 ![wilby4-3](img/demoscene/wilby4-3.png)
 *Wilby #4, Diskmag (code/interface), Jan 2000*
+{:.inline}
 
 ![wilby5-1](img/demoscene/wilby5-1.png)
 ![wilby5-2](img/demoscene/wilby5-2.png)
 ![wilby5-3](img/demoscene/wilby5-3.png)
 *Wilby #5, Diskmag (code/interface), Mar 2000*
+{:.inline}
 
 <!--
 Holy crap, I just found out about a Demoscene archive that actually has all of my old productions on it. Even my old stuff that I made for a few BBSes, before I started releasing 4k demos at demoparties. This is ancient stuff, from 1998-2001 :-) I honestly thought some of these were lost to time.
