@@ -25,9 +25,11 @@ First place in the Ambience 1999 4KB competition.
 
 ![organic-1](img/demoscene/organic-1.png)
 ![organic-2](img/demoscene/organic-2.png)
-![organic-2](img/demoscene/ikamb99.png)
+![organic-2](img/demoscene/ikamb99.jpg)
 
 ### Never Bored
+
+Second place in the Takeover 1999 4KB competition. [Watch on YouTube](https://www.youtube.com/watch?v=gv-gHBz4hgw).
 
 ![neverbored-1](img/demoscene/neverbored-1.png)
 ![neverbored-2](img/demoscene/neverbored-2.png)
@@ -35,20 +37,16 @@ First place in the Ambience 1999 4KB competition.
 ![neverbored-4](img/demoscene/neverbored-4.png)
 ![neverbored-5](img/demoscene/neverbored-5.png)
 
-Second place in the Takeover 1999 4KB competition.
-
-[Watch on YouTube](https://www.youtube.com/watch?v=gv-gHBz4hgw)
-
 ### Meuk
+
+Second place in the Mekka & Symposium 2000 4KB competition. [Watch on YouTube](https://www.youtube.com/watch?v=DYopuMRVN6Q).
+
+This is my most complex 4KB demo yet, featuring a hand written software synthesizer in about 1100 bytes, as opposed to using the AdLib chip as in my previous demos.
 
 ![meuk-1](img/demoscene/meuk-1.png)
 ![meuk-2](img/demoscene/meuk-2.png)
 ![meuk-3](img/demoscene/meuk-3.png)
 ![meuk-4](img/demoscene/meuk-4.png)
-
-Second place in the Mekka & Symposium 2000 4KB competition.
-
-This is my most complex 4KB demo yet, featuring a hand written software synthesizer in about 1100 bytes, as opposed to using the AdLib chip as in my previous demos.
 
 ### Other productions
 
