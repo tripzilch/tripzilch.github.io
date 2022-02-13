@@ -14,7 +14,7 @@ He has been lead organizer of [Genuary 2021](https://genuary2021.github.io/) and
 
 In March 2021 he started releasing his art on the Hic Et Nunc platform, which you can find [here](https://objkt.com/profile/tz1Kw8cEFuNLj21e5b42NBn1ANW7hupmbDbo/created?fa2=KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton). Later that year he also released several pieces on [Foundation](https://foundation.app/@piterpasma?tab=created).
 
-On 27th September 2021 he released [Skulptuur](skulptuur), a generative art project on the [Art Blocks](https://artblocks.io) platform. It consists of 6370 characters of Javascript and GLSL, and produced an incredible variety of highly photorealistic scenes of otherwordly sculptures, in a series of 1000. Check out the full series on [Masterpiece.so](https://masterpiece.so/artwork/302948-skulptuur). [Read more about Skulptuur](skulptuur).
+On 27th September 2021 he released [Skulptuur](skulptuur), a generative art project on the [Art Blocks](https://artblocks.io) platform. It consists of 6370 characters of Javascript and GLSL, and produced an incredible variety of highly photorealistic scenes of otherwordly sculptures, in a series of 1000. Check out the full series on [Masterpiece.so](https://masterpiece.so/artwork/302948-skulptuur). Click to [read more about Skulptuur](skulptuur).
 
 In November 2021 he published [Dot Produkt](https://www.fxhash.xyz/generative/549) and [Hypergiraffe](https://www.fxhash.xyz/generative/1291) on the FX(hash) platform.
 
