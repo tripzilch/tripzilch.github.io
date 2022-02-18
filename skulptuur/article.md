@@ -19,11 +19,17 @@ algorithmic sculpture 1
 
 many example pictures
 
+shapes and colours
+
+gold rarity
+
 ## renderer improvements
 
 exposure function (up to 11!)
 
 round edges
+
+Fresnel reflection coeff
 
 circular focus blur
 
