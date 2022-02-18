@@ -31,13 +31,13 @@ circular focus blur
 
 about environments, they are both the light source and the background. 
 
-catalog
+### catalog
 
-shadows
+### shadows
   - city
   - foliage
 
-clouds
+### clouds
   - solid clouds
   - not solid clouds
 
@@ -67,7 +67,7 @@ shadow/city environment can have different skyline on different GPUs
 
 ## unknown bugs
 
-Certain configurations of reflective surfaces may obtain sentience -- make sure to keep offline.
+Certain configurations of reflective surfaces may obtain sentience -- do not engage, make sure to keep offline.
 
-I'm not so certain about Math itself. There's this axiom of choice thing that is highly suspect.
+I'm not so certain about Math itself. There's this *Axiom of Choice* thing that is highly suspect.
 
