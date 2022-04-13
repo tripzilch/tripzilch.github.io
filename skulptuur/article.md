@@ -67,7 +67,11 @@ shapes and colours
 
 gold rarity
 
-## renderer improvements
+## renderer 
+
+shortly explain MC pathtracing
+
+### improvements
 
 compare to doc/Rinkeby0
 
