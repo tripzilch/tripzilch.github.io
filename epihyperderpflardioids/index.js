@@ -23,8 +23,7 @@ info.hidden=!opts.fps;
 
 S=Uint32Array.from([9,7,n=t=5,3]);
 R=(a=1)=>a*(t=S[3],S[3]=S[2],S[2]=S[1],S[1]=n=S[0],t^=t<<11,S[0]^=(t^t>>>8)^(n>>>19),S[0]/2**32);
-[...fxhash].map(c=>R(S[3]^=c.charCodeAt()));
-// [...'Willekeurig Zaad'].map(c=>R(S[3]^=c.charCodeAt()));
+[...Date.now()+'Kallisti'].map(c=>R(S[3]^=c.charCodeAt()*23205));
 ({min,max,PI}=Math);TAU=PI*2;
 L=(N,f)=>[...Array(N)].map((_,i)=>f(i));
 L(9,R);
