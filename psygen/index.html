@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>MAKE BLEEPY</title>
+  <style>
+    * { margin: 0; padding: 0; }
+    body {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      background: #012;
+      font: 16px/24px sans-serif;
+      padding: 0px 8px;
+      height: 100vh;
+    }
+    #main {
+      display: flex;
+      flex-flow: column;
+      width: 640px;
+      height: 640px;
+      margin: 8px 0 32px 0;
+      background: #012;
+      border-radius: 4px;
+    }
+
+    nav, #display, h1 {
+      display: flex;
+      flex-flow: row wrap;
+      background: #234;
+      border-radius: 4px;
+      padding: 4px;
+      margin: 4px;
+    }
+    #display { 
+      padding: 0; 
+    }
+    .spacer {
+      flex: auto;
+    }
+    h1 {
+      flex-flow: row-reverse;
+      padding-right: 72px;
+      color: #567;
+      /*background: #012;*/
+      font: bold 28px/48px sans-serif;
+      letter-spacing: 4px;
+      text-shadow: 0px -2px 0 #102
+      ,            0px -4px 0 #567
+      ,            0px -6px 0 #102
+      ,            0px -8px 0 #567
+      ,            0px  2px 0 #102
+      ,            0px  4px 0 #567
+      ,            0px  6px 0 #102
+      ,            0px  8px 0 #567;
+    }
+    h1 em { color: #689; font-style: normal;}
+
+    nav a {
+      display: flex;
+      box-sizing: border-box;
+      background: #fe8;
+      color: #567;
+      width: 48px;
+      height: 48px;
+      border-radius: 4px;
+      margin: 8px;
+    }
+    nav a:hover {
+      color: #456;
+      padding-top: 4px;
+      border-bottom: 4px solid #dc6;
+    }
+    nav a:active {
+      color: #689;
+      padding-top: 3px;
+      border-bottom: 2px solid #ba4;
+      border-top: 1px solid #567;
+    }
+    nav a svg {
+      width: 24px;
+      height: 24px;
+      margin: auto;
+    }
+    nav.paused #pause { display: none; }
+    nav.playing #play { display: none; }
+
+  </style>
+  <script src="util.js"></script>
+  <script src="vec2.js"></script>
+</head>
+<body>
+  <div id="main">
+    <nav class="paused">
+      <a id="play"><svg viewBox="0 0 32 32" fill="currentcolor"><path d="M4 4 L28 16 L4 28 z"></path></svg></a>
+      <a id="pause"><svg viewBox="0 0 32 32" fill="currentcolor"><path d="M4 4 H12 V28 H4 z M20 4 H28 V28 H20 z"></path></svg></a>
+      <div class="spacer"></div>
+      <h1>♫ <em>BLEEPY MAKE</em> ♪</h1>
+    </nav>
+    <canvas id="display" class="spacer" moz-opaque></canvas>
+  </div>
+  <script src="web-audio.js"></script>
+</body>
+</html>
