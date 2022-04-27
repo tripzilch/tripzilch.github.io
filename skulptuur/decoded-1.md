@@ -1,12 +1,12 @@
 # Skulptuur Decoded Part 1 -- The PRNG
 
-## intro
+## Introduction
 
 This is going to be a series where I will take apart and explain the source code of Skulptuur. It will have many parts and take a very long time before it is finished, probably.
 
 The first part is about the first line of the code, which is the tiny PRNG that I use, and shared with the Art Blocks community. It explains how every part works, and what steps I took to make it tiny.
 
-## what code are we going to look at?
+## What code are we going to look at?
 
 The first part of Skulptuur's code is the PRNG:
 
@@ -16,7 +16,7 @@ S=Uint32Array.from([0,1,s=t=2,3].map(i=>parseInt(tokenData.hash.substr(i*8+5,8),
 
 It consists of two statements, separated by semicolons.
 
-## first statement: seeding the PRNG
+## First statement: seeding the PRNG
 
 ```
 S=Uint32Array.from([0,1,s=t=2,3].map(i=>parseInt(tokenData.hash.substr(i*8+5,8),16)));
@@ -48,7 +48,7 @@ This explains the number 5 in the `substr` index. It needs to be at least 2, in 
 
 The end result of this part is that we have the global PRNG state `S` as a Float32Array of four elements, initialized with random numbers from the hash, seeding our PRNG. It also declares the variables `s` and `t` into the global scope.
 
-## second statement: the PRNG function
+## Second statement: the PRNG function
 
 The second statement is the PRNG itself, this a function that returns a new pseudo-random number every time it is called.
 
@@ -72,7 +72,7 @@ With this knowledge look again at the complicated bit, you'll find that it's mad
 
 Because `S[0]` is a 32-bit unsigned integer, if you divide it by `2**32` (two to the power thirty-two, or about 4 billion), you end up with a number between 0 and 1. It can never be equal to 1, because the maximum 32-bit unsigned integer value is `2**32-1`, so one less. This is our random number, which then gets multiplied by `a`, to be able to scale it.
 
-## what does the complicated bit actually do?
+## What does the complicated bit actually do?
 
 The complicated bit implements a [Xorshift128](https://en.wikipedia.org/wiki/Xorshift) PRNG. The algorithm was invented by George Marsalia and adapted from sample code of the `xor128` algorithm in ["Xorshift RNGs" by George Marsalia (2003), p. 5](https://doi.org/10.18637%2Fjss.v008.i14). The original sample code was in C, but looks like this when adapted to Javascript:
 
@@ -126,7 +126,7 @@ So this expression updates the PRNG state and returns `S[0]`, all we need to do 
 R=(a=1)=>a*(t=S[3],S[3]=S[2],S[2]=S[1],S[1]=s=S[0],t^=t<<11,S[0]^=(t^t>>>8)^(s>>>19),S[0]/2**32);
 ```
 
-## more optimizations
+## More optimizations
 
 Thanks to [Stranger in the Q](https://twitter.com/stranger_intheq/), who came to me with some more tricks, after the release of Skulptuur.
 
