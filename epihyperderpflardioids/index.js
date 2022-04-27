@@ -19,7 +19,7 @@ function hash_opts(defaults={}) {
   return res;
 }
 const opts = hash_opts(default_opts);
-info.hidden=!opts.fps;
+//info.hidden=!opts.fps;
 
 S=Uint32Array.from([9,7,n=t=5,3]);
 R=(a=1)=>a*(t=S[3],S[3]=S[2],S[2]=S[1],S[1]=n=S[0],t^=t<<11,S[0]^=(t^t>>>8)^(n>>>19),S[0]/2**32);
@@ -209,7 +209,7 @@ gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
   frame_count++;
   let dt = time - prev_time;
   fps = fps * 0.9 + (1000/dt)*0.1;
-  info.innerHTML = fps.toFixed(1)+'fps';
+  //info.innerHTML = fps.toFixed(1)+'fps';
   prev_time = time;
   requestAnimationFrame(render);
 }
