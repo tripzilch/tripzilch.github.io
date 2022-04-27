@@ -4,6 +4,8 @@
 
 This is going to be a series where I will take apart and explain the source code of Skulptuur. It will have many parts and take a very long time before it is finished, probably.
 
+The first part is about the first line of the code, which is the tiny PRNG that I use, and shared with the Art Blocks community. It explains how every part works, and what steps I took to make it tiny.
+
 ## what code are we going to look at?
 
 The first part of Skulptuur's code is the PRNG:
