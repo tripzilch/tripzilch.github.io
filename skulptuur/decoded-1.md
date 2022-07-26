@@ -126,7 +126,7 @@ So this expression updates the PRNG state and returns `S[0]`, all we need to do 
 R=(a=1)=>a*(t=S[3],S[3]=S[2],S[2]=S[1],S[1]=s=S[0],t^=t<<11,S[0]^=(t^t>>>8)^(s>>>19),S[0]/2**32);
 ```
 
-## More optimizations
+<!-- ## More optimizations
 
 Thanks to [Stranger in the Q](https://twitter.com/stranger_intheq/), who came to me with some more tricks, after the release of Skulptuur.
 
@@ -140,5 +140,5 @@ Now the final assignment to `S[0]` of course evaluates to the new value of `S[0]
 
 ```
 R=(a=1)=>(t=S[3],S[3]=S[2],S[2]=S[1],S[1]=s=S[0],t^=t<<11,S[0]^=(t^t>>>8)^(s>>>19))*a/2**32;
-```
+``` -->
 
