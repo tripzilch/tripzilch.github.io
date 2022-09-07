@@ -22,6 +22,8 @@ Februari 2022: [Some of Piter Pasma's pieces on Versum](https://versum.xyz/user/
 
 ## articles
 
+[Measure the line width of your pens with a plotter](articles/line-test)
+
 [Visual depth cues](articles/depth-cues)
 
 [How did I do make the thing?](articles/oppy1)
