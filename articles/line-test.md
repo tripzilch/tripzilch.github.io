@@ -13,7 +13,7 @@ The idea is that you have this bunch of lines going outwards. On the left side t
 
 Now you can measure the distance at which the thick lines actually no longer touch each other. You divide this distance by 10 (or change the cm to mm) and you get the line width. Easy as that!
 
-The SVG actually plots a set of 5 lines twice. In the one set it goes over each line once, and in the other it draws every line and then also back. This is to see how much difference it makes going over a line once or twice.
+The SVG actually plots a set of lines twice. In the one set it goes over each line once, and in the other it draws every line and then also back. This is to see how much difference it makes going over a line once or twice.
 
 Hope that makes sense :-)
 
