@@ -9,11 +9,11 @@ Download the file here: [line-test.svg](line-test.svg)
 
 ## How does it work?
 
-The idea is that you have this bunch of lines going outwards. On the left side they are 0mm apart, and on the right side they are 5mm apart. They do this over a distance of 5cm (50mm). This means that for every cm (10mm) they move 1mm further apart.
+The idea is that you have this bunch of lines going outwards. On the left side they are 0mm apart, and on the right side they are 5mm apart. They do this over a distance of 5cm (50mm). This means that for every 1cm (10mm) they move 1mm further apart.
 
 Now you can measure the distance at which the thick lines actually no longer touch each other. You divide this distance by 10 (or change the cm to mm) and you get the line width. Easy as that!
 
-This SVG actually contains two sets lines. In the one set it goes over each line once, and in the other it draws every line and then also back. This is to see how much difference it makes going over a line once or twice.
+This SVG actually contains two sets of lines. In the one set it goes over each line once, and in the other it draws every line and then also back. This is to see how much difference it makes going over a line once or twice.
 
 Hope that makes sense :-)
 
