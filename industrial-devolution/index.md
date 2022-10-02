@@ -4,26 +4,30 @@ As I had recently bought a plotter, I had mainly been focusing on vector based S
 
 However, I also had been desiring to play with 3D SDFs and raymarching again. An SDF is a mathematical function that describes shapes, in a way that is particularly suited to raymarching. Raymarching is a technique used for raytracing, which is a technique to simulate light bouncing off these 3D shapes, resulting in a picture. Unfortunately, these techniques are mostly aimed at pixel-based rendering, so I had to get clever.
 
+In these first two pieces I use a raster-based scribbling approach to generate scribbles of varying size, creating varying levels of brightness.
+
 ![First vector based raymarcher output (October 2020)](s/ramen-2020-10-16-23-36-25-s3240-s.jpg)
 *First vector based raymarcher output (October 2020)*
 
 ![Second vector based raymarcher output (October 2020)](s/ramen-2020-10-17-15-21-16-s3240-s.jpg)
 *Second vector based raymarcher output (October 2020)*
 
-In these first two pieces I use a raster-based scribbling approach to generate scribbles of varying size, creating varying levels of brightness.
+In this piece I use a very fine Hilbert curve, that gets progressively smoothed to create varying levels of brightness. This piece consists of a single line and could thus be plotted with relative ease (it still took a while).
 
 ![Aftermarket Planetary Recyclotron (October 2020)](s/ramen-2020-10-18-17-36-38-s3240-s.jpg)
 *Aftermarket Planetary Recyclotron (October 2020)*
 
-In this piece I use a very fine Hilbert curve, that gets progressively smoothed to create varying levels of brightness. This piece consists of a single line and could thus be plotted with relative ease (it still took a while).
+Trying to find a way to render a raymarched scene with a shorter plotting time, I tried a different scribbling based approach.
 
 ![Nyarlathotep Road (October 2020)](s/ramen2-2020-10-21-13-52-33-s3240-s.jpg)
 *Nyarlathotep Road (October 2020)*
 
+While this reduced the plotting time somewhat, I was also not really satisfied with the lack of sharp detail in the picture.
+
 ![Untitled (October 2020)](s/ramen5-2020-10-30-14-53-37-s3240-s.jpg)
 *Untitled (October 2020)*
 
-Trying to find a way to render a raymarched scene with a shorter plotting time, I tried a different scribbling based approach. While this reduced the plotting time somewhat, I was also not really satisfied with the lack of sharp detail in the picture.
+I knew that 3D SDFs and raymarching were capable of much finer detail.
 
 ![Possible Dune (October 2020)](s/ramen3-2020-10-23-23-51-10-s3240-s.jpg)
 *Possible Dune (October 2020)*
@@ -31,17 +35,15 @@ Trying to find a way to render a raymarched scene with a shorter plotting time, 
 ![Impossible Dune (October 2020)](s/ramen3-2020-10-24-19-07-53-s3240-s.jpg)
 *Impossible Dune (October 2020)*
 
-I knew that 3D SDFs and raymarching were capable of much finer detail.
-
 # RAYHATCHING chapter 2
 
 ![Conduit Dimension, Elbow Quadrant (November 2020)](s/dingo0-2020-11-11-21-43-55-s3240-s.jpg)
 *Conduit Dimension, Elbow Quadrant (November 2020)*
 
+I figured that one way of achieving more detail with less lines, could be to take surface orientation into account, which previous attempts had not done--they were just scribbling or stippling to create a certain brightness level.
+
 ![Hagelslag Age Cave Painting (November 2020)](s/dingo1-2020-11-17-12-36-54-s3240-s.jpg)
 *Hagelslag Age Cave Painting (November 2020)*
-
-I figured that one way of achieving more detail with less lines, could be to take surface orientation into account, which previous attempts had not done--they were just scribbling or stippling to create a certain brightness level.
 
 These first attempts were merely made of very short lines, and were not really suitable for a plotter (or were they? I have footage of a powerful HP plotter going at it, taking only 50 minutes).
 
@@ -65,10 +67,10 @@ From there on, it quickly got awesome.
 
 However, I had also organised [Genuary 2021](s/genuary2021.githu-sb.io), and didn't really have time to explore the rayhatcher further.
 
+Genuary turned out to be quite the marathon, so I took a short break, but then made a few more pieces.
+
 ![Broken pearl (March 2021)](s/rama-2021-03-06-13-48-25-s3240-s.jpg)
 *Broken pearl (March 2021)*
-
-Genuary turned out to be quite the marathon, so I took a short break, but then made a few more pieces. 
 
 ![Broken planet (March 2021)](s/rama3-2021-03-12-13-00-52-s3240-s.jpg)
 *Broken planet (March 2021)*
@@ -76,7 +78,7 @@ Genuary turned out to be quite the marathon, so I took a short break, but then m
 ![Shattered sphere (March 2021)](s/rama3-2021-03-10-15-57-10-s3240-s.jpg)
 *Shattered sphere (March 2021)*
 
-Then NFTs happened :) And suddenly, digital art could just exist, without necessarily having a physical counterpart. Also at first, I had no idea how to combine NFTs with physical plots. So I explored the digital for a while, which led to [Skulptuur](s/https://www.artblocks.io/collections/curated/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270-s/173) and [Hypergiraffe](s/https://www.fxhash.xyz/generative/slug/hypergir-saffe), amongst many other things.
+And then NFTs happened :) And suddenly, digital art could just exist, without necessarily having a physical counterpart. Also at first, I had no idea how to combine NFTs with physical plots. So I explored the digital for a while, which led to [Skulptuur](s/https://www.artblocks.io/collections/curated/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270-s/173) and [Hypergiraffe](s/https://www.fxhash.xyz/generative/slug/hypergir-saffe), amongst many other things.
 
 # RAYHATCHING chapter 3
 
@@ -110,3 +112,5 @@ After that, I added a noise texture to the blocks and some more details. Further
 
 ![Industrial Devolution (September 2022)](s/2022-09-20-xnor-brightmomentsposter-s3240-s2160.jpg)
 *Industrial Devolution (September 2022)*
+
+*Industrial Devolution* will be released October 6th during a [live minting event](https://lu.ma/fxhash-brightmoments) at Bright Moments gallery, Venice Beach, in collaboration with fx(hash) and Tender.
