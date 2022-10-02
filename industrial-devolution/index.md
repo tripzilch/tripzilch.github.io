@@ -20,7 +20,7 @@ In this piece I use a very fine Hilbert curve, that gets progressively smoothed 
 ![Nyarlathotep Road (October 2020)](ramen2-2020-10-21-13-52-33-s3240.jpg)
 *Nyarlathotep Road (October 2020)*
 
-![Untitled (October 2020)](ramen5-2020-10-30-14-53-37-s3240)
+![Untitled (October 2020)](ramen5-2020-10-30-14-53-37-s3240.jpg)
 *Untitled (October 2020)*
 
 Trying to find a way to render a raymarched scene with a shorter plotting time, I tried a different scribbling based approach. While this reduced the plotting time somewhat, I was also not really satisfied with the lack of sharp detail in the picture.
@@ -78,6 +78,8 @@ Genuary turned out to be quite the marathon, so I took a short break, but then m
 
 Then NFTs happened :) And suddenly, digital art could just exist, without necessarily having a physical counterpart. Also at first, I had no idea how to combine NFTs with physical plots. So I explored the digital for a while, which led to [Skulptuur](https://www.artblocks.io/collections/curated/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/173) and [Hypergiraffe](https://www.fxhash.xyz/generative/slug/hypergiraffe), amongst many other things.
 
+# RAYHATCHING chapter 3
+
 It took until March 2022 until I revisited rayhatching again.
 
 ![Hyperwillows (March 2022)](2022-06-26-15-37-hyperwillows5e-hatched2-s3240.jpg)
@@ -107,3 +109,4 @@ I quickly discovered that I could add a random rotation to the blocks to create 
 After that, I added a noise texture to the blocks and some more details. Furthermore, relentless size optimizing turned this project into a piece of code weighing only 3930 characters.
 
 ![Industrial Devolution (September 2022)](2022-09-20-xnor-brightmomentsposter-s3240.jpg)
+*Industrial Devolution (September 2022)*
