@@ -108,19 +108,22 @@ Some of my first tries I felt were too much like *Skulptuur*, looking at a pecul
 ![Blocks and pipes, placed manually according to rule of thirds (August 2022)](s/2022-08-21-23-55-pipes5-s3240-s2160.jpg)
 *Blocks and pipes, placed manually according to rule of thirds (August 2022)*
 
-In particular, the armature known as the "rule of thirds", which divides the image into thirds, horizontally and vertically seemed an easy one to start with. So I developed an algorithm that could place SDFs of large blocks onto these lines, using a mathematical transformation from 2D to 3D.
+In particular, the armature known as the "rule of thirds", which divides the image horizontally and verytically into thirds, seemed an easy one to start with. I developed an algorithm that could place SDFs of large blocks onto these lines, using a mathematical transformation from 2D (where the lines are on the image) to 3D (where the shapes are, in space).
 
 ![Generated blocks and pipes (August 2022)](s/2022-08-31-14-20-pipesgm-s3240-s2160.jpg)
 *Generated blocks and pipes (August 2022)*
 
-I quickly discovered that I could add a random rotation to the blocks to create more interest.
+When two shapes intersect, their surfaces form a cutting line. Due to the way that SDFs work, it is very easy to construct the SDF of a pipe following this line. I intersected the blocks with invisible planes to construct the pipes. Then I applied this method again, to the pipes themselves, intersecting with a stacked series of invisible planes. This creates the smaller "cooling rings" around the pipe. I also took a large hollow cylinder and punched a hole through the entire scene.
+
+I quickly discovered that I could add a slight random rotation to the blocks to create more interest. This disturbs the "rule of thirds" armature a bit, but not too much and can also add other lines of interest.
 
 ![In this experiment I actually tried out skewed blocks (September 2022)](s/2022-09-15-125pip4-s3240-s2160.jpg)
 *In this experiment I actually tried out skewed blocks (September 2022)*
 
-After that, I added a noise texture to the blocks and some more details. Furthermore, relentless size optimizing turned this project into a piece of code weighing only 3930 characters.
+After that, I added a noise texture to the blocks and some more tweaks and details. Furthermore, relentless size optimizing turned this project into a piece of code weighing only 3930 characters.
 
 ![Industrial Devolution (September 2022)](s/2022-09-20-xnor-brightmomentsposter-s3240-s2160.jpg)
 *Industrial Devolution (September 2022)*
 
 *Industrial Devolution* will be released October 6th during a [live minting event](https://lu.ma/fxhash-brightmoments) at Bright Moments gallery, Venice Beach, in collaboration with fx(hash) and Tender.
+
