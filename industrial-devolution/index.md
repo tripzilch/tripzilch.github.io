@@ -14,7 +14,7 @@ In these first two pieces I use a raster-based scribbling approach to generate s
 ![Second vector based raymarcher output (October 2020)](s/ramen-2020-10-17-15-21-16-s3240-s.jpg)
 *Second vector based raymarcher output (October 2020)*
 
-In this piece I use a very fine Hilbert curve, that gets progressively smoothed to create varying levels of brightness. This piece consists of a single line and could thus be plotted with relative ease (it still took a while).
+In the next piece I use a very fine Hilbert curve, that gets progressively smoothed to create varying levels of brightness. This piece consists of a single line and could thus be plotted with relative ease (it still took a while).
 
 ![Aftermarket Planetary Recyclotron (October 2020)](s/ramen-2020-10-18-17-36-38-s3240-s.jpg)
 *Aftermarket Planetary Recyclotron (October 2020)*
@@ -29,7 +29,7 @@ While this reduced the plotting time somewhat, I was also not really satisfied w
 ![Untitled (October 2020)](s/ramen5-2020-10-30-14-53-37-s3240-s.jpg)
 *Untitled (October 2020)*
 
-I knew that 3D SDFs and raymarching were capable of much finer detail.
+I knew that 3D SDFs and raymarching were capable of much finer detail. Such as with my stippling-based pieces [Possible Dune](https://foundation.app/@piterpasma/foundation/74507) and [Impossible Dune](https://foundation.app/@piterpasma/foundation/74511).
 
 ![Possible Dune (October 2020)](s/ramen3-2020-10-23-23-51-10-s3240-s.jpg)
 *Possible Dune (October 2020)*
@@ -39,22 +39,22 @@ I knew that 3D SDFs and raymarching were capable of much finer detail.
 
 # RAYHATCHING chapter 2
 
+In order to figure out a way of achieving more detail with less lines, I tried taking surface orientation into account, which previous attempts had not done--they were just scribbling or stippling to create a certain brightness level. Notice how the very short lines in the next two pieces are oriented so that they seem to lie "flat" on the 3D surface. This was the first step towards a more intelligent hatching method.
+
 ![Conduit Dimension, Elbow Quadrant (November 2020)](s/dingo0-2020-11-11-21-43-55-s3240-s.jpg)
 *Conduit Dimension, Elbow Quadrant (November 2020)*
-
-I figured that one way of achieving more detail with less lines, could be to take surface orientation into account, which previous attempts had not done--they were just scribbling or stippling to create a certain brightness level.
 
 ![Hagelslag Age Cave Painting (November 2020)](s/dingo1-2020-11-17-12-36-54-s3240-s.jpg)
 *Hagelslag Age Cave Painting (November 2020)*
 
 These first attempts were merely made of very short lines, and were not really suitable for a plotter (or were they? I have footage of a powerful HP plotter going at it, taking only 50 minutes).
 
-However, the first steps were there -- I just needed to connect the dots, somehow.
+But I was getting there -- I just needed to connect the dots, somehow.
 
 ![Capsule Hill (November 2020)](s/dingo2-2020-11-25-19-27-41-s3240-s.jpg)
 *Capsule Hill (November 2020)*
 
-Somehow it didn't take too long to figure out how to use a flowfield renderer, to draw lines in a hatching direction on the shapes, while taking into account line distance to sketch different brightness levels. *Capsule Hill* was the very first successful output of the earliest version of the rayhatching algorithm.
+Somehow it didn't take too long to figure out how to use a flowfield renderer to draw the lines in a hatching direction on the shapes, while taking into account line distance to sketch different brightness levels. *Capsule Hill* was the very first successful output of the earliest version of the rayhatching algorithm.
 
 ![Shape Salad (November 2020)](s/dingo2-2020-11-26-19-45-23-s3240-s.jpg)
 *Shape Salad (November 2020)*
@@ -67,9 +67,9 @@ From there on, it quickly got awesome.
 ![Hyperplane Microplane VX-5 (December 2020)](s/dego2-2020-12-23-17-13-55-s3240-s.jpg)
 *Hyperplane Microplane VX-5 (December 2020)*
 
-However, I had also organised [Genuary 2021](s/genuary2021.githu-sb.io), and didn't really have time to explore the rayhatcher further.
+However, I had also been organising the generative art month of [Genuary 2021](https://genuary2021.github.io/), in an attempt to bring together the various genart communities spread out over the web, and didn't really have time to explore the rayhatcher further.
 
-Genuary turned out to be quite the marathon, so I took a short break, but then made a few more pieces.
+Genuary turned out to be a huge success, and quite the marathon, so I took a short break, then made a few more pieces.
 
 ![Broken pearl (March 2021)](s/rama-2021-03-06-13-48-25-s3240-s.jpg)
 *Broken pearl (March 2021)*
@@ -80,9 +80,9 @@ Genuary turned out to be quite the marathon, so I took a short break, but then m
 ![Shattered sphere (March 2021)](s/rama3-2021-03-10-15-57-10-s3240-s.jpg)
 *Shattered sphere (March 2021)*
 
-And then NFTs happened :) And suddenly, digital art could just exist, without necessarily having a physical counterpart. Also at first, I had no idea how to combine NFTs with physical plots. So I explored the digital for a while, which led to [Skulptuur](s/https://www.artblocks.io/collections/curated/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270-s/173) and [Hypergiraffe](s/https://www.fxhash.xyz/generative/slug/hypergir-saffe), amongst many other things.
+And then NFTs happened :) And suddenly, digital art could just exist, without necessarily having a physical counterpart. Also at first, I had no idea how to combine NFTs with physical plots. So I explored the digital for a while, which led to [Skulptuur](https://www.artblocks.io/collections/curated/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/173) and [Hypergiraffe](https://www.fxhash.xyz/generative/slug/hypergiraffe), amongst many other things.
 
-![Desirotron (August 2021)](rayhatch8b-2021-08-05-13-33-57-s2160.jpg)
+![Desirotron (August 2021)](s/rayhatch8b-2021-08-05-13-33-57-s2160.jpg)
 *Desirotron (August 2021)*
 
 I made [Desirotron](https://foundation.app/@piterpasma/foundation/68944) in this period, which is executed in colour, to underline it's a digital image first, an NFT and not intended to be plotted (though if someone figures out how to make it look good they have my blessing).
@@ -94,7 +94,7 @@ It took until March 2022 until I revisited rayhatching again.
 ![Hyperwillows (March 2022)](s/2022-06-26-15-37-hyperwillows5e-hatched2-s3240-s2160.jpg)
 *Hyperwillows (March 2022)*
 
-I completely rewrote the engine to be a completely self-contained file using no external dependencies (the earlier versions used modules I had written). I re-used the code for a very tiny QuadTree algorithm (an essential part of the flowfield renderer) from Hypergiraffe. At this point, the entire code was about 7 kilobytes, and after a few iterations led to [Hyperwillows](s/https://verse.works/artworks/90e9d550-18e5-40d4-bb07-048d21a5-scc52).
+I completely rewrote the engine to be a completely self-contained file using no external dependencies (the earlier versions used modules I had written myself). I re-used the code for a very tiny QuadTree algorithm (an essential part of the flowfield renderer) from Hypergiraffe. At this point, the entire code was about 7 kilobytes, and after a few iterations led to [Hyperwillows](https://verse.works/artworks/90e9d550-18e5-40d4-bb07-048d21a5cc52).
 
 For a long time I had been saving parameters and important parts of the actual code as comments in the SVG-file (which is a text format, somewhat similar to HTML). This has proven very useful in recreating certain outputs on several occasions. The new rayhatcher engine is no exception, and it includes its entire code fully as an SVG comment in its output.
 
