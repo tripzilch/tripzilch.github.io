@@ -100,7 +100,10 @@ For a long time I had been saving parameters and important parts of the actual c
 
 But *Hyperwillows* is a 1/1. I really wanted to do a big release of the rayhatcher algorithm as a long-form generative piece, that would be able to generate an infinity of possible outputs.
 
-Some of my first tries I felt were too much like *Skulptuur*, looking at a peculiar object in the centre of the scene. So I did some research on how compositions in paintings work. One approach I found is that of the "armature", a set of imaginary lines that are important in the composition. 
+![It's complicated (July 2022)](s/2022-07-14-14-30-idunno-s3240.jpg)
+*It's complicated (July 2022)*
+
+Some of my first tries I felt were too much like *Skulptuur*, looking at a peculiar object in the centre of the scene. So I did some reading and research on how compositions in paintings work. One approach I found is that of the "armature", a set of imaginary lines that are important in the composition. 
 
 ![Blocks and pipes, placed manually according to rule of thirds (August 2022)](s/2022-08-21-23-55-pipes5-s3240-s2160.jpg)
 *Blocks and pipes, placed manually according to rule of thirds (August 2022)*
