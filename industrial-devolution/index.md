@@ -1,8 +1,10 @@
 # RAYHATCHING chapter 1
 
-As I had recently bought a plotter, I had mainly been focusing on vector based SVG outputs. This is a file format particularly suited for the plotter, which builds images as a collection of lines and shapes, instead of pixels, such as a JPEG does.
+In summer of 2020 I bought a plotter, a robot drawing machine that holds a pen. It is only capable of drawing lines, and nothing else.
 
-However, I also had been desiring to play with 3D SDFs and raymarching again. An SDF is a mathematical function that describes shapes, in a way that is particularly suited to raymarching. Raymarching is a technique used for raytracing, which is a technique to simulate light bouncing off these 3D shapes, resulting in a picture. Unfortunately, these techniques are mostly aimed at pixel-based rendering, so I had to get clever.
+Because of this I had been focusing on vector based SVG outputs. This is a file format particularly suited for the plotter, which builds images as a collection of lines and shapes, instead of pixels, like a JPEG does.
+
+However, I felt the urge to play and experiment with 3D SDFs and raymarching again. An SDF is a mathematical function that describes shapes, in a way that is particularly suited to raymarching. Raymarching is a technique used for raytracing, which is a technique to simulate light bouncing off these 3D shapes, resulting in a picture. Unfortunately, these techniques are mostly aimed at pixel-based rendering, so I had to get clever.
 
 In these first two pieces I use a raster-based scribbling approach to generate scribbles of varying size, creating varying levels of brightness.
 
@@ -79,6 +81,11 @@ Genuary turned out to be quite the marathon, so I took a short break, but then m
 *Shattered sphere (March 2021)*
 
 And then NFTs happened :) And suddenly, digital art could just exist, without necessarily having a physical counterpart. Also at first, I had no idea how to combine NFTs with physical plots. So I explored the digital for a while, which led to [Skulptuur](s/https://www.artblocks.io/collections/curated/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270-s/173) and [Hypergiraffe](s/https://www.fxhash.xyz/generative/slug/hypergir-saffe), amongst many other things.
+
+![Desirotron (August 2021)](rayhatch8b-2021-08-05-13-33-57-s2160.jpg)
+*Desirotron (August 2021)*
+
+I made [Desirotron](https://foundation.app/@piterpasma/foundation/68944) in this period, which is executed in colour, to underline it's a digital image first, an NFT and not intended to be plotted (though if someone figures out how to make it look good they have my blessing).
 
 # RAYHATCHING chapter 3
 
