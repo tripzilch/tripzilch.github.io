@@ -1,7 +1,7 @@
 (code=({copyright:piterpasma,max,floor:K,abs,sin,cos,min}=Math)=>{
   // INDUSTRIAL DEVOLUTION (c) 2022 by Piter Pasma
   //
-  // inverted version
+  // commented version
   //
   // featuring some comments and white space
   
