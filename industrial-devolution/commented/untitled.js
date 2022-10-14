@@ -10,10 +10,10 @@
   (new(U=URLSearchParams)(location.search)).forEach((v,k)=>O[k]=v);
   fxhash = O.fxhash || fxhash;
 
-  // init PRNG
-  S=Uint32Array.from([n=9,t=7,5,3]);
-  R=(a=1)=>a*(t=S[3],S[3]=S[2],S[2]=S[1],S[1]=n=S[0],t^=t<<11,S[0]^=(t^t>>>8)^(n>>>19),S[0]/2**32);
-  [...fxhash+'SOURCERY'].map(c=>R(S[3]^=c.charCodeAt()*23205));
+  // init PRNG (see also https://piterpasma.nl/skulptuur/decoded-1 )
+  S=Uint32Array.from([n=9,t=7,5,3]); // PRNG state is four 32 bit unsigned integers (with arbitrary nonzero values also initializing n and t)
+  R=(a=1)=>a*(t=S[3],S[3]=S[2],S[2]=S[1],S[1]=n=S[0],t^=t<<11,S[0]^=(t^t>>>8)^(n>>>19),S[0]/2**32); // https://en.wikipedia.org/wiki/Xorshift
+  [...fxhash+'SOURCERY'].map(c=>R(S[3]^=c.charCodeAt()*23205)); // this xors the random seed into the PRNG state, character by character, shifting the PRNG by one step each time. the string 'SOURCERY' is an arbitrary 8-character string that shuffles the PRNG state even more, making it less dependent on the last bits of the random seed (in other words it's a salt).
 
   // maaaaaath
   T=a=>R(a)-R(a); // random value between -a and a with a triangular weighed distribution peaking at zero
