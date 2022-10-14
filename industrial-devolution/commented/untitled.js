@@ -16,7 +16,7 @@
   [...fxhash+'SOURCERY'].map(c=>R(S[3]^=c.charCodeAt()*23205));
 
   // maaaaaath
-  T=a=>R(a)-R(a); // triangle noise
+  T=a=>R(a)-R(a); // random value between -a and a with a triangular weighed distribution peaking at zero
   F=(N,f)=>[...Array(N)].map(_=>f()); // loop function
 
   L=(x,y)=>(x*x+y*y)**.5; // vec2 length (adapted from: Elements, Euclid 300 BC)
@@ -39,15 +39,15 @@
   C.strokeStyle='#008';
 
   // init 3D stuff
-  lp=[T(80),90,-150]; // light pos
+  lp=[T(80),90,-150]; // light position
   Z=1.1+T(.3); // zoom / FOV
-  cp=[R(60)-30,10+R(20),-100*Z]; // camera pos
+  cp=[R(60)-30,10+R(20),-100*Z]; // camera position
 
   fw=N(A([0,35,0],cp,-1)); // camera forward axis
   rt=N(X(fw,[0,-1,0])); // camera right axis
   up=X(rt,fw); // camera up axis
 
-  [sx,sy]=(([a,d,g],[b,e,h],[c,f,i])=>(t=a*(e*i-h*f)-b*(d*i-f*g)+c*(d*h-g*e),[[(e*i-f*h)/t,(c*h-b*i)/t,(b*f-c*e)/t],[(f*g-d*i)/t,(a*i-c*g)/t,(c*d-a*f)/t]]))(rt,up,fw); // inverse camera matrix
+  [sx,sy]=(([a,d,g],[b,e,h],[c,f,i])=>(t=a*(e*i-h*f)-b*(d*i-f*g)+c*(d*h-g*e),[[(e*i-f*h)/t,(c*h-b*i)/t,(b*f-c*e)/t],[(f*g-d*i)/t,(a*i-c*g)/t,(c*d-a*f)/t]]))(rt,up,fw); // inverse camera matrix (3x3 matrix inversion formula from Wikipedia)
 
   fw=fw.map(v=>v*Z); // pre multiply fwd vector
 
@@ -60,10 +60,12 @@
   d=120+R(48); // block corner dist
   f=F(4,_=>(
     [x,y,z]=G(...e.splice(R(e.length)|0,1)[0],d), // 3D block corner pos
-    R()<.2?px=x:0, // chance to replace pipe x/y/z
-    R()<.2?py=y:0,
-    R()<.2?pz=z:0,
-    Function(`[x,y,z]`,`[x,y]=[x*${c=cos(a=T(sl))}+y*${s=sin(a)},y*${c}-x*${s}];return k(${T()<0?`x+${-x+1}`:`${x+1}-x`},k(${T()<0?`y+${-y+1}`:`${y+1}-y`},${d-=17+R(5),z}-z))-1`) // dist function for block
+    R()<.2?px=x:0, // chance to replace pipe x pos
+    R()<.2?py=y:0, // chance to replace pipe y pos
+    R()<.2?pz=z:0, // chance to replace pipe z pos
+    Function(`[x,y,z]`,`
+      [x,y]=[x*${c=cos(a=T(sl))}+y*${s=sin(a)},y*${c}-x*${s}]; // rotate xy by angle a
+      return k(${T()<0?`x+${-x+1}`:`${x+1}-x`},k(${T()<0?`y+${-y+1}`:`${y+1}-y`},${d-=17+R(5),z}-z))-1`) // dist function for rounded block is k(x,k(y,z))-1 all the string manipulation is to put the corner in its place and align it (left/right x top/bottom) each block is actually only one corner of a cube extending infinitely in the other directions
   )); 
 
   // very very minimal sinus noise
@@ -77,7 +79,23 @@
   c1=4+T(2); // cylinder-hole width
   rp=T()<0; // horizontal or vertical rings
   rr=.4+R(R()); // ring radius
-  P=(p,[x,y,z]=p,d=min(f[0](p),f[1](p),f[2](p),f[3](p),y)-3,v=g(D(p,na)*.05+pa)*.5+.5,u=v,[a,b]=rp?[x-px,y]:[y-py,x])=>(v*=g(D(p,nb)*.06+v*.1+pb),v*=g((D(p,nc)*.7+v-u)*.1+pc),min(W(d+3.4-abs(v+.5),c1-abs(L(x-cx,y-cy)-c0),1),L(d,x-px)-w,L(d,y-py)-w,L(d,z-pz)-w,L(L(d,a)-w*2,b-K(b*.25)*4-2)-rr)); // distance function for everything
+  P=(p,[x,y,z]=p,
+    d=min(f[0](p),f[1](p),f[2](p),f[3](p),y)-3, // union of blocks (inflated to pipes position)
+    v=g(D(p,na)*.05+pa)*.5+.5,u=v, // noise pt1
+    [a,b]=rp?[x-px,y]:[y-py,x] // ring coords
+    )=>(
+      v*=g(D(p,nb)*.06+v*.1+pb), // noise pt2
+      v*=g((D(p,nc)*.7+v-u)*.1+pc), // noise pt3
+      min( // union of
+        W( // rounded subtraction of ("round max")
+          d+3.4-abs(v+.5), // the blocks with noise added (deflated to block surface)
+          c1-abs(L(x-cx,y-cy)-c0) // and the cylinder-hole
+          ,1), // rounding radius
+        L(d,x-px)-w, // x-pipes
+        L(d,y-py)-w, // y-pipes
+        L(d,z-pz)-w, // z-pipes
+        L(L(d,a)-w*2,b-K(b*.25)*4-2)-rr) // rings
+        ); // distance function for everything
 
   u=([x,y])=>{ // raytrace function, evaluate point (x,y) on screen
     if(abs(x)<Y2-.015&&abs(y)<.5-.015){ // page margins
