@@ -38,7 +38,7 @@ We can modify the first of the three formulas above, for instance like this:
 
 This histogram seems to have about 50% probability to return 1. Try playing with the number `3` in the above code, to see how it changes the distributions. Higher values will make it more flat, whereas lower values make the probability to return 1 smaller. Note that using values less than 1 breaks the distribution a bit because it won't return all numbers between 0 and 1 anymore. 
 
-There's probably a formula to calculate the value given a certain probability to return 1, but I haven't quite worked it out yet. Either way for most of my purpose it's enough to visually estimate from the histogram by trying a few different values.
+There's probably a formula to calculate the required value, given a certain probability to return 1, but I haven't quite worked it out yet. Either way, for most of my purposes it's enough to visually estimate from the histogram by trying a few different values.
 
 ## Transforming a PRNG to have less low numbers
 
