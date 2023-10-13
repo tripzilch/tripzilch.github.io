@@ -22,6 +22,8 @@ Februari 2022: [Some of Piter Pasma's pieces on Versum](https://versum.xyz/user/
 
 ## articles
 
+[Interesting basic PRNG distributions](articles/probability)
+
 [Measure the line width of your pens with a plotter](articles/line-test)
 
 [Visual depth cues](articles/depth-cues)
