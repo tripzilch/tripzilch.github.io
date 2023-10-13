@@ -50,7 +50,7 @@ And then we can do a similar modification of the formula to make it less extreme
 
 [`max(1 - R(3), R())`](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+max%281-R%283%29%2CR%28%29%29)
 
-Note that it's not quite a "mirror" of the `min` variant. So depending on your tastes for which formula looks more pretty, you might consider inverting the range instead:
+Note that it's not quite as "elegant" as the `min` variant. So depending on your tastes for which formula looks more pretty, you might consider inverting the range instead:
 
 [`1 - min(R(3), R())`](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+1-min%28R%283%29%2CR%28%29%29)
 
