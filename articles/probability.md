@@ -64,7 +64,7 @@ Subtracting two random numbers from each other gives a triangular distribution c
 
 [`R() - R()`](https://randomometer.netlify.app/?lo=-1&hi=1&bins=150&code=return+R%28%29-R%28%29)
 
-Note that the range of this histogram goes from -1 to 1. The triangle distribution is the first order (linear) approximation to the normal (or Gaussian) distribution. I use this distribution very often, scaling and adding it to a value when I want to tweak or jitter a variable around this value, with less probability for being further away from it.
+Note that the range of this histogram goes from -1 to 1. The triangle distribution is the first order (linear) approximation to the normal (or Gaussian) distribution. I use this distribution very often, scaling and adding it to a value when I want to tweak or jitter a variable around this value, with less probability for being further away from it. I usually define it as a function: `T=a=>R(a)-R(a)`.
 
 In general I find the triangle distribution to suffice for almost all of my normal(-ish) distribution needs. But in case you want a higher order approximation, you can try these formulas:
 
