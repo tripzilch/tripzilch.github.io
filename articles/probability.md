@@ -2,11 +2,11 @@
 
 _by Piter Pasma_
 
-Have you ever needed a value from a random range, but you don't want a lot of high numbers? In this article, we'll investigate these, and other basic transformations of PRNG outputs.
+Have you ever needed a random value from a range, but you don't want a lot of high numbers? In this article, we'll investigate these, and other basic transformations of PRNG outputs.
 
-The formula for a random range is `lo + R() * (hi - lo)`, where `R()` is our PRNG, returning a random value between 0 and 1 (note that in some examples below, we may also use `R(a)`, returning a random value between 0 and `a`). 
+The formula for a random range is `lo + R() * (hi - lo)`, where `R()` is our PRNG, returning a random value between 0 and 1 (note that in some examples below, we may also use `R(a)`, returning a random value between 0 and `a`). This shifts and scales the value of `R()` from between 0 and 1 to between `lo` and `hi`.
 
-In order to skew our random range to have (e.g.) less probability for high numbers, we need to skew the result of `R()` to have more probability for numbers close to 0 and less for numbers close to 1.
+This means that in order to skew our random range to have (e.g.) less probability for high numbers, it is sufficient to skew the result of `R()` to have more probability for numbers close to 0 and less for numbers close to 1.
 
 There are all sorts of fun formulas that transform a value between 0 and 1 into another value between 0 and 1. Such formulas are often called [easing functions](https://www.google.com/search?hl=en&q=easing+functions), and are useful for finetuning the speed of animations, among other things. We can use easing functions to transform our PRNG as well (and I recommend you to try all of them), but the possibilities are in fact broader, because we can also combine the results of several calls to `R()`.
 
