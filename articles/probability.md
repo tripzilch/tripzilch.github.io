@@ -36,13 +36,13 @@ We can modify the first of the three formulas above, for instance like this:
 
 [`min(R(), R(3))`](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+min%28R%28%29%2CR%283%29%29)
 
-This histogram seems to have about 50% probability to return 1. Try playing with the number `3` in the above code, to see how it changes the distributions. Higher values will make it more flat, whereas lower values make the probability to return 1 smaller. Note that using values less than 1 breaks the distribution a bit because it won't return all numbers between 0 and 1 anymore. 
+This formula still returns a number between 0 and 1 (because the minimum of both is always between 0 and 1), but from the histogram it seems to have about 50% probability to return 1. Try playing with the number `3` in the above code, to see how it changes the distributions. Higher values will make it more flat, whereas lower values make the probability to return 1 smaller. Note that using values less than 1 breaks the distribution a bit because it won't return all numbers between 0 and 1 anymore. 
 
 There's probably a formula to calculate the required value, given a certain probability to return 1, but I haven't quite worked it out yet. Either way, for most of my purposes it's enough to visually estimate from the histogram by trying a few different values.
 
 ## Transforming a PRNG to have less low numbers
 
-First of, we can simply do `1 - <any of the formulas above>`, because doing one minus something inverts the range. But we can also start out by taking the maximum of two random numbers:
+First of, we can simply do `1 - <any of the formulas above>`, because doing one minus something inverts the range between 0 and 1. But we can also take the maximum of two random numbers:
 
 [`max(R(), R())`](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+max%28R%28%29%2CR%28%29%29)
 
@@ -54,7 +54,7 @@ Note that it's not quite a "mirror" of the `min` variant. So depending on your t
 
 [`1 - min(R(3), R())`](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+1-min%28R%283%29%2CR%28%29%29)
 
-It's actually quite easy to see that the last two formulas are equivalent, taking the "one minus" outside of the `min`, and because `R()` is the same as `1 - R()` (because it's the uniform distribution).
+It's actually quite easy to see that the last two formulas are equivalent, taking the "one minus" outside of the `min`, and because `R()` is the same as `1 - R()` (because the uniform distribution remains the same when you invert it).
 
 I think it's super interesting that `max(R(), R())` is equivalent to doing `sqrt(R())`, and I wonder if playing around with this idea might in certain other situations allow us to avoid a `sqrt` function, which may be more expensive than generating two random numbers.
 
