@@ -88,7 +88,7 @@ Instead of squaring one random number, we can also multiply two different random
 
 [`R() * R()`](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+R%28%29*R%28%29)
 
-This probability distribution is still steeper than say, `min(R(), R()`, but not quite as steep as `R()**2`. Also note that unlike the previous it does have a probability of 0 at one. When I need a steep distribution, this is the one I usually reach for.
+This probability distribution is still steeper than say, `min(R(), R())`, but not quite as steep as `R()**2`. Also note that unlike the previous it does have 0 probability at one. When I need a steep distribution, this is the one I usually reach for.
 
 ## Experiment!
 
