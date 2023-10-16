@@ -25,17 +25,20 @@ One way to do this, is to take the minimum of two random numbers:
 
 Another way to get exactly (!!) the same distribution is this formula:
 
-[`1 - sqrt(R())`](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+1-R%28%29**.5)
+[![histogram of 1 - sqrt(R)](prob-min2.png)
+*`1 - sqrt(R())`*](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+1-R%28%29**.5)
 
 I think it's interesting and fun that there are quite different formulas yielding the same distribution. Here is yet another way:
 
-[`abs(R() - R())`](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+abs%28R%28%29-R%28%29%29)
+[![histogram of abs(R() - R())](prob-abs.png)
+*`abs(R() - R())`*](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+abs%28R%28%29-R%28%29%29)
 
 So this is pretty cool. But as you can see from the histograms, these formulas are perhaps a little bit _too_ skewed. The probability to return 1 goes all the way to zero (and therefore so would the probability to return the highest value in our range). What if you want something a little bit less extreme?
 
 We can modify the first of the three formulas above, for instance like this:
 
-[`min(R(), R(3))`](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+min%28R%28%29%2CR%283%29%29)
+[![histogram of min(R(), R(3))](prob-lin.png)
+*`min(R(), R(3))`*](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+min%28R%28%29%2CR%283%29%29)
 
 This formula still returns a number between 0 and 1 (because the minimum of both is always between 0 and 1), but from the histogram it seems to have about 50% probability to return 1. Try playing with the number `3` in the above code, to see how it changes the distributions. Higher values will make it more flat, whereas lower values make the probability to return 1 smaller. Note that using values less than 1 breaks the distribution a bit because it won't return all numbers between 0 and 1 anymore. 
 
@@ -45,15 +48,18 @@ There's probably a formula to calculate the required value, given a certain prob
 
 First of, we can simply do `1 - <any of the formulas above>`, because doing one minus something inverts the range between 0 and 1. But we can also take the maximum of two random numbers:
 
-[`max(R(), R())`](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+max%28R%28%29%2CR%28%29%29)
+[![histogram of max(R(), R())](prob-max.png)
+*`max(R(), R())`*](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+max%28R%28%29%2CR%28%29%29)
 
 And then we can do a similar modification of the formula to make it less extreme:
 
-[`max(1 - R(3), R())`](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+max%281-R%283%29%2CR%28%29%29)
+[![histogram of max(1 - R(3), R())](prob-maxlin.png)
+*`max(1 - R(3), R())`*](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+max%281-R%283%29%2CR%28%29%29)
 
-Note that it's not quite as "elegant" as the `min` variant. So depending on your tastes for which formula looks more pretty, you might consider inverting the range instead:
+Note that it's not quite as "elegant" as the `min` variant. So depending on your tastes for which formula looks more pretty, you might consider inverting the range of the `min` variant instead:
 
-[`1 - min(R(3), R())`](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+1-min%28R%283%29%2CR%28%29%29)
+[![histogram of 1 - min(R(3), R())](prob-maxlin2.png)
+*`1 - min(R(3), R())`*](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+1-min%28R%283%29%2CR%28%29%29)
 
 It's actually quite easy to see that the last two formulas are equivalent, taking the "one minus" outside of the `min`, and because `R()` is the same as `1 - R()` (because the uniform distribution remains the same when you invert it).
 
@@ -63,17 +69,20 @@ I think it's super interesting that `max(R(), R())` is equivalent to doing `sqrt
 
 Subtracting two random numbers from each other gives a triangular distribution centred around 0:
 
-[`R() - R()`](https://randomometer.netlify.app/?lo=-1&hi=1&bins=150&code=return+R%28%29-R%28%29)
+[![histogram of R() - R()](prob-tri.png)
+*`R() - R()`*](https://randomometer.netlify.app/?lo=-1&hi=1&bins=150&code=return+R%28%29-R%28%29)
 
 Note that the range of this histogram goes from -1 to 1. The triangle distribution is the first order (linear) approximation to the normal (or Gaussian) distribution. I use this distribution very often, scaling and adding it to a value when I want to tweak or jitter a variable around this value, with less probability for being further away from it. I usually define it as a function: `T=a=>R(a)-R(a)`.
 
 In general I find the triangle distribution sufficient for almost all of my normal(-ish) distribution needs. But in case you want a higher order approximation, you can try these formulas:
 
-[`R() - R() + R() - .5`](https://randomometer.netlify.app/?lo=-1.5&hi=1.5&bins=150&code=return+R%28%29+-+R%28%29+%2B+R%28%29+-+.5) 
+[![histogram of R() - R() + R() - .5](prob-nor2.png)
+*`R() - R() + R() - .5` (range: -1.5 to 1.5)*](https://randomometer.netlify.app/?lo=-1.5&hi=1.5&bins=150&code=return+R%28%29+-+R%28%29+%2B+R%28%29+-+.5) 
 
-[`R() - R() + R() - R()`](https://randomometer.netlify.app/?lo=-2&hi=2&bins=150&code=return+R%28%29+-+R%28%29+%2B+R%28%29+-+R%28%29)
+[![histogram of R() - R() + R() - R()](prob-nor3.png)
+*`R() - R() + R() - R()` (range: -2 to 2)*](https://randomometer.netlify.app/?lo=-2&hi=2&bins=150&code=return+R%28%29+-+R%28%29+%2B+R%28%29+-+R%28%29)
 
-Note that the range of these histograms are -1.5 to 1.5 and -2 to 2, respectively. I'm not exactly sure what their standard deviations are.
+Note that the ranges of these histograms are -1.5 to 1.5 and -2 to 2, respectively. I'm not exactly sure what their standard deviations are.
 
 If you need an _even better_ approximation to the normal distribution, you could keep adding and subtracting more and more random numbers, and this would work. I think it converges pretty quickly actually. However, at some point generating that many random numbers probably gets less efficient than doing the [Box-Muller transform](https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform) (which actually gets you two independent normally distributed values at once).
 
@@ -81,13 +90,15 @@ If you need an _even better_ approximation to the normal distribution, you could
 
 One of the most basic easing functions is `x * x`, squaring a number between 0 and 1 always yields another number between 0 and 1. Trying this in our RANDOMOMETER looks like this:
 
-[`R()**2`](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+R%28%29**2)
+[![histogram of R()\*\*2](prob-sqr.png)
+*`R()**2`*](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+R%28%29**2)
 
 Note that the probability distribution is really steep, yet doesn't reach a probability of 0 at one.
 
 Instead of squaring one random number, we can also multiply two different random numbers. If you think about it, this is not quite the same, but what does the histogram look like?
 
-[`R() * R()`](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+R%28%29*R%28%29)
+[![histogram of R() * R()](prob-rr.png)
+*`R() * R()`*](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+R%28%29*R%28%29)
 
 This probability distribution is still steeper than say, `min(R(), R())`, but not quite as steep as `R()**2`. Also note that unlike the previous it does have 0 probability at one. When I need a steep distribution, this is the one I usually reach for.
 
@@ -103,7 +114,7 @@ Please experiment and do let me know if you find anything cool!
 
 ## Related links
 
-Maybe I'll add more related links, but I wanted to link this one article which is super cool in case you ever need to generate uniform points on a sphere, inside a ball or a disc, on or in any N-dimensional sphere or ball. Even if you think you know how to do this, it might list a couple of methods you haven't heard about, so check it out in case this interests you:
+Maybe I'll add more related links, but I wanted to link this one article from [extremelearning.com.au](extremelearning.com.au) which is a super cool blog. This particular article is relevant in case you ever need to generate uniform points on a sphere, inside a ball or a disc, on or in any N-dimensional sphere or ball. Even if you think you know how to do this, it might list a couple of methods you haven't heard about, so check it out in case this interests you:
 
 [How to generate uniformly random points on n-spheres and in n-balls](https://extremelearning.com.au/how-to-generate-uniformly-random-points-on-n-spheres-and-n-balls/)
 
