@@ -20,7 +20,8 @@ _(I may add screenshots in the future, but I really want to invite you to click 
 
 One way to do this, is to take the minimum of two random numbers:
 
-[`min(R(), R())`](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+min%28R%28%29%2C+R%28%29%29)
+[![histogram of min(R(),R())](prob-min.png)
+*`min(R(), R())`*](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+min%28R%28%29%2C+R%28%29%29)
 
 Another way to get exactly (!!) the same distribution is this formula:
 
