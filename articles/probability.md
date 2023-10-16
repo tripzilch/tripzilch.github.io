@@ -61,7 +61,7 @@ Note that it's not quite as "elegant" as the `min` variant. So depending on your
 [![histogram of 1 - min(R(3), R())](prob-maxlin2.png)
 *`1 - min(R(3), R())`*](https://randomometer.netlify.app/?lo=0&hi=1&bins=150&code=return+1-min%28R%283%29%2CR%28%29%29)
 
-It's actually quite easy to see that the last two formulas are equivalent, taking the "one minus" outside of the `min`, and because `R()` is the same as `1 - R()` (because the uniform distribution remains the same when you invert it).
+It's actually quite easy to see that the last two formulas are equivalent, taking the "one minus" outside of the `min`, and because `R()` is the same as `1 - R()` (because the uniform distribution remains the same when you invert it) and noting that `min(a, b) == -max(-a, -b)`.
 
 I think it's super interesting that `max(R(), R())` is equivalent to doing `sqrt(R())`, and I wonder if playing around with this idea might in certain other situations allow us to avoid a `sqrt` function, which may be more expensive than generating two random numbers.
 
