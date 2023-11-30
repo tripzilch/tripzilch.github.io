@@ -114,7 +114,7 @@ Please experiment and do let me know if you find anything cool!
 
 ## Related links
 
-Maybe I'll add more related links, but I wanted to link this one article from [extremelearning.com.au](extremelearning.com.au) which is a super cool blog. This particular article is relevant in case you ever need to generate uniform points on a sphere, inside a ball or a disc, on or in any N-dimensional sphere or ball. Even if you think you know how to do this, it might list a couple of methods you haven't heard about, so check it out in case this interests you:
+Maybe I'll add more related links, but I wanted to link this one article from [extremelearning.com.au](https://extremelearning.com.au) which is a super cool blog. This particular article is relevant in case you ever need to generate uniform points on a sphere, inside a ball or a disc, on or in any N-dimensional sphere or ball. Even if you think you know how to do this, it might list a couple of methods you haven't heard about, so check it out in case this interests you:
 
 [How to generate uniformly random points on n-spheres and in n-balls](https://extremelearning.com.au/how-to-generate-uniformly-random-points-on-n-spheres-and-n-balls/)
 
