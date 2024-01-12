@@ -45,7 +45,7 @@ We need more sine waves. Jean-Baptiste Joseph Fourier once figured out that if y
 
 Here's two sine waves added together (zoomed out a little, to show more of them):
 
-<code>[{xlim:[-12,12],ylim:[-3,3]},
+<code>[{xlim:[-12,12],ylim:[-3,3],yticks:[-2,-1,0,1,2]},
     (x,t)=>sin(2*x + 3*t + 1) + sin(3*x + 2*t + 2)]</code>
 {:.live}
 
