@@ -193,7 +193,7 @@ Just with a third power, isn't that cool? And if you use this as the inner modul
 
 It almost looks to me like it's adding another octave to the noise, so this is quite a powerful trick because raising something to the third power is a really cheap operation. 
 
-* In GLSL shaders, you can use the `dot()` dot product function to multiply vectors element-wise and then add them up. If you do this with two vectorized wobbly building blocks (shuffling all the axes just right), you get a function that is the multiplication and addition of very many wobbly building blocks. An added bonus is that the `sin()` function is really fast on the GPU. I used this technique to create the clouds and foliage in the backgrounds of [Skulptuur](https://skulpturen.nl){:target="\_blank"}.
+* In GLSL shaders, you can use the `dot()` dot product function to multiply vectors element-wise and then add them up. If you do this with two vectorized wobbly building blocks (shuffling all the axes just right), you get a function that is the multiplication and addition of very many wobbly building blocks. An added bonus is that the `sin()` function is really fast on the GPU. I used this technique to create the clouds and foliage in the backgrounds of [Skulptuur](https://skulpturen.nl){:target="\_blank"} and as a noise function in many other of my shader-based projects.
 
 
 <script src="graphs.js"></script>
