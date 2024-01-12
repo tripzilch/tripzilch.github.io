@@ -155,16 +155,35 @@ Anyway, mainly so I didn't write the 2D visualizer for just one interactive pict
 
 It sort of works, but I cheated a little by zooming in further. Once you zoom out, what really becomes apparent is the diagonal patterns. I think you can get rid of most of these by rotating `x` and `y` by 45 degrees in the second octave term (`rx=.707*x+.707*y;ry=.707*y-.707*x;` should do the trick, where `.707 ~= sqrt(2)`).
 
+There are definitely some variations possible on this formula. But again, I advise you to be strategic about your modifications, really understand what effect they have, for the best results.
 
-## other ways to combine sine waves?
+## Are there any other ways to combine sine waves?
 
-## advantages
+The major one I haven't mentioned so far is multiplying them together. You can totally do this, and according to some trigonometric identities, this happens to be equivalent to adding up a bunch of different sine waves.
 
-## phase modulation
+But not _quite_, when you do it to wobbly building blocks, or phase modulated sine waves. Interesting stuff may happen, I have not experimented with multiplication this too much. My intuition says the noise gets a bit more "spiky", in some sense.
 
-## secret tricks
+But apart from adding, phase modulating and/or multiplying sine waves together, I don't really know of any other meaningful ways to combine sine waves that are useful for wobbly noise. If you can come up with any, please do let me know!
+
+## What are the advantages of wobbly noise?
+
+Almost every noise function has some kind of artifacts or visible "signature". I happen to find the ones that wobbly noise creates rather pleasing, because they consist of smoothly undulating phase modulated sine waves.
+
+Especially when you need relatively large noise features, wobbly noise can come in useful. Many other types of noise functions have visible artifacts when zooming in too far, but wobbly noise just becomes really, really smooth.
+
+## Isn't phase modulation also a synthesizer thing or something?
+
+Yes. And I will write a bunch more about how these two concept are related. (TODO)
+
+## Any secret tricks?
+
+Okay fine if you've read this far :)
 
 
+
+third power
+
+dot product
 
 ## Unsorted
 
