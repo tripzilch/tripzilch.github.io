@@ -46,7 +46,7 @@ We need more sine waves. Jean-Baptiste Joseph Fourier once figured out that if y
 Here's two sine waves added together (zoomed out a little, to show more of them):
 
 <code>[{xlim:[-12,12],ylim:[-3,3],yticks:[-2,-1,0,1,2]},
-    (x,t)=>sin(2*x + 3*t + 5) + sin(3*x + 2*t + 4)]</code>
+    (x,t)=>sin(2*x+3*t+5) + sin(3*x+2*t+4)]</code>
 {:.live}
 
 That's more irregular, right? 
@@ -67,11 +67,39 @@ The answer, at least for wobbly noise is the _Golden Ratio_, or `PHI = .5+.5*5**
 
 You kind of knew it had to be an irrational number, because those don't divide by any integer ratios, and therefore the wave could never repeat exactly. And for various measures of "how irrational is this number", the _Golden Ratio_ `PHI` is the most irrational one.
 
-There are also other numbers which are good, if you want to go really deep down this rabbithole, check out [The Unreasonable Effectiveness of Quasirandom Sequences](https://extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences/){:target="\_blank"}, but the _Golden Ratio_ is a classic favourite.
+There are also other numbers which are good, if you want to go really deep down this rabbithole, check out [The Unreasonable Effectiveness of Quasirandom Sequences](https://extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences/){:target="\_blank"}, which goes into higher dimensional sets of numbers with similar properties, of which the _Golden Ratio_ is the first.
+
+Remember that in the [Fibonacci Sequence](https://en.wikipedia.org/wiki/Fibonacci_sequence){:target="\_blank"} the ratio of consecutive Fibonacci numbers converges to the Golden Ratio (you get closer and closer the further you go up the sequence). So if you want integer frequencies for a periodic function that are still most wobbly, these can be good choices.
 
 ## Can you add even more sine waves together?
 
-You sure can! 
+You sure can! However when you add more than two, it becomes important to _scale_ the sine waves, otherwise the highest frequencies will dominate. A good rule of thumb is to divide each sine wave by its frequency. 
+
+This is the same idea as when you add multiple octaves of regular noise. For each octave you double `*2` the frequency and half `/2` the amplitude (though you can use other "exponents" than 2 -- and why not the _Golden Ratio_?).
+
+Here's four sine waves with Fibonacci frequencies, added together and scaled accordingly:
+
+<code>[{xlim:[-12,12],ylim:[-3,3],yticks:[-2,-1,0,1,2]},
+    (x,t)=>sin(3*x-5*t+5)/3 + sin(5*x+5*t+2)/5 + sin(8*x+5*t+4)/8 + sin(13*x-5*t+3)/8]</code>
+{:.live}
+
+Not bad! But note a couple of things. 
+
+I have no idea how to properly animate it, I set the time frequencies to `4*t` and `-4*t` interchangably, this way the waves sort of crash into each other and it doesn't look like the whole thing is moving to the left. In principle the time dimension `t` should work no different than the space dimension `x`, but you can try it out, it doesn't quite work. (I actually have to experiment more with this, it's helpful, the things you find out when you make moving graphs :) ).
+
+Second, while the waves don't repeat exactly (at least not for a very long time/distance), they do seem to _sort of_ repeat visually, don't they?
+
+And using irrational numbers won't quite fix that, at least not entirely. It seems to be a thing that is almost inherent to wobbly functions and you can at best hide it in clever ways.
+
+This is not always a huge problem though, sometimes you only use a small part of a noise function, and then it's fine. Check out the same graph as above, but zoomed in a bit on the x-axis:
+
+<code>[{xlim:[-1.5,1.5],ylim:[-1.5,1.5],yticks:[-1,0,1]},
+    (x,t)=>sin(3*x-5*t+5)/3 + sin(5*x+5*t+2)/5 + sin(8*x+5*t+4)/8 + sin(13*x-5*t+3)/8]</code>
+{:.live}
+
+This would do nicely if you need a smooth undulating noise-like function for a bit. And of course you get four phase values to pick randomly between `0..TAU`.
+
+## How do I cram in even more sine waves?
 
 ## Unsorted
 
