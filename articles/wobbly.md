@@ -69,6 +69,8 @@ You kind of knew it had to be an irrational number, because those don't divide b
 
 There are also other numbers which are good, if you want to go really deep down this rabbithole, check out [The Unreasonable Effectiveness of Quasirandom Sequences](https://extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences/){:target="\_blank"}, which goes into higher dimensional sets of numbers with similar properties, of which the _Golden Ratio_ is the first.
 
+If you need a whole bunch of frequencies, note that the _Golden Ratio_ is roughly between 1 and 2, so you can also use a random number between 1 and 2 for your frequencies: `1+R()`.
+
 Remember that in the [Fibonacci Sequence](https://en.wikipedia.org/wiki/Fibonacci_sequence){:target="\_blank"} the ratio of consecutive Fibonacci numbers converges to the Golden Ratio (you get closer and closer the further you go up the sequence). So if you want integer frequencies for a periodic function that are still most wobbly, these can be good choices.
 
 ## Can you add even more sine waves together?
@@ -100,6 +102,34 @@ This is not always a huge problem though, sometimes you only use a small part of
 This would do nicely if you need a smooth undulating noise-like function for a bit. And of course you get four phase values to pick randomly between `0..TAU`.
 
 ## How do I cram in even more sine waves?
+
+Okay this is the real meat, here. We're going to put _sine waves in our sine waves_. Check out what happens if we put just one sine wave in a sine wave. No messing around, straight with random irrational-ish numbers for the frequencies and phases:
+
+<code>[{xlim:[-4,4],ylim:[-1.1,1.1]},
+    (x,t)=>sin(2.73*x + 1.21*t + 5.8 + 2 * sin(2.15*x + 1.59*t + 2.4))]</code>
+{:.live}
+
+That's it. **This is the basic building block that I use for pretty much all my wobbly functions.**
+
+Play with the numbers a bit, get a feel for it. Try having the inner and outer frequencies (of `x`) be (almost) the same, or very different, or just kind of close like they are now.
+
+Try imagining how exactly the same happens when you play with `t`, but it looks totally different because it's happening in the time dimension. Wobble your brain a little.
+
+Did you notice the extra number that appeared? It's the `2 * sin(` bit. This number determines the _strength_ of how much the inner sine wave is affecting the outer one. The effect we're talking about is called _phase modulation_ by the way, because we're using the inner sine wave to _modulate_ the _phase_ of the outer sine wave.
+
+Try reducing the modulation strength to (almost?) `0` and see how the wave turns back into a vanilla sine wave. I find modulation strengths between 2 and 3 generally work best, but experiment!
+
+Now let's see how it looks when we add two of these:
+
+<code>[{xlim:[-9,9],ylim:[-5,5],yticks:[-2,-1,0,1,2]},
+    (x,t)=>sin(2.54*x+1.52*t+5.79+2.46*sin(1.69*x-1.83*t+1.42)) + sin(3.13*x-1.77*t+4.94+2.21*sin(2.10*x+1.86*t+4.55))]</code>
+{:.live}
+
+Looks quite random and noisy to me! It's not if you zoom out far enough, there will be patterns. But you can see as you use the building block to add more sine waves, you get quite a few random-ish noise-like wobbles before patterns start to appear.
+
+There are four phases to pick randomly between `0..TAU` in this formula. You can of course also pick the other numbers randomly, but the ratios and relative magnitudes (I think that's the same thing) determine a lot about the character of the noise.
+
+
 
 ## Unsorted
 
