@@ -82,12 +82,12 @@ This is the same idea as when you add multiple octaves of regular noise. For eac
 Here's four sine waves with Fibonacci frequencies, added together and scaled accordingly:
 
 <code>[{xlim:[-12,12],ylim:[-3,3],yticks:[-2,-1,0,1,2]},
-    (x,t)=>sin(3*x-5*t+5)/3 + sin(5*x+5*t+2)/5 + sin(8*x+5*t+4)/8 + sin(13*x-5*t+3)/8]</code>
+    (x,t)=>sin(3*x-3*t+5)/3 + sin(5*x+3*t+2)/5 + sin(8*x+3*t+4)/8 + sin(13*x-3*t+3)/8]</code>
 {:.live}
 
 Not bad! But note a couple of things. 
 
-I have no idea how to properly animate it, I set the time frequencies to `4*t` and `-4*t` interchangably, this way the waves sort of crash into each other and it doesn't look like the whole thing is moving to the left. In principle the time dimension `t` should work no different than the space dimension `x`, but you can try it out, it doesn't quite work. (I actually have to experiment more with this, it's helpful, the things you find out when you make moving graphs :) ).
+I have no idea how to properly animate it, I set the time frequencies to `3*t` and `-3*t` interchangably, this way the waves sort of crash into each other and it doesn't look like the whole thing is moving to the left. In principle the time dimension `t` should work no different than the space dimension `x`, but you can try it out, it doesn't quite work. (I actually have to experiment more with this, it's helpful, the things you find out when you make moving graphs :) ).
 
 Second, while the waves don't repeat exactly (at least not for a very long time/distance), they do seem to _sort of_ repeat visually, don't they?
 
@@ -96,7 +96,7 @@ And using irrational numbers won't quite fix that, at least not entirely. It see
 This is not always a huge problem though, sometimes you only use a small part of a noise function, and then it's fine. Check out the same graph as above, but zoomed in a bit on the x-axis:
 
 <code>[{xlim:[-1.5,1.5],ylim:[-1.5,1.5],yticks:[-1,0,1]},
-    (x,t)=>sin(3*x-5*t+5)/3 + sin(5*x+5*t+2)/5 + sin(8*x+5*t+4)/8 + sin(13*x-5*t+3)/8]</code>
+    (x,t)=>sin(3*x-3*t+5)/3 + sin(5*x+3*t+2)/5 + sin(8*x+3*t+4)/8 + sin(13*x-3*t+3)/8]</code>
 {:.live}
 
 This would do nicely if you need a smooth undulating noise-like function for a bit. And of course you get four phase values to pick randomly between `0..TAU`.
@@ -128,6 +128,14 @@ Now let's see how it looks when we add two of these:
 Looks quite random and noisy to me! It's not if you zoom out far enough, there will be patterns. But you can see as you use the building block to add more sine waves, you get quite a few random-ish noise-like wobbles before patterns start to appear.
 
 There are four phases to pick randomly between `0..TAU` in this formula. You can of course also pick the other numbers randomly, but the ratios and relative magnitudes (I think that's the same thing) determine a lot about the character of the noise.
+
+## But what if I need 2D noise?
+
+
+
+## phase modulation
+
+## secret tricks
 
 
 
