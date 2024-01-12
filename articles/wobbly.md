@@ -1,5 +1,45 @@
 # How to make sinusoid wobbly functions
 
+## What is this article about?
+
+Wobbly functions!
+
+In generative art, we like using noise functions for all sorts of purposes. Given their often central role, wouldn't it be fun to build your own noise function? 
+
+Although that is not really what this article is about. Wobbly functions are something that you can (sometimes) use _instead_ of a noise function, and that you can build yourself! Or let's say they are a very specific type of noise function that is easy to implement and therefore modify to make your own. They're also relatively underused, and the people using them right now might not call them "wobbly functions". But they are also not writing this article.
+
+## What is a wobbly function?
+
+They are functions based on sine waves. Any kind. Whatever you can dream up. But I can share a couple of techniques you may find interesting.
+
+In school, you may have learned that the sine and cosine functions are useful for calculating things about right angled triangles. They were not wrong, but let's focus right now on a more important truth:
+
+*Sine waves have a funny shape.*
+
+Let's start with a graph of a simple sine wave over `x` that moves with time (`t`):
+
+<code>[{xlim:[-4,4],ylim:[-1.1,1.1]},(x,t)=>sin(2*x + 3*t + 5)]</code>
+{:.live}
+
+Note that you can edit the formula and play with it. Also, you can click on the graph to make it stop moving.
+
+I promise we'll get to more interesting wobbles soon, but try changing some of the numbers in the formula above, and see what happens.
+
+The number that you multiply `x` by determines how close the waves are. It's how "fast" we move from left to right through the sine wave. If you increase the number, you move faster to the right, and thus move through more waves. This number is a _frequency_, because it determines how many waves you get to see.
+
+The number that you multiply `t` by determines how fast the waves move in time. It's very similar to the previous number, but it's a _time_ frequency, instead of a _space_ frequency. For the same reason, because if you increase the number, they move faster and you get to see more waves.
+
+The last number is the lonely number that you just add. This one is a bit different, it sets the _phase_ of the sine wave. Try using `0*t` in the formula above, to stop the wave from moving entirely. Now modify the phase and notice how this shifts the sine wave around. In fact once you turn on movement again with `1*t`, what really happens is that this phase gets continuously increased, as `t` increases (because time goes forward). But you could say the same for `x`, right? Well, think about that for a bit.
+
+The point is that it's important to realize when you're modifying _frequencies_ or _phases_. A frequency is basically the speed at which the phase moves. In order to move, it needs a dimension. In the above example we move the phase in both the _space_ (`x`) and _time_ (`t`) dimension. Congratulations, it's a continuum!
+
+A useful thing to know about phases of sine waves is that they repeat every `TAU = 2*PI = 6.2831853` units. That's how far the waves are apart when you do `1*x`. It's also exactly how many seconds it takes for the wave to repeat when you do `1*t`. Try setting the time frequency to `TAU*t` and the sine waves should now oscillate every second.
+
+## What can you do with 
+
+
+## Unsorted
+
 *Warning: this article is unfinished (but it's gonna be really cool) and halfway turns into a rambling braindump.*
 
 I find that for many uses they're just as good as a (simplex or perlin) noise function, except they are a little bit more controllable, and they have a more organic, swinging, wavy or indeed soothing feel to them. A bit more like "it's doing something" rather than just being smooth and unpredictable.
@@ -12,14 +52,10 @@ Let's assume our goal is a 2D sinusoid function that evolves over time `t` (usua
 
 We start with a simple 1D sine wave over `x`, that moves with time:
 
-<script src="graph.js"></script>
+<code>[{xlim:[-4,4],ylim:[-1.1,1.1]},(x,t)=>sin(2*x + 3*t + 5)]</code>
+{:.live}
 
-<div id="sin1d" class="live"> <canvas></canvas> <input type="text" /> </div>
-<script>
-    let graph = new Graph1Dxt("sin1d", "sin(2 * x + 3 * t + 5)");
-    graph.draw();
-    // Graph1D
-</script>
+blairf blorf
 
 	sin(a * x + b * t + c)
     
@@ -97,3 +133,5 @@ Now you may find that this looks fairly boring, and this is because you need to 
 Because the result is the sum of two sine waves, it ranges between -2 and 2. Therefore you do `0.5 + 0.25 * (the entire thing)` to scale it to 0 and 1.
 
 Try it with greyscale first. It's incredibly hard to see what happens when you change the parameters between 3 colour channels at once. Besides, doing that blindly will result in nothing but rainbow puke. If you want nice colours try slight incremental phase offsets between R, G and B. Leave the frequencies the same. After you tried that, realise that this is also about the extent of what you can usefully do with colour in the RGB colour space without using a palette (prove me wrong, though :) ).
+
+<script src="graphs.js"></script>

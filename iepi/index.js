@@ -23,7 +23,8 @@ const opts = hash_opts(default_opts);
 
 S=Uint32Array.from([9,7,n=t=5,3]);
 R=(a=1)=>a*(t=S[3],S[3]=S[2],S[2]=S[1],S[1]=n=S[0],t^=t<<11,S[0]^=(t^t>>>8)^(n>>>19),S[0]/2**32);
-[...Date.now()+'Kallisti'].map(c=>R(S[3]^=c.charCodeAt()*23205));
+seed=Date.now();
+[...seed+'Kallisti'].map(c=>R(S[3]^=c.charCodeAt()*23205));
 ({min,max,PI}=Math);TAU=PI*2;
 L=(N,f)=>[...Array(N)].map((_,i)=>f(i));
 L(9,R);
@@ -41,16 +42,17 @@ x=[];for(;x.length<1||f%2+g%2<1||f%3+g%3<1;f=2+R(6)|0,g=1+R(f-1)|0,h=f+g,x=[2,3,
 console.table({freq0:f,freq1:g,symmetry:`${x} (${y})`});
 I=n=>(1+R(n)|0)*y*(R()<.5?1:-1);
 G=(a=.5)=>.1+R(a/y);rs=x=>R()<.5?-x:x;
-TF=(s=1)=>`${R()}+${rs(s)}*(${R()+.5}*t`+(R()<.3?`+${rs(R()+1)}*pow(O(${R(.4)}, ${R()}, .5, .5, t), 16.)`:``)+`)`
+TF=(s=1)=>`${R()}+${rs(s)}*(${R()+.5}*t)`
 st=0;
 K=`#version 300 es
 precision highp float;
-`+`,S smoothstep,W vec3,V vec2,X vec4,F float
+`+`,S smoothstep,W vec3,V vec2,X vec4,F float,B abs,U min,G max,L length,N normalize
 `.replace(/,/g,`
 #define `);
 const vc = `uniform V res;
 uniform int NV;
 uniform float time;
+uniform W or;
 out V pos;
 out F size;
 
@@ -60,6 +62,12 @@ float rnd(float p) {
   return fract(p2.x * p2.y * 95.6998);
 }
 #define TAU ${TAU}
+
+mat2 rot1(float a) {
+    a*=TAU;
+    float s = sin(a), c = cos(a);
+    return mat2(c, -s, s, c);
+}
 
 V R(float f, float p, float a, float t) {
   // rotating V with frequency f, phase p, amplitude a
@@ -92,14 +100,12 @@ V pss(float u, float t) {
 void main() {
   float u = float(gl_VertexID) / float(NV);  // goes from 0 to 1
   float t = time * .1;
-  float rn = rnd(u + time * 61.8);
-  V ps;
-  
-  ps=pss(u,t);
+  const float y = ${y};
+  V ps=pss(u,t);
   ps.x*=ps.x*ps.x;
   V w = ${R()<.4?'R':'P'}(${180*(y+h)}, ${R()}+u, .06*ps.x   , u);
 
-  const X am = normalize(X(${L(4,_=>R())}));
+  const X am = normalize(X(${L(4,_=>R()-R())}));
   float p0 = O(${I(5)}, ${TF()}, ${z=TF(.2)}, am.x * ${G(.5)}, u);
   float p1 = O(${I(5)}, ${TF()}, -${R()+.5}*(${z}), am.y * ${G(.5)}, u);
   float a0 = O(${I(5)}, ${TF()}, .4, am.z * ${G(.5)}, u);
@@ -109,10 +115,9 @@ void main() {
 
   V aspect = res.yx * (.66+${y*.02}) / max(res.x, res.y);
   pos = p * aspect;
-  size = 2.5 + 5*S(0.5, 1, ps.y);
-  // if (rn<.5) size=0;
+  size = S(0.2, 1, ps.y);
   gl_Position = vec4(pos, 0, 1);
-  gl_PointSize = size;
+  gl_PointSize = 3 + 8*size;
 }`;
 
 const fc = `
@@ -122,7 +127,7 @@ out vec4 outColor;
 
 void main() {
   F d = length(gl_PointCoord*2-1);
-  outColor=X(W(.1,0,.2),clamp((1-d)*size/2,0,1));   // 1-d/f
+  outColor=X(W(0),S(1,size*.8,d));   // 1-d/f
 }`;
   // x = Math.min(Math.max((x - e0) / (e1 - e0), 0), 1);
 //
@@ -150,13 +155,17 @@ if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
   throw ("Program failed to link (see console for error log).");
 }
 
-const uniforms = 'res NV time'.split(' ');
+const uniforms = 'res NV time or'.split(' ');
 for (let uni of uniforms) {
   loc[uni] = gl.getUniformLocation(program, uni);
 }
 
 gl.useProgram(program);
-gl.clearColor(1,1,1,1);
+gl.clearColor(1,.9,.6,1);
+gl.enable(gl.SAMPLE_ALPHA_TO_COVERAGE);
+// gl.enable(gl.SAMPLE_COVERAGE);
+gl.enable(gl.BLEND);
+gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 
 const N = opts.N;
 
@@ -169,12 +178,9 @@ function resize() {
   c.style.height = h+'px';
 }
 resize();
-onresize=resize;
-
-// let alpha,beta,gamma;
-window.addEventListener("deviceorientation", event=>{
-  console.log(`${event.alpha} : ${event.beta} : ${event.gamma}`);
-}, true);
+window.addEventListener('resize', resize);
+alpha=0;beta=0;gamma=0;
+window.addEventListener("deviceorientation", e => ({alpha,beta,gamma}=e));
 let frame_count = 0;
 let prev_time = performance.now();
 let fps = 30;
@@ -183,11 +189,8 @@ function render(time) {
   gl.uniform2fv(loc.res, [res.x, res.y]);
   gl.uniform1i(loc.NV, N);
   gl.uniform1f(loc.time, time * .001);
-gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-gl.enable(gl.SAMPLE_ALPHA_TO_COVERAGE);
-// gl.enable(gl.SAMPLE_COVERAGE);
-gl.enable(gl.BLEND);
-gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+  gl.uniform3f(loc.or, alpha,beta,gamma);
+  gl.clear(gl.COLOR_BUFFER_BIT);
   gl.drawArrays(gl.POINTS, 0, N);
 
 //   gl.uniform1f(loc.time, time * .001 + 0.1);
@@ -198,8 +201,10 @@ gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
   frame_count++;
   let dt = time - prev_time;
   fps = fps * 0.9 + (1000/dt)*0.1;
+  document.title=fps.toFixed(1)+'fps';
   //info.innerHTML = fps.toFixed(1)+'fps';
   prev_time = time;
   requestAnimationFrame(render);
 }
 requestAnimationFrame(render);
+
