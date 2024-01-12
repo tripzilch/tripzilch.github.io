@@ -30,11 +30,13 @@ document.querySelectorAll('p.live code').forEach(e=>{
   let cfg=e.parentNode.graphs_cfg={ // defaults
     xlim:[-4,4],
     ylim:[-1,1],
+    flim:[-1,1],
     ts:1,
     bgcol:'#000',
     fgcol:'#fff',
     tickcol:'#444',
     aspect:1/4,
+    grid_res:128,
     yticks:[-1,0,1],
     xticks:[0],
     running:1,
@@ -62,20 +64,19 @@ document.querySelectorAll('p.live code').forEach(e=>{
     return b.bottom<0 || b.top>innerHeight || document.visibilityState=='hidden';
   }
 
-  let draw = _=>{
+  let draw_1D = _=>{
     if (!cfg.running || out_of_view()) return;
+    C.fillStyle = cfg.bgcol;
+    C.fillRect(0,0,w,h);
     let t = cfg.ts * performance.now() / 1000;
     let [x0,xa] = cfg.xlim; xa-=x0;
     let [y0,ya] = cfg.ylim; ya-=y0;
-    let lw = 3 * devicePixelRatio;
+    let lw = C.lineWidth = 3 * devicePixelRatio;
     let ys = (h-lw*2)/ya;
-    C.fillStyle = cfg.bgcol;
-    C.fillRect(0,0,w,h);
     C.fillStyle = cfg.tickcol;
     cfg.xticks.map(x=>C.fillRect((x-x0)*w/xa,0,lw/2,h));
     cfg.yticks.map(y=>C.fillRect(0,(y-y0)*ys+lw,w,lw/2));
     C.strokeStyle = cfg.fgcol;
-    C.lineWidth = 3 * devicePixelRatio;
     C.beginPath();
     for(let i=-lw;i<w+lw;i++) {
       let x = x0 + xa * i / w;
@@ -84,6 +85,32 @@ document.querySelectorAll('p.live code').forEach(e=>{
     }            
     C.stroke();
   }
+
+  let draw_2D = _=>{
+    if (!cfg.running || out_of_view()) return;
+    C.fillStyle = cfg.bgcol;
+    C.fillRect(0,0,w,h);
+
+    let t = cfg.ts * performance.now() / 1000;
+    let [x0,xa] = cfg.xlim; xa-=x0;
+    let [y0,ya] = cfg.ylim; ya-=y0;
+    let [f0,fa] = cfg.flim; fa-=f0;
+
+    C.fillStyle = cfg.fgcol;
+    let N=cfg.grid_res, M=N*cfg.aspect|0;
+    for (let j=0; j<M; j++) {
+      for (let i=0; i<N; i++) {
+        let fi=(i+.5)/N, fj=(j+.5)/M;
+        let x=x0+xa*fi, y=y0+ya*fj;
+        let f=(fn(x,y,t)-f0)/fa;
+        let rx=w*fi,ry=h*fj;
+        f*=.49*w/N;
+        C.fillRect(rx-f,ry-f,f*2,f*2);
+      }
+    }
+  }
+
+  let draw=draw_1D;
 
   let k=_=>(draw(), requestAnimationFrame(k));
   k();
