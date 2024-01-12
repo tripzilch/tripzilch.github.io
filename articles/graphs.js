@@ -36,7 +36,7 @@ document.querySelectorAll('p.live code').forEach(e=>{
     fgcol:'#fff',
     tickcol:'#444',
     aspect:1/4,
-    grid_res:128,
+    grid_res:72,
     yticks:[-1,0,1],
     xticks:[0],
     running:1,
@@ -50,8 +50,8 @@ document.querySelectorAll('p.live code').forEach(e=>{
   let V=cfg.V=document.createElement('canvas');
   let FN=cfg.FN=document.createElement('input');
   FN.type='text';
-  FN.value=fn.toString();
-  FN.onchange=e=>fn=Function('return '+FN.value)();
+  let fnstr=FN.value=fn.toString();
+  FN.onchange=e=>fn=Function('return '+(fnstr=FN.value))();
 
   e.remove();
   P.append(V,FN);
@@ -110,9 +110,14 @@ document.querySelectorAll('p.live code').forEach(e=>{
     }
   }
 
-  let draw=draw_1D;
+  // let draw=_=>0;
+  // if (draw_1D;
 
-  let k=_=>(draw(), requestAnimationFrame(k));
+  let k=_=>{
+    if(fnstr.startsWith('(x,t)=>'))draw_1D();
+    if(fnstr.startsWith('(x,y,t)=>'))draw_2D();
+    requestAnimationFrame(k);
+  }
   k();
 
   // onkeyup=({key:k})=>{

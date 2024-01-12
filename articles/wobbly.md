@@ -131,7 +131,23 @@ There are four phases to pick randomly between `0..TAU` in this formula. You can
 
 ## But what if I need 2D noise?
 
+Alright so check this:
 
+<code>[{xlim:[-4,4],ylim:[-2,2],flim:[-2,2],yticks:[],xticks:[],aspect:3/8},
+    (x,y,t)=>sin(2.31*x+1.11*t+5.95+2.57*sin(1.73*y-1.65*t+1.87)) + sin(3.09*y-1.28*t+4.15+2.31*sin(2.53*x+1.66*t+4.45))]</code>
+{:.live}
+
+This is basically the same formula as the last, except with slightly different random numbers, and with a `y` space dimension thrown in.
+
+I have mixed up the dimensions, so in the first term, a sine wave on `y` is modulating a sine wave on `x`, and in the second term the other way around.
+
+There are some variations on this formula, but I find it's best to be strategic about it. For instance, adding `x` and `y` together somewhere in the formula basically amounts in a rotation + scaling, which may or may not be what you intended.
+
+Yes, there are quite some visible patterns, however 1) I zoomed out a bit on purpose because 2) the patterns actually look kind of cool and 3) you can always add more sine waves into the mix.
+
+When I go for option 3, I usually duplicate the above formula, but 
+
+## other ways to combine sine waves?
 
 ## phase modulation
 
