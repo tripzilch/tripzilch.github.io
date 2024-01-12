@@ -145,9 +145,20 @@ There are some variations on this formula, but I find it's best to be strategic 
 
 Yes, there are quite some visible patterns, however 1) I zoomed out a bit on purpose because 2) the patterns actually look kind of cool and 3) you can always add more sine waves into the mix.
 
-When I go for option 3, I usually duplicate the above formula, but 
+When I go for option 3, I usually duplicate the above formula (with fresh random numbers), but have the second term be (roughly) double the frequency, and divided by 2. This sort of emulates the idea of adding an octave of the noise. Usually one octave is enough. If you want even finer detail, there are probably better methods.
+
+Anyway, mainly so I didn't write the 2D visualizer for just one interactive picture, here's the formula for what I just described:
+
+<code>[{xlim:[-2,2],ylim:[-1,1],flim:[-3,3],yticks:[],xticks:[],aspect:3/8},
+    (x,y,t)=>sin(2.31*x+0.11*t+5.95+2.57*sin(1.73*y-0.65*t+1.87)) + sin(3.09*y-0.28*t+4.15+2.31*sin(2.53*x+0.66*t+4.45))+sin(3.06*x-0.18*t+5.16+2.28*sin(2.27*y+0.71*t+3.97))+sin(5.40*y-0.13*t+4.74+2.83*sin(3.71*x+0.96*t+4.42))/2]</code>
+{:.live}
+
+It sort of works, but I cheated a little by zooming in further. Once you zoom out, what really becomes apparent is the diagonal patterns. I think you can get rid of most of these by rotating `x` and `y` by 45 degrees in the second octave term (`rx=.707*x+.707*y;ry=.707*y-.707*x;` should do the trick, where `.707 ~= sqrt(2)`).
+
 
 ## other ways to combine sine waves?
+
+## advantages
 
 ## phase modulation
 
