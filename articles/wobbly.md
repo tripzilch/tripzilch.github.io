@@ -10,11 +10,15 @@ Although that is not really what this article is about. Wobbly functions are som
 
 ## What is a wobbly function?
 
-They are functions based on sine waves. Any kind. Whatever you can dream up. But I can share a couple of techniques you may find interesting.
+Wobbly functions are functions based on sine waves. Any kind. Whatever you can dream up. But I can share a couple of techniques you may find interesting.
+
+## Sine waves?
 
 In school, you may have learned that the sine and cosine functions are useful for calculating things about right angled triangles. They were not wrong, but let's focus right now on a more important truth:
 
-*Sine waves have a funny shape.*
+***Sine waves have a funny shape.***
+
+Drawing graphs in school, we started with linear equations, which are just lines. Boring. Next up were parabolas, kinda curvy and neat but they run off the paper really quick, not super practical. No, sine waves are where it's at.
 
 Let's start with a graph of a simple sine wave over `x` that moves with time (`t`):
 
@@ -35,7 +39,20 @@ The point is that it's important to realize when you're modifying _frequencies_ 
 
 A useful thing to know about phases of sine waves is that they repeat every `TAU = 2*PI = 6.2831853` units. That's how far the waves are apart when you do `1*x`. It's also exactly how many seconds it takes for the wave to repeat when you do `1*t`. Try setting the time frequency to `TAU*t` and the sine waves should now oscillate every second.
 
-## What can you do with 
+## How do I make it more irregular?
+
+We need more sine waves. Jean-Baptiste Joseph Fourier once figured out that if you add enough sine waves together, you can do pretty much anything.
+
+Here's two sine waves added together (zoomed out a little, to show more of them):
+
+<code>[{xlim:[-12,12],ylim:[-3,3]},
+    (x,t)=>sin(2*x + 3*t + 1) + sin(3*x + 2*t + 2)]</code>
+{:.live}
+
+That's more irregular, right? 
+
+Not really? Thing is that by using only integer numbers 2 and 3, we're limiting the waves to interfere with each other in either 2:3 or 3:2 ratios. They will in fact repeat every 6 units (6 being the "least common multiple" of 2 and 3). But this might be exactly what you need, if you want a repeating function (maybe a looped animation?) that wobbles slowly but slightly more interesting than a simple sine wave.
+
 
 
 ## Unsorted
