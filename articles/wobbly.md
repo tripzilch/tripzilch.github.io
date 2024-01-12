@@ -37,7 +37,7 @@ The last number is the lonely number that you just add. This one is a bit differ
 
 The point is that it's important to realize when you're modifying _frequencies_ or _phases_. A frequency is basically the speed at which the phase moves. In order to move, it needs a dimension. In the above example we move the phase in both the _space_ (`x`) and _time_ (`t`) dimension. Congratulations, it's a continuum!
 
-A useful thing to know about phases of sine waves is that they repeat every `TAU = 2*PI = 6.2831853` units. That's how far the waves are apart when you do `1*x`. It's also exactly how many seconds it takes for the wave to repeat when you do `1*t`. Try setting the time frequency to `TAU*t` and the sine waves should now oscillate every second.
+A useful thing to know about phases of sine waves is that they repeat every `TAU = 2*PI = 6.2831853..` units. That's how far the waves are apart when you do `1*x`. It's also exactly how many seconds it takes for the wave to repeat when you do `1*t`. Try setting the time frequency to `TAU*t` and the sine waves should now oscillate every second.
 
 ## How do I make it more irregular?
 
@@ -46,14 +46,32 @@ We need more sine waves. Jean-Baptiste Joseph Fourier once figured out that if y
 Here's two sine waves added together (zoomed out a little, to show more of them):
 
 <code>[{xlim:[-12,12],ylim:[-3,3],yticks:[-2,-1,0,1,2]},
-    (x,t)=>sin(2*x + 3*t + 1) + sin(3*x + 2*t + 2)]</code>
+    (x,t)=>sin(2*x + 3*t + 5) + sin(3*x + 2*t + 4)]</code>
 {:.live}
 
 That's more irregular, right? 
 
-Not really? Thing is that by using only integer numbers 2 and 3, we're limiting the waves to interfere with each other in either 2:3 or 3:2 ratios. They will in fact repeat every 6 units (6 being the "least common multiple" of 2 and 3). But this might be exactly what you need, if you want a repeating function (maybe a looped animation?) that wobbles slowly but slightly more interesting than a simple sine wave.
+Not really? Thing is that by using only integer numbers 2 and 3 for the frequencies, we're limiting the waves to interfere with each other in either 2:3 or 3:2 ratios. They will in fact repeat every 6 units (6 being the "least common multiple" of 2 and 3). But this might be exactly what you need, if you want a repeating function (maybe a looped animation?) that wobbles slowly but slightly more interesting than a simple sine wave.
 
+What about the phases? Well we got two phases and we can choose them freely in the range `0..TAU`, any numbers outside that range will just be equivalent modulo `TAU`. This brings us to an important rule that holds for all wobbly noise:
 
+**If you do your wobbly noise right, you can always get infinite random variations, simply by picking each phase randomly in the range `0..TAU`.**
+
+But maybe you don't care about your function being periodic, in which case we are free to use non integer numbers for the frequencies. Try playing around a bit.
+
+You may find that to get most irregular noise, you need numbers that are not too dissimilar in magnitude, but they can't be _too_ close either.
+
+## What is the optimal ratio between frequencies?
+
+The answer, at least for wobbly noise is the _Golden Ratio_, or `PHI = .5+.5*5**.5 = (1+sqrt(5))/2 = 1.618..`.
+
+You kind of knew it had to be an irrational number, because those don't divide by any integer ratios, and therefore the wave could never repeat exactly. And for various measures of "how irrational is this number", the _Golden Ratio_ `PHI` is the most irrational one.
+
+There are also other numbers which are good, if you want to go really deep down this rabbithole, check out [The Unreasonable Effectiveness of Quasirandom Sequences](https://extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences/){:target="\_blank"}, but the _Golden Ratio_ is a classic favourite.
+
+## Can you add even more sine waves together?
+
+You sure can! 
 
 ## Unsorted
 
