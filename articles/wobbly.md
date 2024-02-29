@@ -175,7 +175,7 @@ But apart from adding, phase modulating and/or multiplying sine waves together, 
 
 ## Isn't phase modulation also a synthesizer thing or something?
 
-Yes. And I will write a bunch more about how these two concept are related. (TODO)
+Yes. And I will write a bunch more about how these two concepts are related. (TODO)
 
 ## Any secret tricks?
 
