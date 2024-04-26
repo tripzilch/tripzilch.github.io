@@ -168,7 +168,7 @@ for (let uni of uniforms) {
 }
 
 gl.useProgram(program);
-gl.clearColor(1,.9,.6,1);
+gl.clearColor(1,.7,.2,1);
 gl.enable(gl.SAMPLE_ALPHA_TO_COVERAGE);
 // gl.enable(gl.SAMPLE_COVERAGE);
 gl.enable(gl.BLEND);

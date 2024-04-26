@@ -7,7 +7,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: radial-gradient(#fed, #556);
+  background: #f0f;
 }
 
 * {
