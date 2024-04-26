@@ -194,7 +194,7 @@ let fps = 30;
 N=([x,y,z],m=1e-99+(x*x+y*y+z*z)**.5)=>[x/m,y/m,z/m];
 rot=(x,y,c,s)=>[c*x+s*y,c*y-s*x];
 let fqp=F(99,_=>N([T()-T(),T()-T(),T()-T()]));
-let fqj=F(99,_=>RS(2+R(2)));
+let fqj=F(99,_=>.5*RS(1+R()));
 let fqf=F(99,_=>.003*RS(1+R(2)));
 xf=([x,y,z])=>(
   [x,y]=rot(x,y,acs,asn),
