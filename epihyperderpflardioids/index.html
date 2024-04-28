@@ -4,9 +4,28 @@
     <meta charset="utf-8" />
     <title>EPIHYPERDERPFLARDIOIDS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link type="text/css" rel="stylesheet" href="style.css" />
+    <style>
+      * {margin: 0; padding: 0; }
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+textarea{
+  position: absolute;
+  bottom:0px;right:0px;
+  width: 100vw;
+  height: 10vh;
+  background: #ff0;
+  border: none;
+  border-top: .2em solid #000;
+  font: .8em/1.2em monospace;
+}
+  </style>
   </head>
   <body>
+    <!-- <textarea id="dbg"></textarea> -->
     <canvas id="c"></canvas>
     <script type="text/javascript" src="index.js"></script>
   </body>
