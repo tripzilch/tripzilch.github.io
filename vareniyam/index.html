@@ -126,13 +126,6 @@
       sortfine.onclick=e=>update(cur_sort=sort_fine);
 
       let D=document;
-      // let update=_=>{
-      //     let nn = ims.filter(im=>im._note).map(im=>({i:im._index,n:im._note}));
-      //     summary.value = nn.map(({i,n})=>`${(i+'').padStart(4,0)} -- ${n}`).join('\n'); 
-      //     localStorage['notes'+location.pathname]=JSON.stringify(nn);
-      //   };
-      // let ims=[], num=500,im;
-      // let lnn = JSON.parse(localStorage['notes'+location.pathname] || '[]');
       let num=data.length;
       for(let i=0; i<num; i++) {
         let d=data[i];
