@@ -67,6 +67,7 @@
         padding: 0 2rem;
       }
       #desc p { margin: .5rem 0px; }
+      #desc a { color: #ccc; }
       #sorting {
         position: fixed;
         top: 0px;
@@ -90,7 +91,7 @@
       <a id="sortfine">FINE</a>
     </div>
     <div id="desc">
-<p><b>Vareniyam</b> is a generative project inviting the collector on a journey of exploration by means of randomness. Collectors have chosen which parameters to re-roll and marked their favourites to find magnificent outputs that nobody else could have discovered.</p>
+<p><b>Vareniyam</b> is a generative project released on <a href="https://highlight.xyz">Highlight.xyz</a> inviting the collector on a journey of exploration by means of randomness. Collectors have chosen which parameters to re-roll and marked their favourites to find magnificent outputs that nobody else could have discovered.</p>
 
 <p><b>Vareniyam</b> is a Sanskrit word from the Gayatri mantra, in context of which it means "chosen" or "desirable".</p>
 
@@ -144,7 +145,7 @@
         imlink.href=d.imgsrc;
         imlink.append(img);
         info.innerHTML=`<p><i>#${d.id}</i></p><p><b>age: </b>${d.age}</p><p><b>ver: </b>${d.ver}</p>`;
-        links.innerHTML=`<a href="${d.live}">Live</a><a href="${d.hl}">Highlight</a><a href="${d.owner}">Owner</a>`;
+        links.innerHTML=`<a href="${d.live}">Live</a><a href="${d.hl}">Token</a><a href="${d.owner}">Owner</a>`;
         it.append(imlink,info,links);
         d.it = it;
       }
