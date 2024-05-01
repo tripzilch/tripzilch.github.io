@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vareniyam Gallery</title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #000;
+        font: 1rem/1.5rem monospace;
+        color: #eee;
+      }
+      .item b { color: #777; }
+      .item i { color: #fff; font: bold 1.5rem/1.5rem monospace; }
+      .item {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        column-gap: 1rem;
+        row-gap: .5rem;
+        padding: 1rem;
+        width: 100%;
+        max-width: 70rem;
+        border-bottom: .5rem solid #222;
+        margin: 0 auto;
+      }
+      @media (max-width: 500px) {
+        .item {
+          grid-template-columns: 1fr;
+        }
+        .links, .info { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+        .info p { text-align:center; }
+        #desc { font: .7rem/1.05rem monospace;
+ }
+      }
+      .item img {
+        display: block;
+        width: 100%;
+      }
+      .info {
+        padding:4px;
+        border: 2px solid #000;
+      }
+      .links {
+        padding:4px;
+        border: 2px solid #000;        
+      }
+      .links a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        background: #999;
+        border-radius: .5rem;
+        margin: .25rem;
+        padding: .25rem .3rem;
+        text-align: center;
+      }
+      .links a:hover { background: #ccc; }
+      #desc {
+        max-width: 60rem;
+        margin: 3rem auto 1rem auto;
+        padding: 0 2rem;
+      }
+      #desc p { margin: .5rem 0px; }
+      #sorting {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        background: #000;
+        color: #999;
+        opacity: .8;
+        font: 1rem/2rem monospace;
+        text-align: center;
+      }
+      #sorting a { color: #fff; padding: .125rem .25rem; border-radius: .125rem; cursor: pointer; }
+      #sorting a.yes { background: #fff;color: #000; }
+    </style>
+  </head>
+  <body>
+    <div id="sorting">SORT BY 
+      <a id="sortnum">NUM</a>
+      <a id="sortage">AGE</a>
+      <a id="sortver">VER</a>
+      <a id="sortfine">FINE</a>
+    </div>
+    <div id="desc">
+<p><b>Vareniyam</b> is a generative project inviting the collector on a journey of exploration by means of randomness. Collectors have chosen which parameters to re-roll and marked their favourites to find magnificent outputs that nobody else could have discovered.</p>
+
+<p><b>Vareniyam</b> is a Sanskrit word from the Gayatri mantra, in context of which it means "chosen" or "desirable".</p>
+
+<p>In live view, press "j" (several times) to see keyboard controls to adjust resolution, aspect ratio, etc.</p>
+
+<p>Each <b>Vareniyam</b> output has two traits: "<b>age</b>" is the cumulative amount of time spent exploring before minting this output. "<b>ver</b>" means "version" and it's made of two numbers documenting the collector's exploration journey. The first number counts the full random re-rolls (randomizing all parameters), and the 2nd number counts the individual fine tuning re-rolls (randomizing one category of parameters) made to arrive at this exact output.</p>
+
+<p>This way you can get an impression of the effort spent locating Vareniyam's treasures in its infinite sea. Of course this doesn't mean the ones with lower numbers are worse in any way, there is always luck and the decision to mint or not. Just because someone spent an hour exploring Vareniyam doesn't mean that every output from then on will be better, cause that is not how random does. View these traits as a ship's log, mileage or travel memories.</p>
+
+<p>Use the buttons at the top of the screen to sort the collection in various ways.</p>
+</div>
+
+    <div id="gallery"></div>
+    <script src="data.js"></script>
+    <script>
+      let sort_num = (a,b) => a.id - b.id;
+      let sort_age = (a,b) => b.age.slice(0,-3) - a.age.slice(0,-3);
+      let verm = (d,[ma,mi]=d.ver.split('.'))=>ma*1e9+mi;
+      let sort_ver = (a,b) => verm(b) - verm(a);
+      let sort_fine = (a,b) => b.ver.split('.')[1] - a.ver.split('.')[1];
+      let sorts = [sort_num, sort_age, sort_ver, sort_fine];
+
+      let cur_sort = sort_num;
+      let update=_=>{
+        [...sorting.children].map((e,i)=>e.className=sorts.indexOf(cur_sort)==i?'yes':'');
+        gallery.replaceChildren(...data.sort(cur_sort).map(d=>d.it));
+      }
+
+      sortnum.onclick=e=>update(cur_sort=sort_num);
+      sortage.onclick=e=>update(cur_sort=sort_age);
+      sortver.onclick=e=>update(cur_sort=sort_ver);
+      sortfine.onclick=e=>update(cur_sort=sort_fine);
+
+      let D=document;
+      // let update=_=>{
+      //     let nn = ims.filter(im=>im._note).map(im=>({i:im._index,n:im._note}));
+      //     summary.value = nn.map(({i,n})=>`${(i+'').padStart(4,0)} -- ${n}`).join('\n'); 
+      //     localStorage['notes'+location.pathname]=JSON.stringify(nn);
+      //   };
+      // let ims=[], num=500,im;
+      // let lnn = JSON.parse(localStorage['notes'+location.pathname] || '[]');
+      let num=data.length;
+      for(let i=0; i<num; i++) {
+        let d=data[i];
+        let it=D.createElement('div'),img=new Image(),info=D.createElement('div'),links=D.createElement('div'),imlink=D.createElement('A');
+        it.className='item';
+        info.className='info';
+        links.className='links';
+        img.src=d.imgsrc;
+        img.loading='lazy';
+        imlink.href=d.imgsrc;
+        imlink.append(img);
+        info.innerHTML=`<p><i>#${d.id}</i></p><p><b>age: </b>${d.age}</p><p><b>ver: </b>${d.ver}</p>`;
+        links.innerHTML=`<a href="${d.live}">Live</a><a href="${d.hl}">Highlight</a><a href="${d.owner}">Owner</a>`;
+        it.append(imlink,info,links);
+        d.it = it;
+      }
+      update();
+    </script>
+  </body>
+</html>
+
