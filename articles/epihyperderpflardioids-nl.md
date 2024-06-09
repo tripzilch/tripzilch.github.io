@@ -54,8 +54,10 @@ Maar iedereen doet het ook net op een subtiel andere manier. Mijn Epihyperderpfl
 
 Om mensen te helpen met de uitspraak van "Epihyperderpflardioids", heb ik de hulp van Suno AI ingeschakeld::
 
-[Epihyperderpflardioids GO](https://suno.com/song/9ff6b9b2-4cba-4447-83ab-638760b2c187)  
-[Epihyperderpflardioids New Wave 1](https://suno.com/song/d12b5489-0a2a-4154-8a44-02279bd34058)  
-[Epihyperderpflardioids New Wave 2](https://suno.com/song/fe01624f-e62b-4481-90d0-3c254b374764)  
+[Epihyperderpflardioids GO](https://suno.com/song/9ff6b9b2-4cba-4447-83ab-638760b2c187) [mp3](EPIHYPERDERPFLARDIOIDS.mp3)  
+[Epihyperderpflardioids New Wave 1](https://suno.com/song/d12b5489-0a2a-4154-8a44-02279bd34058) [mp3](EPIHYPERDERPFLARDIOIDS-newwave1.mp3)  
+[Epihyperderpflardioids New Wave 2](https://suno.com/song/fe01624f-e62b-4481-90d0-3c254b374764) [mp3](EPIHYPERDERPFLARDIOIDS-newwave2.mp3)  
+
+
 
 
