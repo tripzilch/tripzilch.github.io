@@ -40,6 +40,8 @@ Verder heb ik nog een live code bewegende random Epihyperderpflardioid generator
 
 Ik ben ook erg trots op deze geanimeerde Epihyperderpflardioids: [Groen](https://www.instagram.com/p/CBqQjU2HqTt/), [Magenta](https://www.instagram.com/p/CBn5kr4nGtI/), [Oranje](https://www.instagram.com/p/CBst6pwnHjG/), [Blauw Geel](https://www.instagram.com/p/CBvtM5Rn2l3/), [Pseudo semi epihyperderpflardioid](https://www.instagram.com/p/CByu9R_HAzM/).
 
+Er staan nog meer op mijn Instagram. Op een dag ooit komt dit allemaal op mijn site ...
+
 # Werk van anderen
 
 Nadieh Bremer's Art Blocks project "Rotae" (Nov 2021) gebruikt vergelijkbare formules: [Rotae (Nov 2021)](https://www.artblocks.io/legacy/collections/presents/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/194)
