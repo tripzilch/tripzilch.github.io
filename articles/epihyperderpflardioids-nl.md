@@ -3,7 +3,9 @@
 ![Geo epihyperderpflardioids in black ballpoint, August 2020](epi-red-plot.jpg)
 *Geo epihyperderpflardioids in black ballpoint, August 2020*
 
-Ik heb deze figuren "Epihyperderpflardioids" genoemd. 
+De blauwe balpen-plots die ik heb uitgedeeld in Venetie zijn gebaseerd op bovenstaande plot uit 2020 (nieuwe code, zelfde principe). Ik heb voor deze plots steeds balpen gebruikt, omdat ik de textuur ervan erg mooi vind voor deze figuren. Een balpen geeft een vrij dunne lijn (met de plotter), maar heeft veel textuur vergeleken met bijv. fine-liner. Omdat een plotter heel precies is, geeft dit een mooi effect als de lijnen heel dicht langs elkaar gaan, bovendien wordt de tint dieper als de plotter meerdere keren over dezelfde lijn gaat. Om deze reden gaat de plotter vijf keer rond de hele figuur, terwijl sommige delen in fase verschoven zijn. Dat zorgt ervoor dat de plotter in sommige delen 5x precies over dezelfde lijn gaat, en in andere delen steeds een beetje verschoven, wat een fijne spiraal oplevert. Je kan dit goed zien in [deze plottervideo](https://www.instagram.com/p/CDrEfwMnLJy/?img_index=4). 
+
+Ik heb deze figuren "Epihyperderpflardioids" genoemd.
 
 De formules zijn ruwweg gebaseerd op die van Spirograaf (Spirograph), die in wiskundige termen "hypotrochoids" en "epitrochoids" worden genoemd. Mijn formules vallen daar niet helemaal precies onder en hebben meer parameters, dus heb ik het woord "Epihyperderpflardioids" bedacht.
 
