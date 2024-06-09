@@ -60,6 +60,13 @@ Om mensen te helpen met de uitspraak van "Epihyperderpflardioids", heb ik de hul
 [Epihyperderpflardioids New Wave 1](https://suno.com/song/d12b5489-0a2a-4154-8a44-02279bd34058) [mp3](EPIHYPERDERPFLARDIOIDS-newwave1.mp3)  
 [Epihyperderpflardioids New Wave 2](https://suno.com/song/fe01624f-e62b-4481-90d0-3c254b374764) [mp3](EPIHYPERDERPFLARDIOIDS-newwave2.mp3)  
 
+# Terminologie
 
+Om dingen ingewikkelder te maken, maak ik onderscheid tussen de volgende termen:
 
+[**geo-epihyperderpflardioids**](https://www.instagram.com/p/CCbMluBH9rc/?img_index=1) -- origineel waren de "bulges" / "spiraal blobjes" cirkelvormige spiralen. Met een beetje gepruts bleken driehoekige en vierkante spiralen ook mogelijk, en die noem ik "geo-epihyperderpflardioids". 
+
+[**semi-epihyperderpflardioids**](https://www.instagram.com/p/B-9jsCpH15G/?img_index=1) -- in sommige versies is de epihyperderpflardioid niet een continue lijn, maar worden de spiraal blobjes onderbroken door kleine losse cirkels, alsof de lijn gebarsten is.
+
+[**pseudo-epihyperderpflardioids**](https://www.instagram.com/p/CByu9R_HAzM/) -- "you've got to know the rules before you break the rules", Epihyperderpflardioids ontstonden door een zoektocht naar symmetrie. Een pseudo-epihyperderpflardioid laat deze voorwaarde los en is niet meer symmetrisch.
 
