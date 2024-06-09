@@ -25,7 +25,7 @@ Ik heb een artikel geschreven over deze zoektocht: [How to make interesting rota
 
 Je kan mijn eerste mints van Epihyperderpflardioids vinden op Hic Et Nunc:
 
-https://objkt.com/@piterpasma?search=epi (de zwart/witte "Syncopated Epihyperderpflardioids" zijn animaties)
+[objkt.com Search Piter Pasma "epi"](https://objkt.com/@piterpasma?search=epi) (de zwart/witte "Syncopated Epihyperderpflardioids" zijn animaties)
 
 Ik heb ook nog een collectie [Epihyperderpflardioids op FX(hash)](https://www.fxhash.xyz/generative/slug/epihyperderpflardioids) uitgebracht.
 
