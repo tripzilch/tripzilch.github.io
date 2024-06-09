@@ -46,7 +46,7 @@ Er staan nog meer op mijn Instagram. Op een dag ooit komt dit allemaal op mijn s
 
 Nadieh Bremer's Art Blocks project "Rotae" (Nov 2021) gebruikt vergelijkbare formules: [Rotae (Nov 2021)](https://www.artblocks.io/legacy/collections/presents/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/194)
 
-Nadieh heeft mij destijds nog gevraagd of ik dit okay vond, maar ik wil geen claim leggen op wiskundige formules. Bovendien bleek uit haar onderzoek dat anderen deze familie van functies/vormen ook hebben onderzocht: 
+Nadieh heeft mij destijds nog gevraagd of ik dit okay vond, dat vond ik prima want ik wil geen claim leggen op wiskundige formules. Bovendien bleek uit haar onderzoek dat anderen deze familie van functies/vormen ook hebben onderzocht: 
 
 [John D. Cook - Mystery curve](https://www.johndcook.com/blog/2015/06/03/mystery-curve/)
 
