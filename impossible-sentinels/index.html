@@ -91,6 +91,16 @@
 
 <p>If you've read this far, we can get into some technical details. Did I mention that everything is self-contained? Well if you right-click save one of these images, you'll find they are SVG files. This is an image format specially suitable for plotter/robot drawing. However they are also text files you can open in a text editor, if you do so, you will find near the top of this file a piece of code. It's almost the same code as the screenshot above, hard-coded to generate that one particular image. Because this is code art, and this way, you can't have the image without also posessing the code.</p>
 
+<p>And what even are these shapes? And why do they remind of some of the outputs of my other project <a href="https://skulpturen.nl">Skulptuur</a>? The shapes are based on fun and interesting things you can do with SDFs, Signed Distance Functions, the mathematical formulas that I use to define and render my 3D scenes.</p> 
+
+<p>One thing you can do with a shape SDF, maybe a sphere, you can take the surface of that shape and give it a thickness. This gives you a hollow sphere. You can repeat this operation, now both the inner and outer surfaces of this hollow sphere get a thickness, giving you a sphere with a double shell.</p>
+
+<p>Another interesting thing you can do is take intersections of two shapes. Imagine two spheres, ghostly passing halfway through each other, the region in the middle where they both exist, has a "lens" shape, if you can imagine this. That region is the intersection of two spheres. An interesting property of the intersection is that it is often a more complex, unexpected shape, than the shapes it was made from.</p>
+
+<p>The shapes of <em>Skulptuur</em> are based on <a href="https://piterpasma.nl/skulptuur/#the-algorithm">the intersection of two grids of various shapes with zero, one or double shells</a>. The shapes of <em>Impossible Sentinels</em> are defined somewhat similar. They are formed of the intersection of a stack (2x3x2) of spheres and a set of two toruses/donuts. Both get double-shelled and the shapes can be rotated in any orientation. The intersection operation is slightly different, instead of intersecting the volumes of shapes, it intersects purely the surfaces of these (double-shelled) shapes, resulting in a set of lines on their shared surfaces. These lines are then inflated, given a thickness. This alternate intersection operation causes everything to look more rounded and organic than the shapes of <em>Skulptuur</em>.</p>
+
+<p>This may all be a bit hard to imagine, but if you look at the output images on the left, you should be able to recognize some donuts/toruses intersected by a stack of spheres, for instance in image#13.</p>
+
     </div>
     <div id="pics">
       <img src="./impossible-sentinels-code.png" />
