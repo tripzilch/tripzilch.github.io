@@ -173,8 +173,8 @@ window.addEventListener('resize', resize);
 froz=0;
 alpha=0;beta=0;gamma=0;
 acs=cos(alpha),asn=sin(alpha),bcs=cos(beta),bsn=sin(beta),gcs=cos(gamma),gsn=sin(gamma);
-rad=TAU/360;
-eori=e => ({alpha,beta,gamma}=e,alpha*=rad,beta*=rad,gamma*=rad,acs=cos(alpha),asn=sin(alpha),bcs=cos(beta),bsn=sin(beta),gcs=cos(gamma),gsn=sin(gamma),froz=1);
+sux=TAU/360; // sux converts from deg to rad
+eori=e => ({alpha,beta,gamma}=e,alpha*=sux,beta*=sux,gamma*=sux,acs=cos(alpha),asn=sin(alpha),bcs=cos(beta),bsn=sin(beta),gcs=cos(gamma),gsn=sin(gamma),froz=1);
 uax=0;
 pal=[
   [1,.3,.01,1], // orange
