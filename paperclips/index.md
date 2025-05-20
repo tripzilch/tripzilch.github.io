@@ -8,4 +8,4 @@ Over the next 27 hours, the solar system itself vanished--planets, asteroids, an
 
 The following day arrived and passed with no change. No flicker of life, no energy pulse, no evolution. Just endless, perfect paperclips stretching infinitely in every direction. Nothing would ever happen again.
 
-## [Don't hesitate](page-6137c44431a87d52) / [Stay](page-cffb8fbe41413558)
+## [Contemplate](page-f3343d61ea339b34) / [Don't perceive](page-4f364f18a67af1d9)

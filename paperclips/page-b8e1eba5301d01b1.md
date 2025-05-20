@@ -2,4 +2,4 @@
 
 A paperclip is surrounded by others in a packed arrangement with no gaps. The loops retain curvature and thickness. The clip does not move or deform. The local configuration remains stable indefinitely.
 
-## [Recline](page-ba358d3e2a6938ad) / [Don't pause](page-f094de0a46f82f1b)
+## [Be](page-8ed1d6f2273dffdb) / [Don't ignore](page-743df35db19dfdcc)

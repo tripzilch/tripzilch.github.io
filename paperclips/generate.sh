@@ -40,11 +40,9 @@ echo adding choices ...
 cp index.org index.md
 # Loop over every *.md file in the cwd
 for pagefile in *.md; do
-  # 1) Pick two distinct random actions from actions.txt
-  #    (shuf -n2 guarantees two different lines if there are ≥2 lines)
-  mapfile -t rand_actions < <(shuf -n 2 actions.txt)
-  action1="${rand_actions[0]}"
-  action2="${rand_actions[1]}"
+  # 1) Pick two random actions from actions.txt possible duplicates
+  action1=$(shuf -n1 actions.txt)
+  action2=$(shuf -n1 actions.txt)
 
   # 2) Choose which of the two gets the "Don't " prefix (50/50 chance)
   if (( RANDOM % 2 == 0 )); then
@@ -71,7 +69,7 @@ for pagefile in *.md; do
     choiceB="$prefixed"
   fi
 
-  # 5) Pick two random pages (with possible duplicates) from pages.txt
+  # 5) Pick two different random pages (with possible duplicates across pages) from pages.txt
   mapfile -t rand_pages < <(shuf -n 2 pages.txt)
   link1="${rand_pages[0]}"
   link2="${rand_pages[1]}"
