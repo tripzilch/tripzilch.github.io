@@ -52,7 +52,7 @@ Later I learned about sine and cosine waves and discovered the math behind these
 ![Epihyperderpflardioids](2020-03-31-18-56-31-s2160.jpg)
 *Epihyperderpflardioids*
 
-You can also play with [Epihyperderpflardoids live on your phone](https://piterpasma.nl/epihyperderpflardioids/) <-- here. Seriously check this out, it's great fun. Please note to allow the page to read your phone's orientation sensor, because that controls them. Tap for a new image. 
+You can also play with [**Epihyperderpflardoids live on your phone**](https://piterpasma.nl/epihyperderpflardioids/) <-- here. Seriously check this out, it's great fun. Please note to allow the page to read your phone's orientation sensor, because that controls them. Tap for a new image. 
 
 Sometimes people ask me how to pronounce "epihyperderpflardioids", and now, thanks to the power of AI, I have created some audio samples: [Power Metal](EPIHYPERDERPFLARDIOIDS.mp3), [New Wave 1](EPIHYPERDERPFLARDIOIDS-newwave1.mp3), [New Wave 2](EPIHYPERDERPFLARDIOIDS-newwave2.mp3). This was just for fun.
 
