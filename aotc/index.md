@@ -38,7 +38,7 @@ It took until 2019 before I started sharing my generative art to the world again
 *Asteroid line cut. I like this piece because it's another beautifully simple algorithm leading to unexpected complexity.*
 
 ![Asteroid line cut algorithm](algo123.jpg)
-*The idea is you draw a spiral, and then you draw a random line that slices it, and move the spiral apart, perpendicular to that line, while keeping all the lines connected. Seems simple enough but I could not image what it would look like if I repeated this process a few hundred times.*
+*The idea is you draw a spiral, and then you draw a random line that slices it, and move the spiral apart, perpendicular to that line, while keeping all the lines connected. Seems simple enough but I could not imagine what it would look like if I repeated this process a few hundred times.*
 
 ## Epihyperderpflardioids
 
