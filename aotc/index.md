@@ -97,7 +97,7 @@ I made the first version of my rayhatcher near the end of 2020, but I put it awa
 ![Universal Rayhatcher 509](URH509-Onduidelijkheid_001.png)
 *Universal Rayhatcher 509*
 
-I made various projects and 1/1s using the rayhatcher technique. The above images are from Universal Rayhatcher, which was a collaborative project, where artists could write their own mathmatical formulas (in 512 characters) to define a 3 dimensional scene. It was a really experimental idea, but so many people put their effort into it, and it was successful beyond my wildest expectations.
+I made various projects and 1/1s using the rayhatcher technique. Universal Rayhatcher was a collaborative project, where artists could write their own mathmatical formulas (in 512 characters) to define a 3 dimensional scene. The above ones are my own. It was a really experimental idea, but so many people put their effort into it, and it was successful beyond my wildest expectations. I can also show other people's contributions.
 
 [https://fxwho.xyz/fxhash/urh/](https://fxwho.xyz/fxhash/urh/) -- this is the main gallery page for Universal Rayhatcher
 
