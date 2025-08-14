@@ -86,14 +86,16 @@ I made the first version of my rayhatcher near the end of 2020, but I put it awa
 *Hyperwillows, July 2022. [https://verse.works/series/hyperwillows-by-piter-pasma](https://verse.works/series/hyperwillows-by-piter-pasma)*
 
 ![Universal Rayhatcher 7](URH7-BOOGSTORING.png)
-*BOOGSTORING*
+*BOOGSTORING (Universal Rayhatcher 7)*
 
 ![Universal Rayhatcher 62](URH62-7D-paperclip.png)
-*7D Paperclip*
+*7D Paperclip (Universal Rayhatcher 62)*
 
 ![Universal Rayhatcher 131](URH131-Kinda-looks-like-some-sort-of-canyon-or-something.png)
+*Universal Rayhatcher 131*
 
 ![Universal Rayhatcher 509](URH509-Onduidelijkheid_001.png)
+*Universal Rayhatcher 509*
 
 I made various projects and 1/1s using the rayhatcher technique. The above images are from Universal Rayhatcher, which was a collaborative project, where artists could write their own mathmatical formulas (in 512 characters) to define a 3 dimensional scene. It was a really experimental idea, but so many people put their effort into it, and it was successful beyond my wildest expectations.
 
