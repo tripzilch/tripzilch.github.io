@@ -29,13 +29,13 @@ It took until 2019 before I started sharing my generative art to the world again
 *Hilbert Curve explorations. When I made these, I was contacted by a Danish graphics design agency who wanted to buy these designs for an upcoming electronic music festival in Copenhagen. The festival unfortunately never happened due to the pandemic, but I did get paid and this allowed me to buy my Axidraw plotter. It's also the first piece I sold as an artist (and for a not insignificant amount) so I am super proud of that.*
 
 ![Polygon subdivision experiment](poly-subdivq-s.jpg)
-*I like this piece because it's a beautifully simple algorithm, I had not heard of before and gives very interesting results and forms I hadn't seen before. The algorithm is: 1. Find the largest polygon by area (starting with a rectangle filling the page) 2a. Split this polygon roughly in half. 2b. The parameter is "roughly", how uneven is the split. In the image here, I vary the evenness from top (very uneven) to bottom (very even).*
+*Polygon subdivision experiment. I like this piece because it's a beautifully simple algorithm, I had not heard of before and gives very interesting results and forms I hadn't seen before. The algorithm is: 1. Find the largest polygon by area (starting with a rectangle filling the page) 2a. Split this polygon roughly in half. 2b. The parameter is "roughly", how uneven is the split. In the image here, I vary the evenness from top (very uneven) to bottom (very even).*
 
 ![Sunset melty thing](sunset-melty-thing-s.jpg)
 *Sunset melty thing. Variation on the previous algorithm.*
 
 ![Asteroid line cut](linecut-2020-10-12-15-19-38-s2160.jpg)
-*I like this piece because it's another beautifully simple algorithm leading to unexpected complexity.*
+*Asteroid line cut. I like this piece because it's another beautifully simple algorithm leading to unexpected complexity.*
 
 ![Asteroid line cut algorithm](algo123.jpg)
 *The idea is you draw a spiral, and then you draw a random line that slices it, and move the spiral apart, perpendicular to that line, while keeping all the lines connected. Seems simple enough but I could not image what it would look like if I repeated this process a few hundred times.*
