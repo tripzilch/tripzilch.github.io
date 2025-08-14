@@ -1,4 +1,4 @@
-# Artists On TheChain 
+# Artists On The Chain 
 
 ## 2025-08-16 Piter Pasma
 
