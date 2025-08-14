@@ -58,9 +58,9 @@ Sometimes people ask me how to pronounce "epihyperderpflardioids", and now, than
 
 ## Skulptuur
 
-At the beginning of 2021 I started working on Skulptuur. I'm a bit too tired to write much more about it now.
+At the beginning of 2021 I started working on Skulptuur. It took half a year while the code just kept getting smaller. Finally it began to all fit onto a single screen and it was a very strange sensation to realize that just these 6370 characters were the result of over 6 months of work and who knows how many years of research and study.
 
-It's a photo realistic renderer for imaginary sculptures using only 6370 characters of Javascript code:
+Skulptuur is a photo realistic renderer for imaginary sculptures using only 6370 characters of Javascript code:
 
 ![Skulptuur's code](code-final4.png)
 *Skulptuur's code*
