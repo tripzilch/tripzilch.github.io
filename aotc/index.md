@@ -132,7 +132,7 @@ Check out [Blokkendoos on FX(hash)](https://www.fxhash.xyz/generative/slug/blokk
 
 ## Impossible Sentinels
 
-Impossible Sentinels is my most recent project. Again too tired to write more, so please [read the article I wrote about it](/impossible-sentinels/).
+Impossible Sentinels is my most recent project. Please [read the article I wrote about it](/impossible-sentinels/).
 
 Here's a few outputs from it:
 
