@@ -77,7 +77,13 @@ Skulptuur was released on Art Blocks in September 2021. Check out the full galle
 
 ## Rayhatcher
 
-Technically I made the first version of my rayhatcher near the end of 2020, but I put it away for a while to work on Skulptuur. A year later when I took up the project again, I reimplemented everything, and I've always been struck by the atmosphere that even basic geometric forms acquire when rendered using this technique.
+I made the first version of my rayhatcher near the end of 2020, but I put it away for a while to work on Skulptuur. Nearly two years later I took up the project again, I reimplemented everything, and I've always been struck by the atmosphere that even basic geometric forms acquire when rendered using this technique.
+
+![Hyperplane Microplane, December 2020](dego2-2020-12-20-15-12-12-s2160.jpg)
+*Hyperplane Microplane, December 2020*
+
+![Hyperwillows, July 2022](hyperwillows-verse-s2160.jpg)
+*Hyperwillows, July 2022. [https://verse.works/series/hyperwillows-by-piter-pasma](https://verse.works/series/hyperwillows-by-piter-pasma)*
 
 ![Universal Rayhatcher 7](URH7-BOOGSTORING.png)
 *BOOGSTORING*
