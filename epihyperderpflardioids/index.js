@@ -25,6 +25,7 @@ gepi=()=>{
   let x=[],f,g,y,ii=0,a0v,s0,s1,s2,s3,wa0,f0,f1,f2,f3;
   for(;ii<9999&&(!x[0]);f=1+R(9)|0,g=1+R(f)|0,h=f+g,x=[2,3,4,5,6,7,8,9,10].filter(d=>h%d<1&&gcd(f,gcd(g,d))==1),ii++);y=RA(x);
   if(ii>=9999)throw 'ARAARARARR';
+  console.log(f,g,y,h);
   // let x=[],f,g,y;
   // for(;!x[0]||f%2+g%2<1||f%3+g%3<1;f=2+R(7)|0,g=1+R(f-1)|0,h=f+g,x=[2,3,4,5,6,7].filter(d=>h%d<1));
   // y=RA(x);
