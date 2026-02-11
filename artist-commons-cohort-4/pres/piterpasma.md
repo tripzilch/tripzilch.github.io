@@ -89,7 +89,7 @@ Show the big code art folder. *(I mean the Dropbox copy from the backup that has
 
 * 2015/2016/2017: orbit trap fractals. Ink splats. Other ones.
 
-In 2019 I started posting my stuff on Instagram :) So we can look there.
+In 2019 I started posting my stuff on [Instagram](https://www.instagram.com/piterpasma/) :) So we can look there.
 
 * More orbit trap fractals
 
