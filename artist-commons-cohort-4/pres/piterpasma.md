@@ -120,7 +120,7 @@ Back to SDF time, trying to make SDFs plottable but how?
 
 Scribbling, stippling
 
-Until: RAYHATCHING
+Until: [RAYHATCHING](https://www.fxhash.xyz/article/rayhatching-evolution)
 
 also: GENARTCLUB
 
@@ -148,9 +148,9 @@ Also plotter based scribbling
 
 Hyperwillows
 
-October: Industrial Devolution
+October: [Industrial Devolution](https://www.fxhash.xyz/article/rayhatching-evolution)
 
-December: GEOMORPHISM
+December: [GEOMORPHISM](https://www.fxhash.xyz/project/geomorphism)
 
 ## 2023 and on
 
