@@ -13,6 +13,8 @@ In some parts of the Universe known as Piter Pasma. Known for generative long fo
 
 Piter Pasma is known for designing generators of three dimensional shapes using mathematical formulas expressing infinite variations, using unfathomably small amounts of code. Each of the above projects are less than 7KB of code, about half a page of inscrutable characters and esoteric incantations with no external dependencies, running in the browser.
 
+He also is the lead organizer of [Genuary](https://genuary.art), the world-wide and possibly interplanetary celebrated generative art month.
+
 Description
 -----------
 
