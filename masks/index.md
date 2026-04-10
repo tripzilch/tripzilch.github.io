@@ -32,17 +32,3 @@ A "Masks" output is a plottable SVG that can be rendered in several different st
 ![High dot detail](mask-hi-s.jpg)
 ![Medium dot detail](mask-med-s.jpg)
 ![Low dot detail](mask-lo-s.jpg)
-
-[Lyrics](https://www.youtube.com/watch?v=vltPKoaNx8I)
-------
-
-Masked crusaders, working all the time, fighting crime, fighting crime!
-Secret raiders, who will neutralise, as soon as they arrive,
-
-Tracker's gonna lead the mission, and Spectum's got such super vision,
-
-M-M-M-MASK! Is the mighty power that can save the day!
-M-M-M-MASK! No-one knows what lies behind their masquerades!
-M-M-M-MASK!
-
-Always riding hot on VENOM's trail, come see the laser rays, fly away!M-M-M-MASK!
