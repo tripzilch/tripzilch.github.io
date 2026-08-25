@@ -3,7 +3,7 @@ MASKS
 
 MASKS continues Piter Pasma's journey generating 3D shapes, mathematical formulas expressing infinite variations, using unfathomably small amounts of code. 
 
-3825 characters of inscrutably esoteric incantations, machine code, no external dependencies, running in the browser, etched onto the Ethereum blockchain.
+3825 characters of inscrutably esoteric incantations, computer code, no external dependencies, running in the browser, etched onto the Ethereum blockchain.
 
 Nobody makes their own mask. Culturally relevant and molded to perfection. Who is the great master, that checks the vibe?
   
@@ -12,6 +12,16 @@ MASKS outputs plottable SVG, with multiple rendering styles accessible via URL G
 `?w=140 ` page width in mm  
 `?lw=.3 ` line width in mm  
 `?d=280 ` dot detail
+
+Promo
+-----
+
+MASKS will be released THIS THURSDAY
+April 23rd on @artblocks_io !!
+
+
+
+
 
 Artist
 ------
